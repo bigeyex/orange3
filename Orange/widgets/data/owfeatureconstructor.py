@@ -156,7 +156,7 @@ class FeatureEditor(QFrame):
         hbox.addWidget(self.functionscb)
 
         layout.addRow(self.nameedit, self.expressionedit)
-        layout.addRow(self.tr(""), hbox)
+        layout.addRow("", hbox)
         self.setLayout(layout)
 
         self.nameedit.editingFinished.connect(self._invalidate)
@@ -269,7 +269,7 @@ class DiscreteFeatureEditor(FeatureEditor):
         self.valuesedit.textChanged.connect(self._invalidate)
 
         layout = self.layout()
-        label = QLabel(self.tr("Values (optional)"))
+        label = QLabel(_("Values (optional)"))
         label.setToolTip(tooltip)
         layout.addRow(label, self.valuesedit)
 

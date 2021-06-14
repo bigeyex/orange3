@@ -25,7 +25,6 @@ from Orange.widgets.utils.sql import check_sql_input
 from Orange.widgets.utils.widgetpreview import WidgetPreview
 from Orange.widgets.widget import Input, Output, Msg
 
-
 class OWConcatenate(widget.OWWidget):
     name = "Concatenate"
     description = "Concatenate (append) two or more datasets."
@@ -84,6 +83,7 @@ class OWConcatenate(widget.OWWidget):
 
     def __init__(self):
         super().__init__()
+        global _
 
         self.primary_data = None
         self.more_data = OrderedDict()
@@ -94,17 +94,17 @@ class OWConcatenate(widget.OWWidget):
             callback=self._merge_type_changed)
 
         gui.widgetLabel(
-            box, self.tr("When there is no primary table, " +
+            box, _("When there is no primary table, "
                          "the output should contain:"))
 
         for opts in self.domain_opts:
-            gui.appendRadioButton(box, self.tr(opts))
+            gui.appendRadioButton(box, _(opts))
 
         gui.separator(box)
 
         label = gui.widgetLabel(
             box,
-            self.tr("The resulting table will have a class only if there " +
+            _("The resulting table will have a class only if there "
                     "is no conflict between input classes."))
         label.setWordWrap(True)
 
@@ -116,12 +116,12 @@ class OWConcatenate(widget.OWWidget):
             callback=self.apply, stateWhenDisabled=False)
         ###
         box = gui.vBox(
-            self.controlArea, self.tr("Source Identification"),
+            self.controlArea, _("Source Identification"),
         )
 
         cb = gui.checkBox(
             box, self, "append_source_column",
-            self.tr("Append data source IDs"),
+            _("Append data source IDs"),
             callback=self._source_changed)
 
         ibox = gui.indentedBox(box, sep=gui.checkButtonOffsetHint(cb))
@@ -134,12 +134,12 @@ class OWConcatenate(widget.OWWidget):
         )
 
         form.addRow(
-            self.tr("Feature name:"),
+            _("Feature name:"),
             gui.lineEdit(ibox, self, "source_attr_name", valueType=str,
                          callback=self._source_changed))
 
         form.addRow(
-            self.tr("Place:"),
+            _("Place:"),
             gui.comboBox(ibox, self, "source_column_role", items=self.id_roles,
                          callback=self._source_changed))
 
@@ -270,7 +270,7 @@ class OWConcatenate(widget.OWWidget):
         if self.primary_data is not None:
             items["Domain"] = "from primary data"
         else:
-            items["Domain"] = self.tr(self.domain_opts[self.merge_type]).lower()
+            items["Domain"] = _(self.domain_opts[self.merge_type]).lower()
         if self.append_source_column:
             items["Source data ID"] = "{} (as {})".format(
                 self.source_attr_name,

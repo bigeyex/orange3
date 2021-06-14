@@ -297,7 +297,7 @@ class OWDiscretize(widget.OWWidget):
         self.k = 5
         self.cutpoints = ()
 
-        box = gui.vBox(self.controlArea, self.tr("Default Discretization"))
+        box = gui.vBox(self.controlArea, _("Default Discretization"))
         self._default_method_ = 0
         self.default_bbox = rbox = gui.radioButtons(
             box, self, "_default_method_", callback=self._default_disc_changed)
@@ -310,13 +310,13 @@ class OWDiscretize(widget.OWWidget):
         rb.layout().setStretch(0, 1)
         rb.layout().setStretch(1, 1)
         self.options = [
-            (Methods.Default, self.tr("Default")),
-            (Methods.Leave, self.tr("Leave numeric")),
-            (Methods.MDL, self.tr("Entropy-MDL discretization")),
-            (Methods.EqualFreq, self.tr("Equal-frequency discretization")),
-            (Methods.EqualWidth, self.tr("Equal-width discretization")),
-            (Methods.Remove, self.tr("Remove numeric variables")),
-            (Methods.Custom, self.tr("Manual")),
+            (Methods.Default, _("Default")),
+            (Methods.Leave, _("Leave numeric")),
+            (Methods.MDL, _("Entropy-MDL discretization")),
+            (Methods.EqualFreq, _("Equal-frequency discretization")),
+            (Methods.EqualWidth, _("Equal-width discretization")),
+            (Methods.Remove, _("Remove numeric variables")),
+            (Methods.Custom, _("Manual")),
         ]
 
         for id_, opt in self.options[1:]:

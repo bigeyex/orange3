@@ -1,1 +1,0 @@
-xgettext -d messages -o locale/messages.pot ./Orange/widgets/data/*.py ../orange-widget-base/orangewidget/*.py ../orange-canvas-core/orangecanvas/application/*.py ../orange-canvas-core/orangecanvas/canvas/items/*.py ../orange-canvas-core/orangecanvas/document/items/*.py

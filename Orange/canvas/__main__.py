@@ -56,9 +56,7 @@ from Orange.canvas.mainwindow import MainWindow
 from Orange.widgets.settings import widget_settings_dir
 
 import gettext
-# translation = gettext.translation('messages', 'locale', languages=['zh_CN'])
 
-# gettext.bindtextdomain('messages', 'locale')
 translation = gettext.translation('messages', 'locale', languages=['zh_CN'])
 translation.install()
 

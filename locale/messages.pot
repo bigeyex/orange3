@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 16:38+0800\n"
+"POT-Creation-Date: 2021-06-14 17:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,32 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: Orange/widgets/data/owconcatenate.py:97
+msgid "When there is no primary table, the output should contain:"
+msgstr ""
+
+#: Orange/widgets/data/owconcatenate.py:107
+msgid ""
+"The resulting table will have a class only if there is no conflict between "
+"input classes."
+msgstr ""
+
+#: Orange/widgets/data/owconcatenate.py:119
+msgid "Source Identification"
+msgstr ""
+
+#: Orange/widgets/data/owconcatenate.py:124
+msgid "Append data source IDs"
+msgstr ""
+
+#: Orange/widgets/data/owconcatenate.py:137
+msgid "Feature name:"
+msgstr ""
+
+#: Orange/widgets/data/owconcatenate.py:142
+msgid "Place:"
+msgstr ""
 
 #: Orange/widgets/data/owcsvimport.py:611
 msgid "CSV File Import"
@@ -31,6 +57,7 @@ msgstr ""
 
 #: Orange/widgets/data/owcsvimport.py:716 Orange/widgets/data/owfile.py:228
 #: Orange/widgets/data/owtable.py:218
+#: ../orange-canvas-core/orangecanvas/application/settings.py:402
 msgid "Info"
 msgstr ""
 
@@ -40,6 +67,22 @@ msgstr ""
 
 #: Orange/widgets/data/owcsvimport.py:845
 msgid "Open Data File"
+msgstr ""
+
+#: Orange/widgets/data/owcsvimport.py:870
+#, python-brace-format
+msgid ""
+"The '{basename}' may be a binary file.\n"
+"Are you sure you want to continue?"
+msgstr ""
+
+#: Orange/widgets/data/owcsvimport.py:880
+msgid "Invalid path"
+msgstr ""
+
+#: Orange/widgets/data/owcsvimport.py:882
+#, python-brace-format
+msgid "Selected path is not within '{prefix}'"
 msgstr ""
 
 #: Orange/widgets/data/owcsvimport.py:968
@@ -52,6 +95,42 @@ msgstr ""
 
 #: Orange/widgets/data/owdatasets.py:142
 msgid "Load a dataset from an online repository"
+msgstr ""
+
+#: Orange/widgets/data/owdiscretize.py:300
+msgid "Default Discretization"
+msgstr ""
+
+#: Orange/widgets/data/owdiscretize.py:313
+msgid "Default"
+msgstr ""
+
+#: Orange/widgets/data/owdiscretize.py:314
+msgid "Leave numeric"
+msgstr ""
+
+#: Orange/widgets/data/owdiscretize.py:315
+msgid "Entropy-MDL discretization"
+msgstr ""
+
+#: Orange/widgets/data/owdiscretize.py:316
+msgid "Equal-frequency discretization"
+msgstr ""
+
+#: Orange/widgets/data/owdiscretize.py:317
+msgid "Equal-width discretization"
+msgstr ""
+
+#: Orange/widgets/data/owdiscretize.py:318
+msgid "Remove numeric variables"
+msgstr ""
+
+#: Orange/widgets/data/owdiscretize.py:319 Orange/widgets/data/owrank.py:362
+msgid "Manual"
+msgstr ""
+
+#: Orange/widgets/data/owfeatureconstructor.py:272
+msgid "Values (optional)"
 msgstr ""
 
 #: Orange/widgets/data/owfile.py:75
@@ -90,6 +169,22 @@ msgstr ""
 
 #: Orange/widgets/data/owfile.py:253
 msgid "Browse documentation datasets"
+msgstr ""
+
+#: Orange/widgets/data/owimpute.py:243
+msgid "Individual Attribute Settings"
+msgstr ""
+
+#: Orange/widgets/data/owrank.py:360
+msgid "None"
+msgstr ""
+
+#: Orange/widgets/data/owrank.py:361
+msgid "All"
+msgstr ""
+
+#: Orange/widgets/data/owrank.py:363
+msgid "Best ranked:"
 msgstr ""
 
 #: Orange/widgets/data/owtable.py:179
@@ -144,6 +239,91 @@ msgstr ""
 msgid "Apply Automatically"
 msgstr ""
 
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:57
+msgid "Show report"
+msgstr ""
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:59
+msgid "Show a report window"
+msgstr ""
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:65
+msgid "Open Report..."
+msgstr ""
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:67
+msgid "Open a saved report"
+msgstr ""
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:72
+msgid "Reset Widget Settings..."
+msgstr ""
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:98
+msgid "Open Report"
+msgstr ""
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:156
+msgid "Clear settings"
+msgstr ""
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:157
+msgid "{} needs to be restarted for the changes to take effect."
+msgstr ""
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:160
+msgid "Press OK to restart {} now."
+msgstr ""
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:212
+msgid "Report window"
+msgstr ""
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:214
+msgid "The report contains unsaved changes."
+msgstr ""
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:215
+msgid "Would you like to save the report?"
+msgstr ""
+
+#: ../orange-widget-base/orangewidget/workflow/widgetsscheme.py:685
+msgid "Show settings"
+msgstr ""
+
+#: ../orange-widget-base/orangewidget/workflow/widgetsscheme.py:687
+msgid "Show widget settings"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/addons.py:333
+msgid "Name"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/addons.py:333
+msgid "Version"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/addons.py:333
+msgid "Action"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/addons.py:545
+msgid "Filter..."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/addons.py:548
+msgid "Add more..."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/addons.py:549
+msgid "Add an add-on not listed below"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/addons.py:692
+#: ../orange-canvas-core/orangecanvas/application/addons.py:966
+msgid "Retrieving package list"
+msgstr ""
+
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:287
 msgid ""
 "Select a widget to show its description.<br/><br/>See <a href='action:"
@@ -161,6 +341,7 @@ msgid "Log"
 msgstr ""
 
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:376
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:375
 msgid "Help"
 msgstr ""
 
@@ -176,6 +357,8 @@ msgstr ""
 
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:410
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1890
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:339
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1730
 msgid "Open"
 msgstr ""
 
@@ -298,6 +481,7 @@ msgstr ""
 
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:549
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1949
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:112
 msgid "Workflow Info"
 msgstr ""
 
@@ -391,6 +575,9 @@ msgstr ""
 
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:838
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1395
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:36
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:54
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:71
 msgid "untitled"
 msgstr ""
 
@@ -400,6 +587,7 @@ msgstr ""
 
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1163
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1248
+#: ../orange-canvas-core/orangecanvas/application/settings.py:400
 msgid "Error"
 msgstr ""
 
@@ -546,6 +734,217 @@ msgstr ""
 msgid "No help found"
 msgstr ""
 
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:42
+msgid "Title"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:43
+msgid "Description"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:132
+msgid "Show when I make a New Workflow."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:140
+msgid "You can also edit Workflow Info later (File -> Workflow Info)."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:273
+msgid "General"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:274
+msgid "General Options"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:284
+msgid "Enable node animations"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:286
+msgid "Enable shadow and ping animations for nodes in the workflow."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:292
+msgid "Nodes"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:299
+msgid "Show channel names between widgets"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:301
+msgid "Show source and sink channel names over the links."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:309
+msgid "Links"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:315
+msgid "Open on double click"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:316
+msgid "Open quick menu on a double click on an empty spot in the canvas"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:319
+msgid "Open on right click"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:320
+msgid "Open quick menu on a right click on an empty spot in the canvas"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:323
+msgid "Open on space key press"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:324
+msgid ""
+"Open quick menu on Space key press while the mouse is hovering over the "
+"canvas."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:327
+msgid "Open on any key press"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:328
+msgid ""
+"Open quick menu on any key press while the mouse is hovering over the canvas."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:331
+msgid "Show categories"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:332
+msgid "In addition to searching, allow filtering by categories."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:347
+msgid "Quick menu"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:353
+msgid "Show splash screen"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:356
+msgid "Show welcome screen"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:359
+msgid "Load crashed scratch workflows"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:370
+msgid "On startup"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:376
+msgid "Only one tab can be open at a time"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:382
+msgid "Tool box"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:387
+msgid "&Style"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:393
+msgid "Output"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:399
+msgid "Critical"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:401
+msgid "Warn"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:403
+msgid "Debug"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:405
+msgid "Logging"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:410
+msgid "Open in external browser"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:415
+msgid "Help window"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:454
+msgid "Add-ons"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:462
+msgid "Install add-ons with conda"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:467
+msgid "Conda"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:469
+msgid "Pip"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:478
+msgid "Network"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/welcomedialog.py:127
+msgid "Show at startup"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/welcomedialog.py:169
+msgid "Help us improve!"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/canvas/view.py:39
+msgid "Zoom in"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/canvas/view.py:45
+msgid "Zoom out"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/canvas/view.py:50
+msgid "Reset Zoom"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/annotationitem.py:131
+msgid "Enter text here"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/annotationitem.py:415
+msgid "Render contents as plain text"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/annotationitem.py:418
+msgid "Render contents as HTML"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/annotationitem.py:421
+msgid "Render contents as RST (reStructuredText)"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/annotationitem.py:425
+msgid "Render contents as Markdown"
+msgstr ""
+
 #: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:248
 msgid "&Undo"
 msgstr ""
@@ -576,4 +975,310 @@ msgstr ""
 
 #: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:303
 msgid "Select All"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:85
+#, python-format
+msgid "Add %s"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:99
+#, python-format
+msgid "Remove %s"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:125
+#: ../orange-canvas-core/orangecanvas/document/interactions.py:585
+msgid "Add link"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:139
+msgid "Remove link"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:163
+msgid "Insert widget into link"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:174
+msgid "Add annotation"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:188
+msgid "Remove annotation"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:206
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1500
+msgid "Move"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:222
+msgid "Resize"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:238
+msgid "Move arrow"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:260
+msgid "Change Annotation Geometry"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:276
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:360
+msgid "Rename"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:300
+msgid "Change text"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:325
+#, python-format
+msgid "Set %r"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:347
+msgid "Set Window Presets"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/editlinksdialog.py:80
+msgid "Clear All"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/interactions.py:453
+msgid "Create a new link"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/interactions.py:454
+msgid ""
+"<h3>Create new link</h3><p>Drag a link to an existing node or release on an "
+"empty spot to create a new node.</p><p>Hold Shift when releasing the mouse "
+"button to edit connections.</p>"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/interactions.py:1338
+msgid "Click and drag to create a new arrow"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/interactions.py:1339
+msgid ""
+"<h3>New arrow annotation</h3><p>Click and drag to create a new arrow "
+"annotation</p>"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/interactions.py:1463
+msgid "Click to create a new text annotation"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/interactions.py:1464
+msgid ""
+"<h3>New text annotation</h3><p>Click (and drag to resize) on the canvas to "
+"create a new text annotation item.</p>"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/quickmenu.py:1235
+msgid "Search for a widget..."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/quickmenu.py:1272
+msgid "Quick Search"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:206
+msgid "&Edit"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:217
+msgid "Widget"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:228
+msgid "&Widget"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:236
+msgid "Link"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:248
+msgid "Clean Up"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:251
+msgid "Align widgets to a grid (Shift+A)"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:256
+msgid "Text"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:258
+msgid "Add a text annotation to the workflow."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:285
+msgid "Arrow"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:287
+msgid "Add a arrow annotation to the workflow."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:332
+msgid "Select all"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:334
+msgid "Select all items."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:341
+msgid "Open selected widget"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:346
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:388
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1130
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1735
+msgid "Remove"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:348
+msgid "Remove selected items"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:362
+msgid "Rename selected widget"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:377
+msgid "Show widget help"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:383
+msgid "Enabled"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:391
+msgid "Remove link."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:395
+msgid "Insert Widget"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:398
+msgid "Insert widget."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:402
+msgid "Reset Signals"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:408
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2057
+msgid "Duplicate"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:416
+msgid "Copy"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:424
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2157
+msgid "Paste"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:460
+msgid "Window Groups"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:471
+msgid "Save Window Group..."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:477
+msgid "Delete All Groups"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:496
+msgid "Bring Widgets to Front"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1181
+msgid "Align To Grid"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1728
+msgid "Open All"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1733
+msgid "Remove All"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1964
+msgid "Sorry there is no documentation available for this widget."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1976
+msgid "Set enabled"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2384
+msgid "Window Group 1"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2386
+msgid "Save As:"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2388
+msgid "Use as default"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2421
+msgid "Confirm Overwrite"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2424
+msgid "The window group '{}' already exists. Do you want to replace it?"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2431
+msgid "Replace"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/preview/previewbrowser.py:92
+msgid "Path:"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/preview/previewdialog.py:35
+msgid "Preview"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/scheme/widgetmanager.py:267
+msgid "Raise Canvas to Front"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/scheme/widgetmanager.py:269
+msgid "Raise containing canvas workflow window"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/scheme/widgetmanager.py:274
+msgid "Raise Descendants"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/scheme/widgetmanager.py:276
+msgid "Raise all immediate descendants of this node"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/scheme/widgetmanager.py:284
+msgid "Raise Ancestors"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/scheme/widgetmanager.py:286
+msgid "Raise all immediate ancestors of this node"
 msgstr ""

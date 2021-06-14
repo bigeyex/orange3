@@ -865,9 +865,9 @@ class OWCSVFileImport(widget.OWWidget):
     def _might_be_binary_mb(self, path) -> QMessageBox:
         mb = QMessageBox(
             parent=self,
-            windowTitle=self.tr(""),
+            windowTitle="",
             icon=QMessageBox.Question,
-            text=self.tr("The '{basename}' may be a binary file.\n"
+            text=_("The '{basename}' may be a binary file.\n"
                          "Are you sure you want to continue?").format(
                              basename=os.path.basename(path)),
             standardButtons=QMessageBox.Cancel | QMessageBox.Yes
@@ -877,9 +877,9 @@ class OWCSVFileImport(widget.OWWidget):
 
     def _path_must_be_relative_mb(self, prefix: str) -> QMessageBox:
         mb = QMessageBox(
-            parent=self, windowTitle=self.tr("Invalid path"),
+            parent=self, windowTitle=_("Invalid path"),
             icon=QMessageBox.Warning,
-            text=self.tr("Selected path is not within '{prefix}'").format(
+            text=_("Selected path is not within '{prefix}'").format(
                 prefix=prefix
             ),
         )

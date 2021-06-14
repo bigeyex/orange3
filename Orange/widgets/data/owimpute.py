@@ -240,7 +240,7 @@ class OWImpute(OWWidget):
 
         self.default_button_group = button_group
 
-        box = gui.hBox(self.controlArea, self.tr("Individual Attribute Settings"),
+        box = gui.hBox(self.controlArea, _("Individual Attribute Settings"),
                        flat=False)
 
         self.varview = ListViewSearch(

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 16:38+0800\n"
-"PO-Revision-Date: 2021-06-14 16:39+0800\n"
+"POT-Creation-Date: 2021-06-14 17:48+0800\n"
+"PO-Revision-Date: 2021-06-14 17:48+0800\n"
 "Last-Translator: yu <bigeyex@gmail.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -17,6 +17,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: Orange/widgets/data/owconcatenate.py:97
+msgid "When there is no primary table, the output should contain:"
+msgstr "如果没有主表时，输出应包含："
+
+#: Orange/widgets/data/owconcatenate.py:107
+msgid ""
+"The resulting table will have a class only if there is no conflict between "
+"input classes."
+msgstr "只有在输入类之间没有冲突时，生成的表才会有类。"
+
+#: Orange/widgets/data/owconcatenate.py:119
+msgid "Source Identification"
+msgstr "来源识别"
+
+#: Orange/widgets/data/owconcatenate.py:124
+msgid "Append data source IDs"
+msgstr "附加数据源 ID"
+
+#: Orange/widgets/data/owconcatenate.py:137
+msgid "Feature name:"
+msgstr "特征名称："
+
+#: Orange/widgets/data/owconcatenate.py:142
+msgid "Place:"
+msgstr "位置："
 
 #: Orange/widgets/data/owcsvimport.py:611
 msgid "CSV File Import"
@@ -32,6 +58,7 @@ msgstr "文件："
 
 #: Orange/widgets/data/owcsvimport.py:716 Orange/widgets/data/owfile.py:228
 #: Orange/widgets/data/owtable.py:218
+#: ../orange-canvas-core/orangecanvas/application/settings.py:402
 msgid "Info"
 msgstr "信息"
 
@@ -42,6 +69,24 @@ msgstr "导入选项…"
 #: Orange/widgets/data/owcsvimport.py:845
 msgid "Open Data File"
 msgstr "打开数据文件"
+
+#: Orange/widgets/data/owcsvimport.py:870
+#, python-brace-format
+msgid ""
+"The '{basename}' may be a binary file.\n"
+"Are you sure you want to continue?"
+msgstr ""
+"\"{basename}\"可能是二进制文件。\n"
+"确定要继续吗？"
+
+#: Orange/widgets/data/owcsvimport.py:880
+msgid "Invalid path"
+msgstr "无效路径"
+
+#: Orange/widgets/data/owcsvimport.py:882
+#, python-brace-format
+msgid "Selected path is not within '{prefix}'"
+msgstr "选定的路径不在\"{prefix}\"内"
 
 #: Orange/widgets/data/owcsvimport.py:968
 msgid "Import Options"
@@ -54,6 +99,42 @@ msgstr "数据集"
 #: Orange/widgets/data/owdatasets.py:142
 msgid "Load a dataset from an online repository"
 msgstr "从在线资源库中下载数据集"
+
+#: Orange/widgets/data/owdiscretize.py:300
+msgid "Default Discretization"
+msgstr "默认离散化"
+
+#: Orange/widgets/data/owdiscretize.py:313
+msgid "Default"
+msgstr "默认"
+
+#: Orange/widgets/data/owdiscretize.py:314
+msgid "Leave numeric"
+msgstr "保持数值"
+
+#: Orange/widgets/data/owdiscretize.py:315
+msgid "Entropy-MDL discretization"
+msgstr "熵-MDL 离散化"
+
+#: Orange/widgets/data/owdiscretize.py:316
+msgid "Equal-frequency discretization"
+msgstr "等频率离散化"
+
+#: Orange/widgets/data/owdiscretize.py:317
+msgid "Equal-width discretization"
+msgstr "等宽离散化"
+
+#: Orange/widgets/data/owdiscretize.py:318
+msgid "Remove numeric variables"
+msgstr "移除数值变量"
+
+#: Orange/widgets/data/owdiscretize.py:319 Orange/widgets/data/owrank.py:362
+msgid "Manual"
+msgstr "手动"
+
+#: Orange/widgets/data/owfeatureconstructor.py:272
+msgid "Values (optional)"
+msgstr "数值（可选）"
 
 #: Orange/widgets/data/owfile.py:75
 msgid "File"
@@ -92,6 +173,22 @@ msgstr "应用"
 #: Orange/widgets/data/owfile.py:253
 msgid "Browse documentation datasets"
 msgstr "浏览测试数据"
+
+#: Orange/widgets/data/owimpute.py:243
+msgid "Individual Attribute Settings"
+msgstr "单个属性设置"
+
+#: Orange/widgets/data/owrank.py:360
+msgid "None"
+msgstr "无"
+
+#: Orange/widgets/data/owrank.py:361
+msgid "All"
+msgstr "所有"
+
+#: Orange/widgets/data/owrank.py:363
+msgid "Best ranked:"
+msgstr "排名在前："
 
 #: Orange/widgets/data/owtable.py:179
 msgid "Data Table"
@@ -145,6 +242,91 @@ msgstr "自动发送"
 msgid "Apply Automatically"
 msgstr "自动应用"
 
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:57
+msgid "Show report"
+msgstr "显示报告"
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:59
+msgid "Show a report window"
+msgstr "显示报告窗口"
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:65
+msgid "Open Report..."
+msgstr "打开报告..."
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:67
+msgid "Open a saved report"
+msgstr "打开保存的报告"
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:72
+msgid "Reset Widget Settings..."
+msgstr "重置节点设置..."
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:98
+msgid "Open Report"
+msgstr "打开报告"
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:156
+msgid "Clear settings"
+msgstr "清楚设置"
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:157
+msgid "{} needs to be restarted for the changes to take effect."
+msgstr "{} 需要重新启动才能使更改生效。"
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:160
+msgid "Press OK to restart {} now."
+msgstr "按\"确定\"立即重新启动 {}"
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:212
+msgid "Report window"
+msgstr "报告窗口"
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:214
+msgid "The report contains unsaved changes."
+msgstr "该报告包含未保存的更改。"
+
+#: ../orange-widget-base/orangewidget/workflow/mainwindow.py:215
+msgid "Would you like to save the report?"
+msgstr "您想保存此报告吗？"
+
+#: ../orange-widget-base/orangewidget/workflow/widgetsscheme.py:685
+msgid "Show settings"
+msgstr "Show settings 显示设置 "
+
+#: ../orange-widget-base/orangewidget/workflow/widgetsscheme.py:687
+msgid "Show widget settings"
+msgstr "显示节点设置"
+
+#: ../orange-canvas-core/orangecanvas/application/addons.py:333
+msgid "Name"
+msgstr "名称"
+
+#: ../orange-canvas-core/orangecanvas/application/addons.py:333
+msgid "Version"
+msgstr "版本"
+
+#: ../orange-canvas-core/orangecanvas/application/addons.py:333
+msgid "Action"
+msgstr "动作"
+
+#: ../orange-canvas-core/orangecanvas/application/addons.py:545
+msgid "Filter..."
+msgstr "过滤..."
+
+#: ../orange-canvas-core/orangecanvas/application/addons.py:548
+msgid "Add more..."
+msgstr "添加更多..."
+
+#: ../orange-canvas-core/orangecanvas/application/addons.py:549
+msgid "Add an add-on not listed below"
+msgstr "添加未在下面列出的附加组件"
+
+#: ../orange-canvas-core/orangecanvas/application/addons.py:692
+#: ../orange-canvas-core/orangecanvas/application/addons.py:966
+msgid "Retrieving package list"
+msgstr "获取包列表"
+
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:287
 msgid ""
 "Select a widget to show its description.<br/><br/>See <a href='action:"
@@ -165,6 +347,7 @@ msgid "Log"
 msgstr "日志"
 
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:376
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:375
 msgid "Help"
 msgstr "帮助"
 
@@ -180,6 +363,8 @@ msgstr "打开新的工作流。"
 
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:410
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1890
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:339
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1730
 msgid "Open"
 msgstr "打开"
 
@@ -302,6 +487,7 @@ msgstr "清除最近打开菜单。"
 
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:549
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1949
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:112
 msgid "Workflow Info"
 msgstr "工作流信息"
 
@@ -395,6 +581,9 @@ msgstr "帮助(&H)"
 
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:838
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1395
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:36
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:54
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:71
 msgid "untitled"
 msgstr "无标题"
 
@@ -404,6 +593,7 @@ msgstr "打开Orange工作流文件"
 
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1163
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1248
+#: ../orange-canvas-core/orangecanvas/application/settings.py:400
 msgid "Error"
 msgstr "错误"
 
@@ -552,6 +742,217 @@ msgstr "此节点没有文档。"
 msgid "No help found"
 msgstr "未找到帮助"
 
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:42
+msgid "Title"
+msgstr "标题"
+
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:43
+msgid "Description"
+msgstr "描述"
+
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:132
+msgid "Show when I make a New Workflow."
+msgstr "在制作新工作流时展示。"
+
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:140
+msgid "You can also edit Workflow Info later (File -> Workflow Info)."
+msgstr "您还可以稍后编辑工作流信息（文件->工作流信息）。"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:273
+msgid "General"
+msgstr "常规"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:274
+msgid "General Options"
+msgstr "常规选项"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:284
+msgid "Enable node animations"
+msgstr "启用节点动画"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:286
+msgid "Enable shadow and ping animations for nodes in the workflow."
+msgstr "为工作流中的节点启用阴影和动画。"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:292
+msgid "Nodes"
+msgstr "节点"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:299
+msgid "Show channel names between widgets"
+msgstr "在节点之间显示端口名称"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:301
+msgid "Show source and sink channel names over the links."
+msgstr "在连线上显示来源和去向端口名称"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:309
+msgid "Links"
+msgstr "链接"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:315
+msgid "Open on double click"
+msgstr "双击时打开"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:316
+msgid "Open quick menu on a double click on an empty spot in the canvas"
+msgstr "在画布上的空白位置双击时，打开快捷菜单"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:319
+msgid "Open on right click"
+msgstr "右键单击打开"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:320
+msgid "Open quick menu on a right click on an empty spot in the canvas"
+msgstr "在画布空白位置右键单击时，显示快捷菜单"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:323
+msgid "Open on space key press"
+msgstr "按下空格键时打开菜单"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:324
+msgid ""
+"Open quick menu on Space key press while the mouse is hovering over the "
+"canvas."
+msgstr "当鼠标悬停在画布上时，打开空格键可以打开快捷菜单"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:327
+msgid "Open on any key press"
+msgstr "按下任意键时打开"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:328
+msgid ""
+"Open quick menu on any key press while the mouse is hovering over the canvas."
+msgstr "当鼠标悬停在画布上时，按下任意键均可打开快捷菜单。"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:331
+msgid "Show categories"
+msgstr "显示类别"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:332
+msgid "In addition to searching, allow filtering by categories."
+msgstr "除搜索外，还允许按类别进行筛选。"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:347
+msgid "Quick menu"
+msgstr "快速菜单"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:353
+msgid "Show splash screen"
+msgstr "显示闪屏"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:356
+msgid "Show welcome screen"
+msgstr "显示欢迎页面。"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:359
+msgid "Load crashed scratch workflows"
+msgstr "加载崩溃时未完成的工作流"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:370
+msgid "On startup"
+msgstr "启动时"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:376
+msgid "Only one tab can be open at a time"
+msgstr "一次只能打开一个选项卡"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:382
+msgid "Tool box"
+msgstr "工具箱"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:387
+msgid "&Style"
+msgstr "风格"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:393
+msgid "Output"
+msgstr "输出"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:399
+msgid "Critical"
+msgstr "危急"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:401
+msgid "Warn"
+msgstr "报警"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:403
+msgid "Debug"
+msgstr "调试"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:405
+msgid "Logging"
+msgstr "记录"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:410
+msgid "Open in external browser"
+msgstr "在外部浏览器中打开"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:415
+msgid "Help window"
+msgstr "帮助窗口"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:454
+msgid "Add-ons"
+msgstr "附加组件..."
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:462
+msgid "Install add-ons with conda"
+msgstr "通过Conda安装附加组件"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:467
+msgid "Conda"
+msgstr "Conda"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:469
+msgid "Pip"
+msgstr "Pip"
+
+#: ../orange-canvas-core/orangecanvas/application/settings.py:478
+msgid "Network"
+msgstr "网络"
+
+#: ../orange-canvas-core/orangecanvas/application/welcomedialog.py:127
+msgid "Show at startup"
+msgstr "在启动时显示"
+
+#: ../orange-canvas-core/orangecanvas/application/welcomedialog.py:169
+msgid "Help us improve!"
+msgstr "帮助改进产品！"
+
+#: ../orange-canvas-core/orangecanvas/canvas/view.py:39
+msgid "Zoom in"
+msgstr "放大"
+
+#: ../orange-canvas-core/orangecanvas/canvas/view.py:45
+msgid "Zoom out"
+msgstr "缩小"
+
+#: ../orange-canvas-core/orangecanvas/canvas/view.py:50
+msgid "Reset Zoom"
+msgstr "重置缩放"
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/annotationitem.py:131
+msgid "Enter text here"
+msgstr "在这里输入文本"
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/annotationitem.py:415
+msgid "Render contents as plain text"
+msgstr "将内容渲染为纯文本"
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/annotationitem.py:418
+msgid "Render contents as HTML"
+msgstr "将内容渲染为 HTML"
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/annotationitem.py:421
+msgid "Render contents as RST (reStructuredText)"
+msgstr "渲染内容为 RST（reStructuredText）"
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/annotationitem.py:425
+msgid "Render contents as Markdown"
+msgstr "将内容渲染为Markdown"
+
 #: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:248
 msgid "&Undo"
 msgstr "撤销"
@@ -570,7 +971,7 @@ msgstr "复制"
 
 #: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:281
 msgid "Copy &Link Location"
-msgstr ""
+msgstr "复制链接位置"
 
 #: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:288
 msgid "&Paste"
@@ -583,6 +984,314 @@ msgstr "删除"
 #: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:303
 msgid "Select All"
 msgstr "选择全部"
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:85
+#, python-format
+msgid "Add %s"
+msgstr "添加 %s"
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:99
+#, python-format
+msgid "Remove %s"
+msgstr "移除 %s"
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:125
+#: ../orange-canvas-core/orangecanvas/document/interactions.py:585
+msgid "Add link"
+msgstr "添加链接"
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:139
+msgid "Remove link"
+msgstr "删除链接"
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:163
+msgid "Insert widget into link"
+msgstr "将节点插入链接"
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:174
+msgid "Add annotation"
+msgstr "添加注释"
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:188
+msgid "Remove annotation"
+msgstr "移除注释"
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:206
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1500
+msgid "Move"
+msgstr "移动"
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:222
+msgid "Resize"
+msgstr "调整大小"
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:238
+msgid "Move arrow"
+msgstr "移动箭头"
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:260
+msgid "Change Annotation Geometry"
+msgstr "更改注释形状"
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:276
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:360
+msgid "Rename"
+msgstr "重命名"
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:300
+msgid "Change text"
+msgstr "更改文字"
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:325
+#, python-format
+msgid "Set %r"
+msgstr "设置 %r"
+
+#: ../orange-canvas-core/orangecanvas/document/commands.py:347
+msgid "Set Window Presets"
+msgstr "设置窗口预设"
+
+#: ../orange-canvas-core/orangecanvas/document/editlinksdialog.py:80
+msgid "Clear All"
+msgstr "全部清除"
+
+#: ../orange-canvas-core/orangecanvas/document/interactions.py:453
+msgid "Create a new link"
+msgstr "创建新链接"
+
+#: ../orange-canvas-core/orangecanvas/document/interactions.py:454
+msgid ""
+"<h3>Create new link</h3><p>Drag a link to an existing node or release on an "
+"empty spot to create a new node.</p><p>Hold Shift when releasing the mouse "
+"button to edit connections.</p>"
+msgstr ""
+"<h3>创建新链接</h3><p>将链接拖动到已有节点上，或在空白处释放来创建新节点。</"
+"p><p>在释放鼠标按钮时按住Shift键，可以编辑链接。</p>"
+
+#: ../orange-canvas-core/orangecanvas/document/interactions.py:1338
+msgid "Click and drag to create a new arrow"
+msgstr "单击并拖动以创建新箭头"
+
+#: ../orange-canvas-core/orangecanvas/document/interactions.py:1339
+msgid ""
+"<h3>New arrow annotation</h3><p>Click and drag to create a new arrow "
+"annotation</p>"
+msgstr "<h3>新箭头注释</h3><p>单击并拖动以创建新的箭头注释</p>"
+
+#: ../orange-canvas-core/orangecanvas/document/interactions.py:1463
+msgid "Click to create a new text annotation"
+msgstr "单击以创建新的文本注释"
+
+#: ../orange-canvas-core/orangecanvas/document/interactions.py:1464
+msgid ""
+"<h3>New text annotation</h3><p>Click (and drag to resize) on the canvas to "
+"create a new text annotation item.</p>"
+msgstr "<h3>新文本注释</h3><p>单击（拖动缩放）在画布上创建新的文本注释项。</p>"
+
+#: ../orange-canvas-core/orangecanvas/document/quickmenu.py:1235
+msgid "Search for a widget..."
+msgstr "搜索节点..."
+
+#: ../orange-canvas-core/orangecanvas/document/quickmenu.py:1272
+msgid "Quick Search"
+msgstr "快速搜索"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:206
+msgid "&Edit"
+msgstr "&编辑"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:217
+msgid "Widget"
+msgstr "小工具"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:228
+msgid "&Widget"
+msgstr "节点"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:236
+msgid "Link"
+msgstr "链接"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:248
+msgid "Clean Up"
+msgstr "清理"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:251
+msgid "Align widgets to a grid (Shift+A)"
+msgstr "将节点对齐到网格（Shift+A）"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:256
+msgid "Text"
+msgstr "文字"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:258
+msgid "Add a text annotation to the workflow."
+msgstr "在工作流程中添加文本注释。"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:285
+msgid "Arrow"
+msgstr "箭头"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:287
+msgid "Add a arrow annotation to the workflow."
+msgstr "在工作流中添加箭头注释。"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:332
+msgid "Select all"
+msgstr "选择全部"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:334
+msgid "Select all items."
+msgstr "选择全部项目。"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:341
+msgid "Open selected widget"
+msgstr "打开选定节点"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:346
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:388
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1130
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1735
+msgid "Remove"
+msgstr "移除"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:348
+msgid "Remove selected items"
+msgstr "删除选定的项目"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:362
+msgid "Rename selected widget"
+msgstr "重命名选定的节点"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:377
+msgid "Show widget help"
+msgstr "显示节点帮助"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:383
+msgid "Enabled"
+msgstr "启用"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:391
+msgid "Remove link."
+msgstr "删除链接。"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:395
+msgid "Insert Widget"
+msgstr "插入小部件"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:398
+msgid "Insert widget."
+msgstr "插入节点。"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:402
+msgid "Reset Signals"
+msgstr "重置计算"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:408
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2057
+msgid "Duplicate"
+msgstr "复制"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:416
+msgid "Copy"
+msgstr "复制"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:424
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2157
+msgid "Paste"
+msgstr "粘贴"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:460
+msgid "Window Groups"
+msgstr "窗口组"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:471
+msgid "Save Window Group..."
+msgstr "保存窗口组..."
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:477
+msgid "Delete All Groups"
+msgstr "删除全部组  Delete All Groups"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:496
+msgid "Bring Widgets to Front"
+msgstr "将节点置于顶层"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1181
+msgid "Align To Grid"
+msgstr "对齐网格"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1728
+msgid "Open All"
+msgstr "打开所有"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1733
+msgid "Remove All"
+msgstr "移除所有"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1964
+msgid "Sorry there is no documentation available for this widget."
+msgstr "此节点没有文档。"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1976
+msgid "Set enabled"
+msgstr "启用"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2384
+msgid "Window Group 1"
+msgstr "窗口组1"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2386
+msgid "Save As:"
+msgstr "另存为..."
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2388
+msgid "Use as default"
+msgstr "设为预设"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2421
+msgid "Confirm Overwrite"
+msgstr "确认覆盖"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2424
+msgid "The window group '{}' already exists. Do you want to replace it?"
+msgstr "窗口组\"{}\"已经存在。你想换掉它吗？"
+
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2431
+msgid "Replace"
+msgstr "替换"
+
+#: ../orange-canvas-core/orangecanvas/preview/previewbrowser.py:92
+msgid "Path:"
+msgstr "路径："
+
+#: ../orange-canvas-core/orangecanvas/preview/previewdialog.py:35
+msgid "Preview"
+msgstr "预览"
+
+#: ../orange-canvas-core/orangecanvas/scheme/widgetmanager.py:267
+msgid "Raise Canvas to Front"
+msgstr "将画布置于顶层"
+
+#: ../orange-canvas-core/orangecanvas/scheme/widgetmanager.py:269
+msgid "Raise containing canvas workflow window"
+msgstr "前置包含画布工作流窗口"
+
+#: ../orange-canvas-core/orangecanvas/scheme/widgetmanager.py:274
+msgid "Raise Descendants"
+msgstr "前置子节点"
+
+#: ../orange-canvas-core/orangecanvas/scheme/widgetmanager.py:276
+msgid "Raise all immediate descendants of this node"
+msgstr "前置此节点的所有子节点"
+
+#: ../orange-canvas-core/orangecanvas/scheme/widgetmanager.py:284
+msgid "Raise Ancestors"
+msgstr "前置前序节点"
+
+#: ../orange-canvas-core/orangecanvas/scheme/widgetmanager.py:286
+msgid "Raise all immediate ancestors of this node"
+msgstr "前置这个节点的所有直接前序节点"
 
 #~ msgid "and send a data table to the output."
 #~ msgstr "输出数据表"

@@ -99,7 +99,7 @@ class OWDBSCAN(widget.OWWidget):
                        callback=self._eps_changed,
                        label="Neighborhood distance")
 
-        box = gui.widgetBox(self.controlArea, self.tr("Distance Metric"))
+        box = gui.widgetBox(self.controlArea, _("Distance Metric"))
         gui.comboBox(box, self, "metric_idx",
                      items=list(zip(*self.METRICS))[0],
                      callback=self._metirc_changed)

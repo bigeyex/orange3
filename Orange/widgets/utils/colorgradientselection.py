@@ -73,23 +73,23 @@ class ColorGradientSelection(QWidget):
             objectName="threshold-low-slider", minimum=0, maximum=100,
             value=int(low * 100), orientation=Qt.Horizontal,
             tickPosition=QSlider.TicksBelow, pageStep=10,
-            toolTip=self.tr("Low gradient threshold"),
-            whatsThis=self.tr("Applying a low threshold will squeeze the "
+            toolTip=_("Low gradient threshold"),
+            whatsThis=_("Applying a low threshold will squeeze the "
                               "gradient from the lower end")
         )
         slider_high = QSlider(
             objectName="threshold-low-slider", minimum=0, maximum=100,
             value=int(high * 100), orientation=Qt.Horizontal,
             tickPosition=QSlider.TicksAbove, pageStep=10,
-            toolTip=self.tr("High gradient threshold"),
-            whatsThis=self.tr("Applying a high threshold will squeeze the "
+            toolTip=_("High gradient threshold"),
+            whatsThis=_("Applying a high threshold will squeeze the "
                               "gradient from the higher end")
         )
         form.setWidget(0, QFormLayout.SpanningRole, self.gradient_cb)
         if self.center_box:
             form.setWidget(1, QFormLayout.SpanningRole, self.center_box)
-        form.addRow(self.tr("Low:"), slider_low)
-        form.addRow(self.tr("High:"), slider_high)
+        form.addRow(_("Low:"), slider_low)
+        form.addRow(_("High:"), slider_high)
         self.slider_low = slider_low
         self.slider_high = slider_high
         self.slider_low.valueChanged.connect(self.__on_slider_low_moved)

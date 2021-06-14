@@ -357,10 +357,10 @@ class OWRank(OWWidget, ConcurrentWidgetMixin):
                 b.setToolTip(toolTip)
             return b
 
-        b1 = button(self.tr("None"), OWRank.SelectNone)
-        b2 = button(self.tr("All"), OWRank.SelectAll)
-        b3 = button(self.tr("Manual"), OWRank.SelectManual)
-        b4 = button(self.tr("Best ranked:"), OWRank.SelectNBest)
+        b1 = button(_("None"), OWRank.SelectNone)
+        b2 = button(_("All"), OWRank.SelectAll)
+        b3 = button(_("Manual"), OWRank.SelectManual)
+        b4 = button(_("Best ranked:"), OWRank.SelectNBest)
 
         s = gui.spin(selMethBox, self, "nSelected", 1, 999,
                      callback=lambda: self.setSelectionMethod(OWRank.SelectNBest),
