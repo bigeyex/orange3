@@ -1,0 +1,588 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-14 16:38+0800\n"
+"PO-Revision-Date: 2021-06-14 16:39+0800\n"
+"Last-Translator: yu <bigeyex@gmail.com>\n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: Orange/widgets/data/owcsvimport.py:611
+msgid "CSV File Import"
+msgstr "导入CSV文件"
+
+#: Orange/widgets/data/owcsvimport.py:612
+msgid "Import a data table from a CSV formatted file."
+msgstr "从格式为CSV的文件中导入数据表。"
+
+#: Orange/widgets/data/owcsvimport.py:676 Orange/widgets/data/owfile.py:167
+msgid "File:"
+msgstr "文件："
+
+#: Orange/widgets/data/owcsvimport.py:716 Orange/widgets/data/owfile.py:228
+#: Orange/widgets/data/owtable.py:218
+msgid "Info"
+msgstr "信息"
+
+#: Orange/widgets/data/owcsvimport.py:743
+msgid "Import Options…"
+msgstr "导入选项…"
+
+#: Orange/widgets/data/owcsvimport.py:845
+msgid "Open Data File"
+msgstr "打开数据文件"
+
+#: Orange/widgets/data/owcsvimport.py:968
+msgid "Import Options"
+msgstr "导入选项"
+
+#: Orange/widgets/data/owdatasets.py:141
+msgid "Datasets"
+msgstr "数据集"
+
+#: Orange/widgets/data/owdatasets.py:142
+msgid "Load a dataset from an online repository"
+msgstr "从在线资源库中下载数据集"
+
+#: Orange/widgets/data/owfile.py:75
+msgid "File"
+msgstr "文件"
+
+#: Orange/widgets/data/owfile.py:77
+msgid ""
+"Read data from an input file or network and send a data table to the output."
+msgstr "从文件或网络中读取数据并发送数据表到输出。"
+
+#: Orange/widgets/data/owfile.py:163
+msgid "Source"
+msgstr "数据源"
+
+#: Orange/widgets/data/owfile.py:184
+msgid "Reload"
+msgstr "重新加载"
+
+#: Orange/widgets/data/owfile.py:229
+msgid "No data loaded."
+msgstr "没有加载数据。"
+
+#: Orange/widgets/data/owfile.py:232
+msgid "Columns (Double click to edit)"
+msgstr "数据列（双击编辑）"
+
+#: Orange/widgets/data/owfile.py:239
+msgid "Reset"
+msgstr "重置"
+
+#: Orange/widgets/data/owfile.py:244
+#: ../orange-widget-base/orangewidget/gui.py:1830
+msgid "Apply"
+msgstr "应用"
+
+#: Orange/widgets/data/owfile.py:253
+msgid "Browse documentation datasets"
+msgstr "浏览测试数据"
+
+#: Orange/widgets/data/owtable.py:179
+msgid "Data Table"
+msgstr "数据表"
+
+#: Orange/widgets/data/owtable.py:180
+msgid "View the dataset in a spreadsheet."
+msgstr "通过电子表格查看数据集。"
+
+#: Orange/widgets/data/owtable.py:222
+msgid "Variables"
+msgstr "变量"
+
+#: Orange/widgets/data/owtable.py:225
+msgid "Show variable labels (if present)"
+msgstr "显示变量标签（如果存在）"
+
+#: Orange/widgets/data/owtable.py:229
+msgid "Visualize numeric values"
+msgstr "可视化数值"
+
+#: Orange/widgets/data/owtable.py:231
+msgid "Color by instance classes"
+msgstr "按实例类别着色"
+
+#: Orange/widgets/data/owtable.py:234
+msgid "Selection"
+msgstr "选中项"
+
+#: Orange/widgets/data/owtable.py:236
+msgid "Select full rows"
+msgstr "选择整行"
+
+#: Orange/widgets/data/owtable.py:241
+msgid "Restore Original Order"
+msgstr "恢复原始顺序"
+
+#: Orange/widgets/data/owtable.py:243
+msgid "Show rows in the original order"
+msgstr "按原始顺序显示行"
+
+#: ../orange-widget-base/orangewidget/gui.py:1814
+msgid "Send Selection"
+msgstr "发送选中项目"
+
+#: ../orange-widget-base/orangewidget/gui.py:1814
+msgid "Send Automatically"
+msgstr "自动发送"
+
+#: ../orange-widget-base/orangewidget/gui.py:1830
+msgid "Apply Automatically"
+msgstr "自动应用"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:287
+msgid ""
+"Select a widget to show its description.<br/><br/>See <a href='action:"
+"examples-action'>workflow examples</a>, <a href='action:screencasts-"
+"action'>YouTube tutorials</a>, or open the <a href='action:welcome-"
+"action'>welcome screen</a>."
+msgstr ""
+"选择节点来查看说明。<br/><br/>查看<a href='action:examples-action'>工作流示例"
+"</a>, <a href='action:screencasts-action'>YouTube上的教程</a>，或者打开<a "
+"href='action:welcome-action'>欢迎屏幕</a>。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:294
+msgid "Show Help"
+msgstr "显示帮助"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:365
+msgid "Log"
+msgstr "日志"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:376
+msgid "Help"
+msgstr "帮助"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:402
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1882
+msgid "New"
+msgstr "新建"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:404
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1883
+msgid "Open a new workflow."
+msgstr "打开新的工作流。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:410
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1890
+msgid "Open"
+msgstr "打开"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:412
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1892
+msgid "Open a workflow."
+msgstr "打开工作流。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:418
+msgid "Open and Freeze"
+msgstr "打开并冻结"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:420
+msgid "Open a new workflow and freeze signal propagation."
+msgstr "打开新的工作流并冻结计算。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:428
+msgid "Close Window"
+msgstr "关闭窗口"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:430
+msgid "Close the window"
+msgstr "关闭此窗口"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:435
+msgid "Save"
+msgstr "保存"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:437
+msgid "Save current workflow."
+msgstr "保存当前工作流。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:442
+msgid "Save As ..."
+msgstr "另存为..."
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:444
+msgid "Save current workflow as."
+msgstr "将当前工作流另存为其他文件。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:449
+msgid "Quit"
+msgstr "退出"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:456
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1855
+msgid "Welcome"
+msgstr "欢迎"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:458
+msgid "Show welcome screen."
+msgstr "显示欢迎页面。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:481
+msgid "Get Started"
+msgstr "开始使用"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:483
+msgid "View a 'Get Started' introduction."
+msgstr "查看\"快速上手\"简介。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:489
+msgid "Video Tutorials"
+msgstr "视频教程"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:491
+msgid "View video tutorials"
+msgstr "查看视频教程"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:497
+msgid "Documentation"
+msgstr "文档"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:499
+msgid "View reference documentation."
+msgstr "查看参考文档。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:505
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1827
+msgid "Example Workflows"
+msgstr "示例工作流"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:507
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1911
+msgid "Browse example workflows."
+msgstr "浏览示例工作流。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:513
+msgid "About"
+msgstr "关于"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:515
+msgid "Show about dialog."
+msgstr "显示关于对话框。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:527
+msgid "Browse Recent"
+msgstr "浏览最近"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:529
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1901
+msgid "Browse and open a recent workflow."
+msgstr "浏览并打开最近的工作流。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:536
+msgid "Reload Last Workflow"
+msgstr "重新加载最近工作流"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:538
+msgid "Reload last open workflow."
+msgstr "重新加载最后一个打开的工作流。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:543
+msgid "Clear Menu"
+msgstr "清空菜单"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:545
+msgid "Clear recent menu."
+msgstr "清除最近打开菜单。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:549
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1949
+msgid "Workflow Info"
+msgstr "工作流信息"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:551
+msgid "Show workflow properties."
+msgstr "显示工作流属性。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:558
+msgid "Settings"
+msgstr "设置"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:560
+msgid "Set application settings."
+msgstr "修改应用程序设置。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:566
+msgid "&Add-ons..."
+msgstr "附加组件(&A)..."
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:568
+msgid "Manage add-ons."
+msgstr "管理附加组件。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:572
+msgid "&Log"
+msgstr "日志(&L)"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:573
+msgid "Show application standard output."
+msgstr "显示应用标准输出。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:581
+msgid "Minimize"
+msgstr "最小化"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:586
+msgid "Zoom"
+msgstr "缩放"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:591
+msgid "Freeze"
+msgstr "冻结"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:595
+msgid "Freeze signal propagation (Shift+F)"
+msgstr "冻结计算（Shift+F）"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:601
+msgid "Expand Tool Dock"
+msgstr "展开工具面板"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:615
+msgid "Show Workflow Margins"
+msgstr "显示工作流边框"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:617
+msgid "Show margins around the workflow view."
+msgstr "显示工作流视图周围的边距。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:624
+msgid "Display Widgets on Top"
+msgstr "在顶部显示小部件"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:626
+msgid "Widgets are always displayed above other windows."
+msgstr "小部件始终显示在其他窗口上方。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:640
+msgid "&File"
+msgstr "文件(&F)"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:649
+msgid "Open Recent"
+msgstr "打开最近使用"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:709
+msgid "&View"
+msgstr "&视图"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:746
+msgid "&Options"
+msgstr "选项(&O)"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:757
+msgid "Window"
+msgstr "窗口"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:767
+msgid "&Help"
+msgstr "帮助(&H)"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:838
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1395
+msgid "untitled"
+msgstr "无标题"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1112
+msgid "Open Orange Workflow File"
+msgstr "打开Orange工作流文件"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1163
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1248
+msgid "Error"
+msgstr "错误"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1165
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1203
+msgid "Could not open: '{}'"
+msgstr "无法打开：'{}'"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1167
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1205
+msgid "Error was: {}"
+msgstr "错误：{}"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1247
+msgid "Could not load an Orange Workflow file."
+msgstr "无法加载Orange工作流文件。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1249
+#, python-format
+msgid "An unexpected error occurred while loading '%s'."
+msgstr "加载\"%s\"时发生了意外错误。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1257
+msgid "Could not load the full workflow."
+msgstr "无法加载完整的工作流。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1258
+msgid "Workflow Partially Loaded"
+msgstr "工作流部分加载"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1260
+msgid ""
+"Some of the nodes/links could not be reconstructed and were omitted from the "
+"workflow."
+msgstr "某些节点/链接无法重建，已从工作流中忽略。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1413
+#, python-format
+msgid "Do you want to save changes made to %s?"
+msgstr "您是否要保存对%s所做的更改？"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1415
+msgid "Do you want to save this workflow?"
+msgstr "您想保存此工作流吗？"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1418
+msgid "Save Changes?"
+msgstr "保存更改？"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1419
+msgid "Your changes will be lost if you do not save them."
+msgstr "如果不保存更改，则更改将丢失。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1482
+msgid "Save Orange Workflow File"
+msgstr "保存Orange工作流文件"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1483
+msgid "Orange Workflow (*.ows)"
+msgstr "Orange工作流（*.ows）"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1516
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1568
+#, python-format
+msgid "An error occurred while trying to save workflow \"%s\" to \"%s\""
+msgstr "在尝试将工作流\"%s\"保存到\"%s\"时发生错误"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1518
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1570
+#, python-format
+msgid "Error saving %s"
+msgstr "保存%s发生错误"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1533
+#, python-format
+msgid "Workflow \"%s\" could not be saved. The path does not exist"
+msgstr "无法保存工作流\"%s\"。路径不存在"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1536
+msgid "Choose another location."
+msgstr "选择其他位置。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1544
+#, python-format
+msgid "Workflow \"%s\" could not be saved. You do not have write permissions."
+msgstr "无法保存工作流\"%s\"。您没有写权限。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1548
+msgid "Change the file system permissions or choose another location."
+msgstr "更改文件系统权限或选择其他位置。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1557
+#, python-format
+msgid "Workflow \"%s\" could not be saved."
+msgstr "无法保存工作流\"%s\"。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1659
+msgid "Restore unsaved changes from crash?"
+msgstr "从崩溃中恢复未保存的更改？"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1663
+msgid "Restore Changes?"
+msgstr "恢复更改？"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1664
+msgid ""
+"{} seems to have crashed at some point.\n"
+"Changes will be discarded if not restored now."
+msgstr ""
+"{}似乎在某个时候崩溃了。\n"
+"如果现在不恢复，更改将被丢弃。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1792
+msgid "Recent Workflows"
+msgstr "最近打开的工作流"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1853
+msgid "Welcome to {}"
+msgstr "欢迎来到{}"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1899
+msgid "Recent"
+msgstr "最近"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1909
+msgid "Examples"
+msgstr "示例"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1976
+msgid "Change Info"
+msgstr "更改信息"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:2027
+msgid "Preferences"
+msgstr "首选项"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:2059
+msgid "Installer"
+msgstr "安装器"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:2300
+msgid "There is no documentation for this widget."
+msgstr "此节点没有文档。"
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:2301
+msgid "No help found"
+msgstr "未找到帮助"
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:248
+msgid "&Undo"
+msgstr "撤销"
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:255
+msgid "&Redo"
+msgstr "重做"
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:263
+msgid "Cu&t"
+msgstr "剪切"
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:272
+msgid "&Copy"
+msgstr "复制"
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:281
+msgid "Copy &Link Location"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:288
+msgid "&Paste"
+msgstr "粘贴"
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:295
+msgid "Delete"
+msgstr "删除"
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:303
+msgid "Select All"
+msgstr "选择全部"
+
+#~ msgid "and send a data table to the output."
+#~ msgstr "输出数据表"

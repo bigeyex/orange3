@@ -608,8 +608,8 @@ def default_options_for_mime_type(
 
 
 class OWCSVFileImport(widget.OWWidget):
-    name = "CSV File Import"
-    description = "Import a data table from a CSV formatted file."
+    name = _("CSV File Import")
+    description = _("Import a data table from a CSV formatted file.")
     icon = "icons/CSVFile.svg"
     priority = 11
     category = "Data"
@@ -673,7 +673,7 @@ class OWCSVFileImport(widget.OWWidget):
 
         self.controlArea.layout().setSpacing(-1)  # reset spacing
         grid = QGridLayout()
-        grid.addWidget(QLabel("File:", self), 0, 0, 1, 1)
+        grid.addWidget(QLabel(_("File:"), self), 0, 0, 1, 1)
 
         self.import_items_model = VarPathItemModel(self)
         self.import_items_model.setReplacementEnv(self._replacements())
@@ -713,7 +713,7 @@ class OWCSVFileImport(widget.OWWidget):
         ###########
         # Info text
         ###########
-        box = gui.widgetBox(self.controlArea, "Info")
+        box = gui.widgetBox(self.controlArea, _("Info"))
         self.summary_text = QTextBrowser(
             verticalScrollBarPolicy=Qt.ScrollBarAsNeeded,
             readOnly=True,
@@ -740,7 +740,7 @@ class OWCSVFileImport(widget.OWWidget):
         b.setAutoDefault(False)
 
         self.import_options_button = QPushButton(
-            "Import Options…", enabled=False, autoDefault=False,
+            _("Import Options…"), enabled=False, autoDefault=False,
             clicked=self._activate_import_dialog
         )
 
@@ -842,7 +842,7 @@ class OWCSVFileImport(widget.OWWidget):
 
     def _browse_dialog(self):
         dlg = FileDialog(
-            self, windowTitle=self.tr("Open Data File"),
+            self, windowTitle=_("Open Data File"),
             acceptMode=QFileDialog.AcceptOpen,
             fileMode=QFileDialog.ExistingFile
         )
@@ -965,7 +965,7 @@ class OWCSVFileImport(widget.OWWidget):
         item = self.current_item()
         assert item is not None
         dlg = CSVImportDialog(
-            self, windowTitle="Import Options", sizeGripEnabled=True,
+            self, windowTitle=_("Import Options"), sizeGripEnabled=True,
         )
         dlg.setWindowModality(Qt.WindowModal)
         dlg.setAttribute(Qt.WA_DeleteOnClose)

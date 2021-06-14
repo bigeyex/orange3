@@ -1,3 +1,5 @@
+# This Python file uses the following encoding: utf-8
+
 from collections import namedtuple
 from itertools import chain, product
 

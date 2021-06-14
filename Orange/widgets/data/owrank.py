@@ -1,3 +1,5 @@
+# This Python file uses the following encoding: utf-8
+
 import logging
 import warnings
 from collections import OrderedDict, namedtuple

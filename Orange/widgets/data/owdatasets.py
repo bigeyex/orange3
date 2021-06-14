@@ -138,8 +138,8 @@ class TreeViewWithReturn(QTreeView):
 
 
 class OWDataSets(OWWidget):
-    name = "Datasets"
-    description = "Load a dataset from an online repository"
+    name = _("Datasets")
+    description = _("Load a dataset from an online repository")
     icon = "icons/DataSets.svg"
     priority = 20
     replaces = ["orangecontrib.prototypes.widgets.owdatasets.OWDataSets"]

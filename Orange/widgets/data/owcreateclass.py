@@ -1,3 +1,4 @@
+# This Python file uses the following encoding: utf-8
 """Widget for creating classes from non-numeric attribute by substrings"""
 import re
 from itertools import count

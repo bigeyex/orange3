@@ -1,0 +1,579 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-14 16:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Orange/widgets/data/owcsvimport.py:611
+msgid "CSV File Import"
+msgstr ""
+
+#: Orange/widgets/data/owcsvimport.py:612
+msgid "Import a data table from a CSV formatted file."
+msgstr ""
+
+#: Orange/widgets/data/owcsvimport.py:676 Orange/widgets/data/owfile.py:167
+msgid "File:"
+msgstr ""
+
+#: Orange/widgets/data/owcsvimport.py:716 Orange/widgets/data/owfile.py:228
+#: Orange/widgets/data/owtable.py:218
+msgid "Info"
+msgstr ""
+
+#: Orange/widgets/data/owcsvimport.py:743
+msgid "Import Options…"
+msgstr ""
+
+#: Orange/widgets/data/owcsvimport.py:845
+msgid "Open Data File"
+msgstr ""
+
+#: Orange/widgets/data/owcsvimport.py:968
+msgid "Import Options"
+msgstr ""
+
+#: Orange/widgets/data/owdatasets.py:141
+msgid "Datasets"
+msgstr ""
+
+#: Orange/widgets/data/owdatasets.py:142
+msgid "Load a dataset from an online repository"
+msgstr ""
+
+#: Orange/widgets/data/owfile.py:75
+msgid "File"
+msgstr ""
+
+#: Orange/widgets/data/owfile.py:77
+msgid ""
+"Read data from an input file or network and send a data table to the output."
+msgstr ""
+
+#: Orange/widgets/data/owfile.py:163
+msgid "Source"
+msgstr ""
+
+#: Orange/widgets/data/owfile.py:184
+msgid "Reload"
+msgstr ""
+
+#: Orange/widgets/data/owfile.py:229
+msgid "No data loaded."
+msgstr ""
+
+#: Orange/widgets/data/owfile.py:232
+msgid "Columns (Double click to edit)"
+msgstr ""
+
+#: Orange/widgets/data/owfile.py:239
+msgid "Reset"
+msgstr ""
+
+#: Orange/widgets/data/owfile.py:244
+#: ../orange-widget-base/orangewidget/gui.py:1830
+msgid "Apply"
+msgstr ""
+
+#: Orange/widgets/data/owfile.py:253
+msgid "Browse documentation datasets"
+msgstr ""
+
+#: Orange/widgets/data/owtable.py:179
+msgid "Data Table"
+msgstr ""
+
+#: Orange/widgets/data/owtable.py:180
+msgid "View the dataset in a spreadsheet."
+msgstr ""
+
+#: Orange/widgets/data/owtable.py:222
+msgid "Variables"
+msgstr ""
+
+#: Orange/widgets/data/owtable.py:225
+msgid "Show variable labels (if present)"
+msgstr ""
+
+#: Orange/widgets/data/owtable.py:229
+msgid "Visualize numeric values"
+msgstr ""
+
+#: Orange/widgets/data/owtable.py:231
+msgid "Color by instance classes"
+msgstr ""
+
+#: Orange/widgets/data/owtable.py:234
+msgid "Selection"
+msgstr ""
+
+#: Orange/widgets/data/owtable.py:236
+msgid "Select full rows"
+msgstr ""
+
+#: Orange/widgets/data/owtable.py:241
+msgid "Restore Original Order"
+msgstr ""
+
+#: Orange/widgets/data/owtable.py:243
+msgid "Show rows in the original order"
+msgstr ""
+
+#: ../orange-widget-base/orangewidget/gui.py:1814
+msgid "Send Selection"
+msgstr ""
+
+#: ../orange-widget-base/orangewidget/gui.py:1814
+msgid "Send Automatically"
+msgstr ""
+
+#: ../orange-widget-base/orangewidget/gui.py:1830
+msgid "Apply Automatically"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:287
+msgid ""
+"Select a widget to show its description.<br/><br/>See <a href='action:"
+"examples-action'>workflow examples</a>, <a href='action:screencasts-"
+"action'>YouTube tutorials</a>, or open the <a href='action:welcome-"
+"action'>welcome screen</a>."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:294
+msgid "Show Help"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:365
+msgid "Log"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:376
+msgid "Help"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:402
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1882
+msgid "New"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:404
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1883
+msgid "Open a new workflow."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:410
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1890
+msgid "Open"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:412
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1892
+msgid "Open a workflow."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:418
+msgid "Open and Freeze"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:420
+msgid "Open a new workflow and freeze signal propagation."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:428
+msgid "Close Window"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:430
+msgid "Close the window"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:435
+msgid "Save"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:437
+msgid "Save current workflow."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:442
+msgid "Save As ..."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:444
+msgid "Save current workflow as."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:449
+msgid "Quit"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:456
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1855
+msgid "Welcome"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:458
+msgid "Show welcome screen."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:481
+msgid "Get Started"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:483
+msgid "View a 'Get Started' introduction."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:489
+msgid "Video Tutorials"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:491
+msgid "View video tutorials"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:497
+msgid "Documentation"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:499
+msgid "View reference documentation."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:505
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1827
+msgid "Example Workflows"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:507
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1911
+msgid "Browse example workflows."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:513
+msgid "About"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:515
+msgid "Show about dialog."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:527
+msgid "Browse Recent"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:529
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1901
+msgid "Browse and open a recent workflow."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:536
+msgid "Reload Last Workflow"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:538
+msgid "Reload last open workflow."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:543
+msgid "Clear Menu"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:545
+msgid "Clear recent menu."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:549
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1949
+msgid "Workflow Info"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:551
+msgid "Show workflow properties."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:558
+msgid "Settings"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:560
+msgid "Set application settings."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:566
+msgid "&Add-ons..."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:568
+msgid "Manage add-ons."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:572
+msgid "&Log"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:573
+msgid "Show application standard output."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:581
+msgid "Minimize"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:586
+msgid "Zoom"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:591
+msgid "Freeze"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:595
+msgid "Freeze signal propagation (Shift+F)"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:601
+msgid "Expand Tool Dock"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:615
+msgid "Show Workflow Margins"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:617
+msgid "Show margins around the workflow view."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:624
+msgid "Display Widgets on Top"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:626
+msgid "Widgets are always displayed above other windows."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:640
+msgid "&File"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:649
+msgid "Open Recent"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:709
+msgid "&View"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:746
+msgid "&Options"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:757
+msgid "Window"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:767
+msgid "&Help"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:838
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1395
+msgid "untitled"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1112
+msgid "Open Orange Workflow File"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1163
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1248
+msgid "Error"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1165
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1203
+msgid "Could not open: '{}'"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1167
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1205
+msgid "Error was: {}"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1247
+msgid "Could not load an Orange Workflow file."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1249
+#, python-format
+msgid "An unexpected error occurred while loading '%s'."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1257
+msgid "Could not load the full workflow."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1258
+msgid "Workflow Partially Loaded"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1260
+msgid ""
+"Some of the nodes/links could not be reconstructed and were omitted from the "
+"workflow."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1413
+#, python-format
+msgid "Do you want to save changes made to %s?"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1415
+msgid "Do you want to save this workflow?"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1418
+msgid "Save Changes?"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1419
+msgid "Your changes will be lost if you do not save them."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1482
+msgid "Save Orange Workflow File"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1483
+msgid "Orange Workflow (*.ows)"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1516
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1568
+#, python-format
+msgid "An error occurred while trying to save workflow \"%s\" to \"%s\""
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1518
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1570
+#, python-format
+msgid "Error saving %s"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1533
+#, python-format
+msgid "Workflow \"%s\" could not be saved. The path does not exist"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1536
+msgid "Choose another location."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1544
+#, python-format
+msgid "Workflow \"%s\" could not be saved. You do not have write permissions."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1548
+msgid "Change the file system permissions or choose another location."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1557
+#, python-format
+msgid "Workflow \"%s\" could not be saved."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1659
+msgid "Restore unsaved changes from crash?"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1663
+msgid "Restore Changes?"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1664
+msgid ""
+"{} seems to have crashed at some point.\n"
+"Changes will be discarded if not restored now."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1792
+msgid "Recent Workflows"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1853
+msgid "Welcome to {}"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1899
+msgid "Recent"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1909
+msgid "Examples"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1976
+msgid "Change Info"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:2027
+msgid "Preferences"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:2059
+msgid "Installer"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:2300
+msgid "There is no documentation for this widget."
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:2301
+msgid "No help found"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:248
+msgid "&Undo"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:255
+msgid "&Redo"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:263
+msgid "Cu&t"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:272
+msgid "&Copy"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:281
+msgid "Copy &Link Location"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:288
+msgid "&Paste"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:295
+msgid "Delete"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/canvas/items/graphicstextitem.py:303
+msgid "Select All"
+msgstr ""

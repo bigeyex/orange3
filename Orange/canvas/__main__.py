@@ -28,7 +28,7 @@ import yaml
 
 from AnyQt.QtGui import QFont, QColor, QPalette, QDesktopServices, QIcon
 from AnyQt.QtCore import (
-    Qt, QDir, QUrl, QSettings, QThread, pyqtSignal, QT_VERSION, QFile
+    Qt, QDir, QUrl, QSettings, QThread, pyqtSignal, QT_VERSION, QFile, QTranslator
 )
 import pyqtgraph
 
@@ -55,6 +55,12 @@ from Orange.canvas import config
 from Orange.canvas.mainwindow import MainWindow
 from Orange.widgets.settings import widget_settings_dir
 
+import gettext
+# translation = gettext.translation('messages', 'locale', languages=['zh_CN'])
+
+# gettext.bindtextdomain('messages', 'locale')
+translation = gettext.translation('messages', 'locale', languages=['zh_CN'])
+translation.install()
 
 log = logging.getLogger(__name__)
 

@@ -7,7 +7,7 @@ from typing import List
 import numpy as np
 from AnyQt.QtWidgets import \
     QStyle, QComboBox, QMessageBox, QGridLayout, QLabel, \
-    QLineEdit, QSizePolicy as Policy, QCompleter
+    QLineEdit, QSizePolicy as Policy, QCompleter, QApplication
 from AnyQt.QtCore import Qt, QTimer, QSize
 
 from Orange.data.table import Table, get_sample_datasets_dir
@@ -27,7 +27,6 @@ from Orange.widgets.widget import Output, Msg
 # and it is used in saved (pickled) settings. It must be imported into the
 # module's namespace so that old saved settings still work
 from Orange.widgets.utils.filedialogs import RecentPath
-
 
 log = logging.getLogger(__name__)
 
@@ -73,10 +72,10 @@ class LineEditSelectOnFocus(QLineEdit):
 
 
 class OWFile(widget.OWWidget, RecentPathsWComboMixin):
-    name = "File"
+    name = _("File")
     id = "orange.widgets.data.file"
-    description = "Read data from an input file or network " \
-                  "and send a data table to the output."
+    description = _("Read data from an input file or network " \
+                    "and send a data table to the output.")
     icon = "icons/File.svg"
     priority = 10
     category = "Data"
@@ -161,11 +160,11 @@ class OWFile(widget.OWWidget, RecentPathsWComboMixin):
 
         layout = QGridLayout()
         layout.setSpacing(4)
-        gui.widgetBox(self.controlArea, orientation=layout, box='Source')
+        gui.widgetBox(self.controlArea, orientation=layout, box=_('Source'))
         vbox = gui.radioButtons(None, self, "source", box=True,
                                 callback=self.load_data, addToLayout=False)
 
-        rb_button = gui.appendRadioButton(vbox, "File:", addToLayout=False)
+        rb_button = gui.appendRadioButton(vbox, _("File:"), addToLayout=False)
         layout.addWidget(rb_button, 0, 0, Qt.AlignVCenter)
 
         box = gui.hBox(None, addToLayout=False, margin=0)
@@ -182,7 +181,7 @@ class OWFile(widget.OWWidget, RecentPathsWComboMixin):
         layout.addWidget(file_button, 0, 2)
 
         reload_button = gui.button(
-            None, self, "Reload", callback=self.load_data, autoDefault=False)
+            None, self, _("Reload"), callback=self.load_data, autoDefault=False)
         reload_button.setIcon(self.style().standardIcon(
             QStyle.SP_BrowserReload))
         reload_button.setSizePolicy(Policy.Fixed, Policy.Fixed)
@@ -226,23 +225,23 @@ class OWFile(widget.OWWidget, RecentPathsWComboMixin):
         completer.setCaseSensitivity(Qt.CaseSensitive)
         url_combo.setCompleter(completer)
 
-        box = gui.vBox(self.controlArea, "Info")
-        self.infolabel = gui.widgetLabel(box, 'No data loaded.')
+        box = gui.vBox(self.controlArea, _("Info"))
+        self.infolabel = gui.widgetLabel(box, _('No data loaded.'))
         self.warnings = gui.widgetLabel(box, '')
 
-        box = gui.widgetBox(self.controlArea, "Columns (Double click to edit)")
+        box = gui.widgetBox(self.controlArea, _("Columns (Double click to edit)"))
         self.domain_editor = DomainEditor(self)
         self.editor_model = self.domain_editor.model()
         box.layout().addWidget(self.domain_editor)
 
         box = gui.hBox(box)
         gui.button(
-            box, self, "Reset", callback=self.reset_domain_edit,
+            box, self, _("Reset"), callback=self.reset_domain_edit,
             autoDefault=False
         )
         gui.rubber(box)
         self.apply_button = gui.button(
-            box, self, "Apply", callback=self.apply_domain_edit)
+            box, self, _("Apply"), callback=self.apply_domain_edit)
         self.apply_button.setEnabled(False)
         self.apply_button.setFixedWidth(170)
         self.editor_model.dataChanged.connect(
@@ -251,7 +250,7 @@ class OWFile(widget.OWWidget, RecentPathsWComboMixin):
         hBox = gui.hBox(self.controlArea)
         gui.rubber(hBox)
         gui.button(
-            hBox, self, "Browse documentation datasets",
+            hBox, self, _("Browse documentation datasets"),
             callback=lambda: self.browse_file(True), autoDefault=False)
         gui.rubber(hBox)
 

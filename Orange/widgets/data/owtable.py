@@ -176,8 +176,8 @@ class TableBarItemDelegate(gui.TableBarItem, TableDataDelegate):
 
 
 class OWDataTable(OWWidget):
-    name = "Data Table"
-    description = "View the dataset in a spreadsheet."
+    name = _("Data Table")
+    description = _("View the dataset in a spreadsheet.")
     icon = "icons/Table.svg"
     priority = 50
     keywords = []
@@ -215,32 +215,32 @@ class OWDataTable(OWWidget):
 
         self.dist_color = QColor(*self.dist_color_RGB)
 
-        info_box = gui.vBox(self.controlArea, "Info")
+        info_box = gui.vBox(self.controlArea, _("Info"))
         self.info_text = gui.widgetLabel(info_box)
         self._set_input_summary(None)
 
-        box = gui.vBox(self.controlArea, "Variables")
+        box = gui.vBox(self.controlArea, _("Variables"))
         self.c_show_attribute_labels = gui.checkBox(
             box, self, "show_attribute_labels",
-            "Show variable labels (if present)",
+            _("Show variable labels (if present)"),
             callback=self._on_show_variable_labels_changed)
 
         gui.checkBox(box, self, "show_distributions",
-                     'Visualize numeric values',
+                     _('Visualize numeric values'),
                      callback=self._on_distribution_color_changed)
-        gui.checkBox(box, self, "color_by_class", 'Color by instance classes',
+        gui.checkBox(box, self, "color_by_class", _('Color by instance classes'),
                      callback=self._on_distribution_color_changed)
 
-        box = gui.vBox(self.controlArea, "Selection")
+        box = gui.vBox(self.controlArea, _("Selection"))
 
-        gui.checkBox(box, self, "select_rows", "Select full rows",
+        gui.checkBox(box, self, "select_rows", _("Select full rows"),
                      callback=self._on_select_rows_changed)
 
         gui.rubber(self.controlArea)
 
-        gui.button(self.buttonsArea, self, "Restore Original Order",
+        gui.button(self.buttonsArea, self, _("Restore Original Order"),
                    callback=self.restore_order,
-                   tooltip="Show rows in the original order",
+                   tooltip=_("Show rows in the original order"),
                    autoDefault=False,
                    attribute=Qt.WA_LayoutUsesWidgetRect)
         gui.auto_send(self.buttonsArea, self, "auto_commit")
