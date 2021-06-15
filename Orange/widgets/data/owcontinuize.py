@@ -18,8 +18,8 @@ from Orange.widgets.widget import Input, Output
 
 
 class OWContinuize(widget.OWWidget):
-    name = "Continuize"
-    description = ("Transform categorical attributes into numeric and, " +
+    name = _("Continuize")
+    description = _("Transform categorical attributes into numeric and, "
                    "optionally, normalize numeric values.")
     icon = "icons/Continuize.svg"
     category = "Data"
@@ -45,28 +45,28 @@ class OWContinuize(widget.OWWidget):
     autosend = Setting(True)
 
     multinomial_treats = (
-        ("First value as base", Continuize.FirstAsBase),
-        ("Most frequent value as base", Continuize.FrequentAsBase),
-        ("One attribute per value", Continuize.Indicators),
-        ("Ignore multinomial attributes", Continuize.RemoveMultinomial),
-        ("Remove categorical attributes", Continuize.Remove),
-        ("Treat as ordinal", Continuize.AsOrdinal),
-        ("Divide by number of values", Continuize.AsNormalizedOrdinal))
+        (_("First value as base"), Continuize.FirstAsBase),
+        (_("Most frequent value as base"), Continuize.FrequentAsBase),
+        (_("One attribute per value"), Continuize.Indicators),
+        (_("Ignore multinomial attributes"), Continuize.RemoveMultinomial),
+        (_("Remove categorical attributes"), Continuize.Remove),
+        (_("Treat as ordinal"), Continuize.AsOrdinal),
+        (_("Divide by number of values"), Continuize.AsNormalizedOrdinal))
 
     continuous_treats = (
-        ("Leave them as they are", True),
-        ("Standardize to μ=0, σ²=1", False),
-        ("Center to μ=0", False),
-        ("Scale to σ²=1", True),
-        ("Normalize to interval [-1, 1]", False),
-        ("Normalize to interval [0, 1]", False)
+        (_("Leave them as they are"), True),
+        (_("Standardize to μ=0, σ²=1"), False),
+        (_("Center to μ=0"), False),
+        (_("Scale to σ²=1"), True),
+        (_("Normalize to interval [-1, 1]"), False),
+        (_("Normalize to interval [0, 1]"), False)
     )
 
     class_treats = (
-        ("Leave it as it is", Continuize.Leave),
-        ("Treat as ordinal", Continuize.AsOrdinal),
-        ("Divide by number of values", Continuize.AsNormalizedOrdinal),
-        ("One class per value", Continuize.Indicators),
+        (_("Leave it as it is"), Continuize.Leave),
+        (_("Treat as ordinal"), Continuize.AsOrdinal),
+        (_("Divide by number of values"), Continuize.AsNormalizedOrdinal),
+        (_("One class per value"), Continuize.Indicators),
     )
 
     def __init__(self):
@@ -76,21 +76,21 @@ class OWContinuize(widget.OWWidget):
         gui.widgetBox(self.controlArea, orientation=layout)
 
         box = gui.radioButtonsInBox(
-            None, self, "multinomial_treatment", box="Categorical Features",
+            None, self, "multinomial_treatment", box=_("Categorical Features"),
             btnLabels=[x[0] for x in self.multinomial_treats],
             callback=self.settings_changed)
         gui.rubber(box)
         layout.addWidget(box, 0, 0, 2, 1)
 
         box = gui.radioButtonsInBox(
-            None, self, "continuous_treatment", box = "Numeric Features",
+            None, self, "continuous_treatment", box = _("Numeric Features"),
             btnLabels=[x[0] for x in self.continuous_treats],
             callback=self.settings_changed)
         gui.rubber(box)
         layout.addWidget(box, 0, 1, 2, 1)
 
         box = gui.radioButtonsInBox(
-            None, self, "class_treatment", box="Categorical Outcome(s)",
+            None, self, "class_treatment", box=_("Categorical Outcome(s)"),
             btnLabels=[t[0] for t in self.class_treats],
             callback=self.settings_changed)
         gui.rubber(box)

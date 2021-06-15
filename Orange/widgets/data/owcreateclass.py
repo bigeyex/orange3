@@ -160,8 +160,8 @@ def unique_in_order_mapping(a):
 
 
 class OWCreateClass(widget.OWWidget):
-    name = "Create Class"
-    description = "Create class attribute from a string attribute"
+    name = _("Create Class")
+    description = _("Create class attribute from a string attribute")
     icon = "icons/CreateClass.svg"
     category = "Data"
     keywords = []
@@ -191,11 +191,11 @@ class OWCreateClass(widget.OWWidget):
     cached_variables = {}
 
     class Warning(widget.OWWidget.Warning):
-        no_nonnumeric_vars = Msg("Data contains only numeric variables.")
+        no_nonnumeric_vars = Msg(_("Data contains only numeric variables."))
 
     class Error(widget.OWWidget.Error):
-        class_name_duplicated = Msg("Class name duplicated.")
-        class_name_empty = Msg("Class name should not be empty.")
+        class_name_duplicated = Msg(_("Class name duplicated."))
+        class_name_empty = Msg(_("Class name should not be empty."))
 
     def __init__(self):
         super().__init__()
@@ -217,12 +217,12 @@ class OWCreateClass(widget.OWWidget):
 
         gui.lineEdit(
             self.controlArea, self, "class_name",
-            orientation=Qt.Horizontal, box="New Class Name")
+            orientation=Qt.Horizontal, box=_("New Class Name"))
 
-        variable_select_box = gui.vBox(self.controlArea, "Match by Substring")
+        variable_select_box = gui.vBox(self.controlArea, _("Match by Substring"))
 
         combo = gui.comboBox(
-            variable_select_box, self, "attribute", label="From column:",
+            variable_select_box, self, "attribute", label=_("From column:"),
             orientation=Qt.Horizontal, searchable=True,
             callback=self.update_rules,
             model=DomainModel(valid_types=(StringVariable, DiscreteVariable)))
@@ -241,9 +241,9 @@ class OWCreateClass(widget.OWWidget):
         self.rules_box.setColumnStretch(0, 1)
         self.rules_box.setColumnStretch(1, 1)
         self.rules_box.setColumnStretch(2, 100)
-        rules_box.addWidget(QLabel("Name"), 0, 1)
-        rules_box.addWidget(QLabel("Substring"), 0, 2)
-        rules_box.addWidget(QLabel("Count"), 0, 3, 1, 2)
+        rules_box.addWidget(QLabel(_("Name")), 0, 1)
+        rules_box.addWidget(QLabel(_("Substring")), 0, 2)
+        rules_box.addWidget(QLabel(_("Count")), 0, 3, 1, 2)
         self.update_rules()
 
         widget = QWidget(patternbox)
@@ -257,17 +257,17 @@ class OWCreateClass(widget.OWWidget):
                    sizePolicy=(QSizePolicy.Maximum,
                                QSizePolicy.Maximum))
 
-        optionsbox = gui.vBox(self.controlArea, "Options")
+        optionsbox = gui.vBox(self.controlArea, _("Options"))
         gui.checkBox(
-            optionsbox, self, "match_beginning", "Match only at the beginning",
+            optionsbox, self, "match_beginning", _("Match only at the beginning"),
             callback=self.options_changed)
         gui.checkBox(
-            optionsbox, self, "case_sensitive", "Case sensitive",
+            optionsbox, self, "case_sensitive", _("Case sensitive"),
             callback=self.options_changed)
 
         gui.rubber(self.controlArea)
 
-        gui.button(self.buttonsArea, self, "Apply", callback=self.apply)
+        gui.button(self.buttonsArea, self, _("Apply"), callback=self.apply)
 
         # TODO: Resizing upon changing the number of rules does not work
         self.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)

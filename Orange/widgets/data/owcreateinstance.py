@@ -23,7 +23,9 @@ from Orange.widgets.widget import OWWidget, Input, Output, Msg
 VariableRole = next(gui.OrangeUserRole)
 ValuesRole = next(gui.OrangeUserRole)
 ValueRole = next(gui.OrangeUserRole)
-
+import gettext
+translation = gettext.translation('messages', 'locale', languages=['zh_CN'])
+_ = translation.gettext
 
 class VariableEditor(QWidget):
     valueChanged = Signal(float)
@@ -80,7 +82,7 @@ class ContinuousVariableEditor(VariableEditor):
         super().__init__(parent, callback)
 
         if np.isnan(min_value) or np.isnan(max_value):
-            raise ValueError("Min/Max cannot be NaN.")
+            raise ValueError(_("Min/Max cannot be NaN."))
 
         n_decimals = variable.number_of_decimals
         abs_max = max(abs(min_value), max_value)
@@ -444,10 +446,11 @@ class VariableItemModel(QStandardItemModel):
         else:
             return gui.attributeIconDict[-1]
 
+_ = translation.gettext
 
 class OWCreateInstance(OWWidget):
-    name = "Create Instance"
-    description = "Interactively create a data instance from sample dataset."
+    name = _("Create Instance")
+    description = _("Interactively create a data instance from sample dataset.")
     icon = "icons/CreateInstance.svg"
     category = "Data"
     keywords = ["simulator"]
@@ -461,13 +464,13 @@ class OWCreateInstance(OWWidget):
         data = Output("Data", Table)
 
     class Information(OWWidget.Information):
-        nans_removed = Msg("Variables with only missing values were "
-                           "removed from the list.")
+        nans_removed = Msg(_("Variables with only missing values were "
+                           "removed from the list."))
 
     want_main_area = False
     ACTIONS = ["median", "mean", "random", "input"]
-    HEADER = [["name", "Variable"],
-              ["variable", "Value"]]
+    HEADER = [["name", _("Variable")],
+              ["variable", _("Value")]]
     Header = namedtuple(
         "header", [tag for tag, _ in HEADER]
     )(*range(len(HEADER)))
@@ -482,7 +485,7 @@ class OWCreateInstance(OWWidget):
         self.reference: Optional[Table] = None
 
         self.filter_edit = QLineEdit(textChanged=self.__filter_edit_changed,
-                                     placeholderText="Filter...")
+                                     placeholderText=_("Filter..."))
         self.view = QTableView(sortingEnabled=True,
                                contextMenuPolicy=Qt.CustomContextMenu,
                                selectionMode=QTableView.NoSelection)
@@ -520,7 +523,7 @@ class OWCreateInstance(OWWidget):
 
         # pylint: disable=unnecessary-lambda
         append = gui.checkBox(self.buttonsArea, self, "append_to_data",
-                              "Append this instance to input data",
+                              _("Append this instance to input data"),
                               callback=lambda: self.commit())
         gui.rubber(self.buttonsArea)
         box = gui.auto_apply(self.buttonsArea, self, "auto_commit")

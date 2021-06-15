@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-14 17:48+0800\n"
-"PO-Revision-Date: 2021-06-14 17:48+0800\n"
+"POT-Creation-Date: 2021-06-15 22:50+0800\n"
+"PO-Revision-Date: 2021-06-15 22:52+0800\n"
 "Last-Translator: yu <bigeyex@gmail.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -17,6 +17,124 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: Orange/widgets/data/owaggregatecolumns.py:19
+msgid "Aggregate Columns"
+msgstr "列聚合计算"
+
+#: Orange/widgets/data/owaggregatecolumns.py:20
+msgid "Compute a sum, max, min ... of selected columns."
+msgstr "计算选定列的求和、最大值、最小值等。"
+
+#: Orange/widgets/data/owaggregatecolumns.py:36
+#: Orange/widgets/data/owaggregatecolumns.py:40
+msgid "Sum"
+msgstr "求和"
+
+#: Orange/widgets/data/owaggregatecolumns.py:40
+msgid "Product"
+msgstr "求乘积"
+
+#: Orange/widgets/data/owaggregatecolumns.py:41
+#: Orange/widgets/data/owaggregatecolumns.py:44
+msgid "Min"
+msgstr "最小值"
+
+#: Orange/widgets/data/owaggregatecolumns.py:41
+#: Orange/widgets/data/owaggregatecolumns.py:44
+msgid "Max"
+msgstr "最大值"
+
+#: Orange/widgets/data/owaggregatecolumns.py:42
+#: Orange/widgets/data/owaggregatecolumns.py:44
+msgid "Mean"
+msgstr "平均值"
+
+#: Orange/widgets/data/owaggregatecolumns.py:42
+msgid "Variance"
+msgstr "方差"
+
+#: Orange/widgets/data/owaggregatecolumns.py:43
+#: Orange/widgets/data/owaggregatecolumns.py:44
+msgid "Median"
+msgstr "中位数"
+
+#: Orange/widgets/data/owaggregatecolumns.py:62
+msgid "Operator: "
+msgstr "操作员: "
+
+#: Orange/widgets/data/owaggregatecolumns.py:70
+msgid "Variable name: "
+msgstr "变量名: "
+
+#: Orange/widgets/data/owcolor.py:537
+msgid "Color"
+msgstr "颜色"
+
+#: Orange/widgets/data/owcolor.py:538
+msgid "Set color legend for variables."
+msgstr "设置变量的颜色图例。"
+
+#: Orange/widgets/data/owcolor.py:563
+msgid "Discrete Variables"
+msgstr "离散变量"
+
+#: Orange/widgets/data/owcolor.py:569
+msgid "Numeric Variables"
+msgstr "数值变量"
+
+#: Orange/widgets/data/owcolor.py:576
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:435
+msgid "Save"
+msgstr "保存"
+
+#: Orange/widgets/data/owcolor.py:577
+msgid "Load"
+msgstr "加载"
+
+#: Orange/widgets/data/owcolor.py:578 Orange/widgets/data/owfile.py:239
+msgid "Reset"
+msgstr "重置"
+
+#: Orange/widgets/data/owconcatenate.py:29
+msgid "Concatenate"
+msgstr "连接"
+
+#: Orange/widgets/data/owconcatenate.py:30
+msgid "Concatenate (append) two or more datasets."
+msgstr "链接（追加到末尾）两个或多个数据表。"
+
+#: Orange/widgets/data/owconcatenate.py:46
+msgid "Inputs must be of the same type."
+msgstr "输入必须是同一类型。"
+
+#: Orange/widgets/data/owconcatenate.py:50
+msgid "Variables with duplicated names have been renamed."
+msgstr "已重命名有重复名称的变量。"
+
+#: Orange/widgets/data/owconcatenate.py:77
+msgid "all variables that appear in input tables"
+msgstr "输入表中出现的所有变量"
+
+#: Orange/widgets/data/owconcatenate.py:78
+msgid "only variables that appear in all tables"
+msgstr "仅显示所有表中均出现的变量"
+
+#: Orange/widgets/data/owconcatenate.py:80
+msgid "Class attribute"
+msgstr "类属性"
+
+#: Orange/widgets/data/owconcatenate.py:80
+msgid "Attribute"
+msgstr "属性"
+
+#: Orange/widgets/data/owconcatenate.py:80
+msgid "Meta attribute"
+msgstr "元属性"
+
+#: Orange/widgets/data/owconcatenate.py:91
+msgid "Variable Merging"
+msgstr "变量合并"
 
 #: Orange/widgets/data/owconcatenate.py:97
 msgid "When there is no primary table, the output should contain:"
@@ -27,6 +145,14 @@ msgid ""
 "The resulting table will have a class only if there is no conflict between "
 "input classes."
 msgstr "只有在输入类之间没有冲突时，生成的表才会有类。"
+
+#: Orange/widgets/data/owconcatenate.py:114
+msgid ""
+"Treat variables with the same name as the same variable,\n"
+"even if they are computed using different formulae."
+msgstr ""
+"将相同变量名的变量当成同一个变量处理，\n"
+"即使他们使用不同的公式计算。"
 
 #: Orange/widgets/data/owconcatenate.py:119
 msgid "Source Identification"
@@ -44,6 +170,217 @@ msgstr "特征名称："
 msgid "Place:"
 msgstr "位置："
 
+#: Orange/widgets/data/owcontinuize.py:21
+msgid "Continuize"
+msgstr "连续化"
+
+#: Orange/widgets/data/owcontinuize.py:22
+msgid ""
+"Transform categorical attributes into numeric and, optionally, normalize "
+"numeric values."
+msgstr "将分类属性转换为数值属性，并且可选归一化数值"
+
+#: Orange/widgets/data/owcontinuize.py:48
+msgid "First value as base"
+msgstr "用第一个数值作为基础"
+
+#: Orange/widgets/data/owcontinuize.py:49
+msgid "Most frequent value as base"
+msgstr "用出现次数最多的值作为基础"
+
+#: Orange/widgets/data/owcontinuize.py:50
+msgid "One attribute per value"
+msgstr "每个数值一个属性"
+
+#: Orange/widgets/data/owcontinuize.py:51
+msgid "Ignore multinomial attributes"
+msgstr "忽略多重定类属性"
+
+#: Orange/widgets/data/owcontinuize.py:52
+msgid "Remove categorical attributes"
+msgstr "移除分类属性"
+
+#: Orange/widgets/data/owcontinuize.py:53
+#: Orange/widgets/data/owcontinuize.py:67
+msgid "Treat as ordinal"
+msgstr "作为定序变量处理"
+
+#: Orange/widgets/data/owcontinuize.py:54
+#: Orange/widgets/data/owcontinuize.py:68
+msgid "Divide by number of values"
+msgstr "除以数值数目"
+
+#: Orange/widgets/data/owcontinuize.py:57
+msgid "Leave them as they are"
+msgstr "保持不变"
+
+#: Orange/widgets/data/owcontinuize.py:58
+msgid "Standardize to μ=0, σ²=1"
+msgstr "标准化为μ=0，σ²=1"
+
+#: Orange/widgets/data/owcontinuize.py:59
+msgid "Center to μ=0"
+msgstr "中心移动到μ=0"
+
+#: Orange/widgets/data/owcontinuize.py:60
+msgid "Scale to σ²=1"
+msgstr "缩放为σ²=1"
+
+#: Orange/widgets/data/owcontinuize.py:61
+msgid "Normalize to interval [-1, 1]"
+msgstr "归一化到区间 [-1, 1]"
+
+#: Orange/widgets/data/owcontinuize.py:62
+msgid "Normalize to interval [0, 1]"
+msgstr "归一化到区间 [0, 1]"
+
+#: Orange/widgets/data/owcontinuize.py:66
+msgid "Leave it as it is"
+msgstr "保持不变"
+
+#: Orange/widgets/data/owcontinuize.py:69
+msgid "One class per value"
+msgstr "每个值一个分类"
+
+#: Orange/widgets/data/owcontinuize.py:79
+msgid "Categorical Features"
+msgstr "分类特征"
+
+#: Orange/widgets/data/owcontinuize.py:86
+msgid "Numeric Features"
+msgstr "数值特征"
+
+#: Orange/widgets/data/owcontinuize.py:93
+msgid "Categorical Outcome(s)"
+msgstr "分类结果"
+
+#: Orange/widgets/data/owcorrelations.py:46
+msgid "Pearson correlation"
+msgstr "皮尔逊相关性"
+
+#: Orange/widgets/data/owcorrelations.py:46
+msgid "Spearman correlation"
+msgstr "斯皮尔曼相关性"
+
+#: Orange/widgets/data/owcorrelations.py:236
+msgid "Correlations"
+msgstr "相关性"
+
+#: Orange/widgets/data/owcorrelations.py:237
+msgid "Compute all pairwise attribute correlations."
+msgstr "计算每一对属性的相关性。"
+
+#: Orange/widgets/data/owcorrelations.py:261
+msgid "Constant features have been removed."
+msgstr "已移除恒定特征。"
+
+#: Orange/widgets/data/owcorrelations.py:264
+msgid "At least two numeric features are needed."
+msgstr "至少需要两个数字特征。"
+
+#: Orange/widgets/data/owcorrelations.py:265
+msgid "At least two instances are needed."
+msgstr "至少需要两条记录。"
+
+#: Orange/widgets/data/owcorrelations.py:285
+msgid "(All combinations)"
+msgstr "（所有组合）"
+
+#: Orange/widgets/data/owcreateclass.py:163
+msgid "Create Class"
+msgstr "创建分类属性"
+
+#: Orange/widgets/data/owcreateclass.py:164
+msgid "Create class attribute from a string attribute"
+msgstr "从字符串属性创建分类属性"
+
+#: Orange/widgets/data/owcreateclass.py:194
+msgid "Data contains only numeric variables."
+msgstr "数据仅包含数值型变量"
+
+#: Orange/widgets/data/owcreateclass.py:197
+msgid "Class name duplicated."
+msgstr "类名称重复。"
+
+#: Orange/widgets/data/owcreateclass.py:198
+msgid "Class name should not be empty."
+msgstr "类名称不应为空。"
+
+#: Orange/widgets/data/owcreateclass.py:220
+msgid "New Class Name"
+msgstr "新分类名称"
+
+#: Orange/widgets/data/owcreateclass.py:222
+msgid "Match by Substring"
+msgstr "按子字符串匹配"
+
+#: Orange/widgets/data/owcreateclass.py:225
+msgid "From column:"
+msgstr "从列："
+
+#: Orange/widgets/data/owcreateclass.py:244
+#: ../orange-canvas-core/orangecanvas/application/addons.py:333
+msgid "Name"
+msgstr "名称"
+
+#: Orange/widgets/data/owcreateclass.py:245
+msgid "Substring"
+msgstr "子字符串"
+
+#: Orange/widgets/data/owcreateclass.py:246
+msgid "Count"
+msgstr "计数"
+
+#: Orange/widgets/data/owcreateclass.py:260
+msgid "Options"
+msgstr "选项"
+
+#: Orange/widgets/data/owcreateclass.py:262
+msgid "Match only at the beginning"
+msgstr "只从开头匹配"
+
+#: Orange/widgets/data/owcreateclass.py:265
+msgid "Case sensitive"
+msgstr "区分大小写"
+
+#: Orange/widgets/data/owcreateclass.py:270 Orange/widgets/data/owfile.py:244
+#: ../orange-widget-base/orangewidget/gui.py:1830
+msgid "Apply"
+msgstr "应用"
+
+#: Orange/widgets/data/owcreateinstance.py:85
+msgid "Min/Max cannot be NaN."
+msgstr "最小/最大值不能是非数值(NaN)。"
+
+#: Orange/widgets/data/owcreateinstance.py:452
+msgid "Create Instance"
+msgstr "创建新记录"
+
+#: Orange/widgets/data/owcreateinstance.py:453
+msgid "Interactively create a data instance from sample dataset."
+msgstr "从示例数据中交互式地创建新纪录"
+
+#: Orange/widgets/data/owcreateinstance.py:467
+msgid "Variables with only missing values were removed from the list."
+msgstr "仅有缺失值的变量已经从列表中删除"
+
+#: Orange/widgets/data/owcreateinstance.py:472
+msgid "Variable"
+msgstr "变量"
+
+#: Orange/widgets/data/owcreateinstance.py:473
+msgid "Value"
+msgstr "数值"
+
+#: Orange/widgets/data/owcreateinstance.py:488
+#: ../orange-canvas-core/orangecanvas/application/addons.py:545
+msgid "Filter..."
+msgstr "过滤..."
+
+#: Orange/widgets/data/owcreateinstance.py:526
+msgid "Append this instance to input data"
+msgstr "将此记录添加到输入数据"
+
 #: Orange/widgets/data/owcsvimport.py:611
 msgid "CSV File Import"
 msgstr "导入CSV文件"
@@ -58,7 +395,7 @@ msgstr "文件："
 
 #: Orange/widgets/data/owcsvimport.py:716 Orange/widgets/data/owfile.py:228
 #: Orange/widgets/data/owtable.py:218
-#: ../orange-canvas-core/orangecanvas/application/settings.py:402
+#: ../orange-canvas-core/orangecanvas/application/settings.py:403
 msgid "Info"
 msgstr "信息"
 
@@ -160,15 +497,6 @@ msgstr "没有加载数据。"
 #: Orange/widgets/data/owfile.py:232
 msgid "Columns (Double click to edit)"
 msgstr "数据列（双击编辑）"
-
-#: Orange/widgets/data/owfile.py:239
-msgid "Reset"
-msgstr "重置"
-
-#: Orange/widgets/data/owfile.py:244
-#: ../orange-widget-base/orangewidget/gui.py:1830
-msgid "Apply"
-msgstr "应用"
 
 #: Orange/widgets/data/owfile.py:253
 msgid "Browse documentation datasets"
@@ -292,15 +620,11 @@ msgstr "您想保存此报告吗？"
 
 #: ../orange-widget-base/orangewidget/workflow/widgetsscheme.py:685
 msgid "Show settings"
-msgstr "Show settings 显示设置 "
+msgstr "显示设置"
 
 #: ../orange-widget-base/orangewidget/workflow/widgetsscheme.py:687
 msgid "Show widget settings"
 msgstr "显示节点设置"
-
-#: ../orange-canvas-core/orangecanvas/application/addons.py:333
-msgid "Name"
-msgstr "名称"
 
 #: ../orange-canvas-core/orangecanvas/application/addons.py:333
 msgid "Version"
@@ -309,10 +633,6 @@ msgstr "版本"
 #: ../orange-canvas-core/orangecanvas/application/addons.py:333
 msgid "Action"
 msgstr "动作"
-
-#: ../orange-canvas-core/orangecanvas/application/addons.py:545
-msgid "Filter..."
-msgstr "过滤..."
 
 #: ../orange-canvas-core/orangecanvas/application/addons.py:548
 msgid "Add more..."
@@ -388,10 +708,6 @@ msgstr "关闭窗口"
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:430
 msgid "Close the window"
 msgstr "关闭此窗口"
-
-#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:435
-msgid "Save"
-msgstr "保存"
 
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:437
 msgid "Save current workflow."
@@ -593,7 +909,7 @@ msgstr "打开Orange工作流文件"
 
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1163
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:1248
-#: ../orange-canvas-core/orangecanvas/application/settings.py:400
+#: ../orange-canvas-core/orangecanvas/application/settings.py:401
 msgid "Error"
 msgstr "错误"
 
@@ -758,158 +1074,158 @@ msgstr "在制作新工作流时展示。"
 msgid "You can also edit Workflow Info later (File -> Workflow Info)."
 msgstr "您还可以稍后编辑工作流信息（文件->工作流信息）。"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:273
+#: ../orange-canvas-core/orangecanvas/application/settings.py:274
 msgid "General"
 msgstr "常规"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:274
+#: ../orange-canvas-core/orangecanvas/application/settings.py:275
 msgid "General Options"
 msgstr "常规选项"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:284
+#: ../orange-canvas-core/orangecanvas/application/settings.py:285
 msgid "Enable node animations"
 msgstr "启用节点动画"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:286
+#: ../orange-canvas-core/orangecanvas/application/settings.py:287
 msgid "Enable shadow and ping animations for nodes in the workflow."
 msgstr "为工作流中的节点启用阴影和动画。"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:292
+#: ../orange-canvas-core/orangecanvas/application/settings.py:293
 msgid "Nodes"
 msgstr "节点"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:299
+#: ../orange-canvas-core/orangecanvas/application/settings.py:300
 msgid "Show channel names between widgets"
 msgstr "在节点之间显示端口名称"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:301
+#: ../orange-canvas-core/orangecanvas/application/settings.py:302
 msgid "Show source and sink channel names over the links."
-msgstr "在连线上显示来源和去向端口名称"
+msgstr "在连线上显示来源和去向端口名称。"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:309
+#: ../orange-canvas-core/orangecanvas/application/settings.py:310
 msgid "Links"
 msgstr "链接"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:315
+#: ../orange-canvas-core/orangecanvas/application/settings.py:316
 msgid "Open on double click"
 msgstr "双击时打开"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:316
+#: ../orange-canvas-core/orangecanvas/application/settings.py:317
 msgid "Open quick menu on a double click on an empty spot in the canvas"
 msgstr "在画布上的空白位置双击时，打开快捷菜单"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:319
+#: ../orange-canvas-core/orangecanvas/application/settings.py:320
 msgid "Open on right click"
 msgstr "右键单击打开"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:320
+#: ../orange-canvas-core/orangecanvas/application/settings.py:321
 msgid "Open quick menu on a right click on an empty spot in the canvas"
 msgstr "在画布空白位置右键单击时，显示快捷菜单"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:323
+#: ../orange-canvas-core/orangecanvas/application/settings.py:324
 msgid "Open on space key press"
 msgstr "按下空格键时打开菜单"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:324
+#: ../orange-canvas-core/orangecanvas/application/settings.py:325
 msgid ""
 "Open quick menu on Space key press while the mouse is hovering over the "
 "canvas."
-msgstr "当鼠标悬停在画布上时，打开空格键可以打开快捷菜单"
+msgstr "当鼠标悬停在画布上时，打开空格键可以打开快捷菜单。"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:327
+#: ../orange-canvas-core/orangecanvas/application/settings.py:328
 msgid "Open on any key press"
 msgstr "按下任意键时打开"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:328
+#: ../orange-canvas-core/orangecanvas/application/settings.py:329
 msgid ""
 "Open quick menu on any key press while the mouse is hovering over the canvas."
 msgstr "当鼠标悬停在画布上时，按下任意键均可打开快捷菜单。"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:331
+#: ../orange-canvas-core/orangecanvas/application/settings.py:332
 msgid "Show categories"
 msgstr "显示类别"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:332
+#: ../orange-canvas-core/orangecanvas/application/settings.py:333
 msgid "In addition to searching, allow filtering by categories."
 msgstr "除搜索外，还允许按类别进行筛选。"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:347
+#: ../orange-canvas-core/orangecanvas/application/settings.py:348
 msgid "Quick menu"
 msgstr "快速菜单"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:353
+#: ../orange-canvas-core/orangecanvas/application/settings.py:354
 msgid "Show splash screen"
 msgstr "显示闪屏"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:356
+#: ../orange-canvas-core/orangecanvas/application/settings.py:357
 msgid "Show welcome screen"
-msgstr "显示欢迎页面。"
+msgstr "显示欢迎页面"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:359
+#: ../orange-canvas-core/orangecanvas/application/settings.py:360
 msgid "Load crashed scratch workflows"
 msgstr "加载崩溃时未完成的工作流"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:370
+#: ../orange-canvas-core/orangecanvas/application/settings.py:371
 msgid "On startup"
 msgstr "启动时"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:376
+#: ../orange-canvas-core/orangecanvas/application/settings.py:377
 msgid "Only one tab can be open at a time"
 msgstr "一次只能打开一个选项卡"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:382
+#: ../orange-canvas-core/orangecanvas/application/settings.py:383
 msgid "Tool box"
 msgstr "工具箱"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:387
+#: ../orange-canvas-core/orangecanvas/application/settings.py:388
 msgid "&Style"
 msgstr "风格"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:393
+#: ../orange-canvas-core/orangecanvas/application/settings.py:394
 msgid "Output"
 msgstr "输出"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:399
+#: ../orange-canvas-core/orangecanvas/application/settings.py:400
 msgid "Critical"
 msgstr "危急"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:401
+#: ../orange-canvas-core/orangecanvas/application/settings.py:402
 msgid "Warn"
 msgstr "报警"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:403
+#: ../orange-canvas-core/orangecanvas/application/settings.py:404
 msgid "Debug"
 msgstr "调试"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:405
+#: ../orange-canvas-core/orangecanvas/application/settings.py:406
 msgid "Logging"
 msgstr "记录"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:410
+#: ../orange-canvas-core/orangecanvas/application/settings.py:411
 msgid "Open in external browser"
 msgstr "在外部浏览器中打开"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:415
+#: ../orange-canvas-core/orangecanvas/application/settings.py:416
 msgid "Help window"
 msgstr "帮助窗口"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:454
+#: ../orange-canvas-core/orangecanvas/application/settings.py:455
 msgid "Add-ons"
-msgstr "附加组件..."
+msgstr "附加组件"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:462
+#: ../orange-canvas-core/orangecanvas/application/settings.py:463
 msgid "Install add-ons with conda"
 msgstr "通过Conda安装附加组件"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:467
+#: ../orange-canvas-core/orangecanvas/application/settings.py:468
 msgid "Conda"
 msgstr "Conda"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:469
+#: ../orange-canvas-core/orangecanvas/application/settings.py:470
 msgid "Pip"
 msgstr "Pip"
 
-#: ../orange-canvas-core/orangecanvas/application/settings.py:478
+#: ../orange-canvas-core/orangecanvas/application/settings.py:479
 msgid "Network"
 msgstr "网络"
 
@@ -1243,7 +1559,7 @@ msgstr "窗口组1"
 
 #: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2386
 msgid "Save As:"
-msgstr "另存为..."
+msgstr "另存为:"
 
 #: ../orange-canvas-core/orangecanvas/document/schemeedit.py:2388
 msgid "Use as default"
@@ -1292,6 +1608,9 @@ msgstr "前置前序节点"
 #: ../orange-canvas-core/orangecanvas/scheme/widgetmanager.py:286
 msgid "Raise all immediate ancestors of this node"
 msgstr "前置这个节点的所有直接前序节点"
+
+#~ msgid "Data"
+#~ msgstr "数据"
 
 #~ msgid "and send a data table to the output."
 #~ msgstr "输出数据表"

@@ -534,8 +534,8 @@ class ContinuousTable(ColorTable):
 
 
 class OWColor(widget.OWWidget):
-    name = "Color"
-    description = "Set color legend for variables."
+    name = _("Color")
+    description = _("Set color legend for variables.")
     icon = "icons/Colors.svg"
 
     class Inputs:
@@ -560,22 +560,22 @@ class OWColor(widget.OWWidget):
         self.data = None
         self.orig_domain = self.domain = None
 
-        box = gui.hBox(self.controlArea, "Discrete Variables")
+        box = gui.hBox(self.controlArea, _("Discrete Variables"))
         self.disc_model = DiscColorTableModel()
         self.disc_view = DiscreteTable(self.disc_model)
         self.disc_model.dataChanged.connect(self._on_data_changed)
         box.layout().addWidget(self.disc_view)
 
-        box = gui.hBox(self.controlArea, "Numeric Variables")
+        box = gui.hBox(self.controlArea, _("Numeric Variables"))
         self.cont_model = ContColorTableModel()
         self.cont_view = ContinuousTable(self.cont_model)
         self.cont_model.dataChanged.connect(self._on_data_changed)
         box.layout().addWidget(self.cont_view)
 
         box = gui.hBox(self.buttonsArea)
-        gui.button(box, self, "Save", callback=self.save)
-        gui.button(box, self, "Load", callback=self.load)
-        gui.button(box, self, "Reset", callback=self.reset)
+        gui.button(box, self, _("Save"), callback=self.save)
+        gui.button(box, self, _("Load"), callback=self.load)
+        gui.button(box, self, _("Reset"), callback=self.reset)
         gui.rubber(self.buttonsArea)
         gui.auto_apply(self.buttonsArea, self, "auto_apply")
 

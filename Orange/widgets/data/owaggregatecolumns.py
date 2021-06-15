@@ -16,8 +16,8 @@ from Orange.widgets.utils.itemmodels import DomainModel
 
 
 class OWAggregateColumns(widget.OWWidget):
-    name = "Aggregate Columns"
-    description = "Compute a sum, max, min ... of selected columns."
+    name = _("Aggregate Columns")
+    description = _("Compute a sum, max, min ... of selected columns.")
     icon = "icons/AggregateColumns.svg"
     priority = 100
     keywords = ["aggregate", "sum", "product", "max", "min", "mean",
@@ -33,15 +33,15 @@ class OWAggregateColumns(widget.OWWidget):
 
     settingsHandler = DomainContextHandler()
     variables: List[Variable] = ContextSetting([])
-    operation = Setting("Sum")
+    operation = Setting(_("Sum"))
     var_name = Setting("agg")
     auto_apply = Setting(True)
 
-    Operations = {"Sum": np.nansum, "Product": np.nanprod,
-                  "Min": np.nanmin, "Max": np.nanmax,
-                  "Mean": np.nanmean, "Variance": np.nanvar,
-                  "Median": np.nanmedian}
-    TimePreserving = ("Min", "Max", "Mean", "Median")
+    Operations = {_("Sum"): np.nansum, _("Product"): np.nanprod,
+                  _("Min"): np.nanmin, _("Max"): np.nanmax,
+                  _("Mean"): np.nanmean, _("Variance"): np.nanvar,
+                  _("Median"): np.nanmedian}
+    TimePreserving = (_("Min"), _("Max"), _("Mean"), _("Median"))
 
     def __init__(self):
         super().__init__()
@@ -59,7 +59,7 @@ class OWAggregateColumns(widget.OWWidget):
 
         combo = gui.comboBox(
             box, self, "operation",
-            label="Operator: ", orientation=Qt.Horizontal,
+            label=_("Operator: "), orientation=Qt.Horizontal,
             items=list(self.Operations), sendSelectedValue=True,
             callback=lambda: self.commit()  # pylint: disable=W0108
         )
@@ -67,7 +67,7 @@ class OWAggregateColumns(widget.OWWidget):
 
         gui.lineEdit(
             box, self, "var_name",
-            label="Variable name: ", orientation=Qt.Horizontal,
+            label=_("Variable name: "), orientation=Qt.Horizontal,
             callback=lambda: self.commit()  # pylint: disable=W0108
         )
 

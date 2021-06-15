@@ -26,8 +26,8 @@ from Orange.widgets.utils.widgetpreview import WidgetPreview
 from Orange.widgets.widget import Input, Output, Msg
 
 class OWConcatenate(widget.OWWidget):
-    name = "Concatenate"
-    description = "Concatenate (append) two or more datasets."
+    name = _("Concatenate")
+    description = _("Concatenate (append) two or more datasets.")
     priority = 1111
     icon = "icons/Concatenate.svg"
     keywords = ["append", "join", "extend"]
@@ -43,11 +43,11 @@ class OWConcatenate(widget.OWWidget):
         data = Output("Data", Orange.data.Table)
 
     class Error(widget.OWWidget.Error):
-        bow_concatenation = Msg("Inputs must be of the same type.")
+        bow_concatenation = Msg(_("Inputs must be of the same type."))
 
     class Warning(widget.OWWidget.Warning):
         renamed_variables = Msg(
-            "Variables with duplicated names have been renamed.")
+            _("Variables with duplicated names have been renamed."))
 
     merge_type: int
     append_source_column: bool
@@ -74,10 +74,10 @@ class OWConcatenate(widget.OWWidget):
     want_main_area = False
     resizing_enabled = False
 
-    domain_opts = ("all variables that appear in input tables",
-                   "only variables that appear in all tables")
+    domain_opts = (_("all variables that appear in input tables"),
+                   _("only variables that appear in all tables"))
 
-    id_roles = ("Class attribute", "Attribute", "Meta attribute")
+    id_roles = (_("Class attribute"), _("Attribute"), _("Meta attribute"))
 
     auto_commit = Setting(True)
 
@@ -88,7 +88,7 @@ class OWConcatenate(widget.OWWidget):
         self.primary_data = None
         self.more_data = OrderedDict()
 
-        self.mergebox = gui.vBox(self.controlArea, "Variable Merging")
+        self.mergebox = gui.vBox(self.controlArea, _("Variable Merging"))
         box = gui.radioButtons(
             self.mergebox, self, "merge_type",
             callback=self._merge_type_changed)
@@ -111,8 +111,8 @@ class OWConcatenate(widget.OWWidget):
         gui.separator(box)
         gui.checkBox(
             box, self, "ignore_compute_value",
-            "Treat variables with the same name as the same variable,\n"
-            "even if they are computed using different formulae.",
+            _("Treat variables with the same name as the same variable,\n"
+            "even if they are computed using different formulae."),
             callback=self.apply, stateWhenDisabled=False)
         ###
         box = gui.vBox(

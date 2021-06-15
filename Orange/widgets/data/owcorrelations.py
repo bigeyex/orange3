@@ -43,7 +43,7 @@ class CorrelationType(IntEnum):
         """
         Texts for correlation types. Can be used in gui controls (eg. combobox).
         """
-        return ["Pearson correlation", "Spearman correlation"]
+        return [_("Pearson correlation"), _("Spearman correlation")]
 
 
 class Cluster(SimpleNamespace):
@@ -233,8 +233,8 @@ class CorrelationRank(VizRankDialogAttrPair):
 
 
 class OWCorrelations(OWWidget):
-    name = "Correlations"
-    description = "Compute all pairwise attribute correlations."
+    name = _("Correlations")
+    description = _("Compute all pairwise attribute correlations.")
     icon = "icons/Correlations.svg"
     priority = 1106
 
@@ -258,11 +258,11 @@ class OWCorrelations(OWWidget):
     correlation_type = Setting(0)
 
     class Information(OWWidget.Information):
-        removed_cons_feat = Msg("Constant features have been removed.")
+        removed_cons_feat = Msg(_("Constant features have been removed."))
 
     class Warning(OWWidget.Warning):
-        not_enough_vars = Msg("At least two numeric features are needed.")
-        not_enough_inst = Msg("At least two instances are needed.")
+        not_enough_vars = Msg(_("At least two numeric features are needed."))
+        not_enough_inst = Msg(_("At least two instances are needed."))
 
     def __init__(self):
         super().__init__()
@@ -276,9 +276,13 @@ class OWCorrelations(OWWidget):
             orientation=Qt.Horizontal, callback=self._correlation_combo_changed
         )
 
+        import gettext
+        translation = gettext.translation('messages', 'locale', languages=['zh_CN'])
+        _ = translation.gettext
+
         self.feature_model = DomainModel(
             order=DomainModel.ATTRIBUTES, separators=False,
-            placeholder="(All combinations)", valid_types=ContinuousVariable)
+            placeholder=_("(All combinations)"), valid_types=ContinuousVariable)
         gui.comboBox(
             box, self, "feature", callback=self._feature_combo_changed,
             model=self.feature_model
