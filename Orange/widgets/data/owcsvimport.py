@@ -729,7 +729,7 @@ class OWCSVFileImport(widget.OWWidget):
             standardButtons=QDialogButtonBox.Cancel | QDialogButtonBox.Retry
         )
         self.load_button = b = button_box.button(QDialogButtonBox.Retry)
-        b.setText("Load")
+        b.setText(_("Load"))
         b.clicked.connect(self.__committimer.start)
         b.setEnabled(False)
         b.setDefault(True)
@@ -1127,21 +1127,21 @@ class OWCSVFileImport(widget.OWWidget):
         if self.__watcher is not None:
             self.__cancel_task()
             self.__clear_running_state()
-            self.setStatusMessage("Cancelled")
+            self.setStatusMessage(_("Cancelled"))
             self.summary_text.setText(
-                "<div>Cancelled<br/><small>Press 'Reload' to try again</small></div>"
+                _("<div>Cancelled<br/><small>Press 'Reload' to try again</small></div>")
             )
 
     def __set_running_state(self):
         self.progressBarInit()
         self.setBlocking(True)
-        self.setStatusMessage("Running")
+        self.setStatusMessage(_("Running"))
         self.cancel_button.setEnabled(True)
-        self.load_button.setText("Restart")
+        self.load_button.setText(_("Restart"))
         path = self.current_item().path()
         self.Error.clear()
         self.summary_text.setText(
-            "<div>Loading: <i>{}</i><br/>".format(prettyfypath(path))
+            _("<div>Loading: <i>{}</i><br/>").format(prettyfypath(path))
         )
 
     def __clear_running_state(self, ):
@@ -1149,7 +1149,7 @@ class OWCSVFileImport(widget.OWWidget):
         self.setStatusMessage("")
         self.setBlocking(False)
         self.cancel_button.setEnabled(False)
-        self.load_button.setText("Reload")
+        self.load_button.setText(_("Reload"))
 
     def __set_error_state(self, err):
         self.Error.clear()
@@ -1162,16 +1162,16 @@ class OWCSVFileImport(widget.OWWidget):
         basename = os.path.basename(path)
         if isinstance(err, UnicodeDecodeError):
             text = (
-                "<div><i>{basename}</i> was not loaded due to a text encoding "
+                _("<div><i>{basename}</i> was not loaded due to a text encoding "
                 "error. The file might be saved in an unknown or invalid "
-                "encoding, or it might be a binary file.</div>"
+                "encoding, or it might be a binary file.</div>")
             ).format(
                 basename=escape(basename)
             )
         else:
             text = (
-                "<div><i>{basename}</i> was not loaded due to an error:"
-                "<p style='white-space: pre;'>{err}</p>"
+                _("<div><i>{basename}</i> was not loaded due to an error:"
+                "<p style='white-space: pre;'>{err}</p>")
             ).format(
                 basename=escape(basename),
                 err="".join(traceback.format_exception_only(type(err), err))
@@ -1288,7 +1288,7 @@ class OWCSVFileImport(widget.OWWidget):
             try:
                 p, m = (PathItem.from_dict(p), Options.from_dict(m))
             except (csv.Error, LookupError, ValueError):
-                _log.error("Failed to restore '%s'", p, exc_info=True)
+                _log.error(_("Failed to restore '%s'"), p, exc_info=True)
             else:
                 sitems.append((p, m, True))
 

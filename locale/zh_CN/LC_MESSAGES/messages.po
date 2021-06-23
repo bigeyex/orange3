@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-15 22:50+0800\n"
-"PO-Revision-Date: 2021-06-15 22:52+0800\n"
+"POT-Creation-Date: 2021-06-16 23:20+0800\n"
+"PO-Revision-Date: 2021-06-23 23:07+0800\n"
 "Last-Translator: yu <bigeyex@gmail.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: Orange/widgets/data/owaggregatecolumns.py:19
 msgid "Aggregate Columns"
-msgstr "列聚合计算"
+msgstr "多列合计"
 
 #: Orange/widgets/data/owaggregatecolumns.py:20
 msgid "Compute a sum, max, min ... of selected columns."
@@ -61,7 +61,7 @@ msgstr "中位数"
 
 #: Orange/widgets/data/owaggregatecolumns.py:62
 msgid "Operator: "
-msgstr "操作员: "
+msgstr "运算: "
 
 #: Orange/widgets/data/owaggregatecolumns.py:70
 msgid "Variable name: "
@@ -88,7 +88,7 @@ msgstr "数值变量"
 msgid "Save"
 msgstr "保存"
 
-#: Orange/widgets/data/owcolor.py:577
+#: Orange/widgets/data/owcolor.py:577 Orange/widgets/data/owcsvimport.py:732
 msgid "Load"
 msgstr "加载"
 
@@ -178,7 +178,7 @@ msgstr "连续化"
 msgid ""
 "Transform categorical attributes into numeric and, optionally, normalize "
 "numeric values."
-msgstr "将分类属性转换为数值属性，并且可选归一化数值"
+msgstr "将分类属性转换为数值属性，并且可选归一化数值。"
 
 #: Orange/widgets/data/owcontinuize.py:48
 msgid "First value as base"
@@ -296,7 +296,7 @@ msgstr "从字符串属性创建分类属性"
 
 #: Orange/widgets/data/owcreateclass.py:194
 msgid "Data contains only numeric variables."
-msgstr "数据仅包含数值型变量"
+msgstr "数据仅包含数值型变量。"
 
 #: Orange/widgets/data/owcreateclass.py:197
 msgid "Class name duplicated."
@@ -358,11 +358,35 @@ msgstr "创建新记录"
 
 #: Orange/widgets/data/owcreateinstance.py:453
 msgid "Interactively create a data instance from sample dataset."
-msgstr "从示例数据中交互式地创建新纪录"
+msgstr "从示例数据中交互式地创建新纪录。"
 
 #: Orange/widgets/data/owcreateinstance.py:467
 msgid "Variables with only missing values were removed from the list."
-msgstr "仅有缺失值的变量已经从列表中删除"
+msgstr "仅有缺失值的变量已经从列表中删除。"
+
+#: Orange/widgets/data/owcreateinstance.py:471
+#: Orange/widgets/data/owcreateinstance.py:559
+#: Orange/widgets/data/owcreateinstance.py:563
+msgid "median"
+msgstr "中位数"
+
+#: Orange/widgets/data/owcreateinstance.py:471
+#: Orange/widgets/data/owcreateinstance.py:560
+#: Orange/widgets/data/owcreateinstance.py:564
+msgid "mean"
+msgstr "平均数"
+
+#: Orange/widgets/data/owcreateinstance.py:471
+#: Orange/widgets/data/owcreateinstance.py:561
+#: Orange/widgets/data/owcreateinstance.py:565
+msgid "random"
+msgstr "随机"
+
+#: Orange/widgets/data/owcreateinstance.py:471
+#: Orange/widgets/data/owcreateinstance.py:562
+#: Orange/widgets/data/owcreateinstance.py:566
+msgid "input"
+msgstr "输入"
 
 #: Orange/widgets/data/owcreateinstance.py:472
 msgid "Variable"
@@ -429,6 +453,293 @@ msgstr "选定的路径不在\"{prefix}\"内"
 msgid "Import Options"
 msgstr "导入选项"
 
+#: Orange/widgets/data/owcsvimport.py:1130
+msgid "Cancelled"
+msgstr "已取消"
+
+#: Orange/widgets/data/owcsvimport.py:1132
+msgid "<div>Cancelled<br/><small>Press 'Reload' to try again</small></div>"
+msgstr "<div>已取消<br/><small>按\"重新加载\"再试一次</small></div>"
+
+#: Orange/widgets/data/owcsvimport.py:1138
+msgid "Running"
+msgstr "运行中"
+
+#: Orange/widgets/data/owcsvimport.py:1140
+msgid "Restart"
+msgstr "重新启动"
+
+#: Orange/widgets/data/owcsvimport.py:1144
+msgid "<div>Loading: <i>{}</i><br/>"
+msgstr "<div>正在加载: <i>{}</i><br/>"
+
+#: Orange/widgets/data/owcsvimport.py:1152 Orange/widgets/data/owfile.py:184
+msgid "Reload"
+msgstr "重新加载"
+
+#: Orange/widgets/data/owcsvimport.py:1165
+#, python-brace-format
+msgid ""
+"<div><i>{basename}</i> was not loaded due to a text encoding error. The file "
+"might be saved in an unknown or invalid encoding, or it might be a binary "
+"file.</div>"
+msgstr ""
+"<div><i>{basename}</i> 由于文本编码错误未能加载。文件可能以未知或无效的编码保"
+"存，或者是二进制文件。</div>"
+
+#: Orange/widgets/data/owcsvimport.py:1173
+#, python-brace-format
+msgid ""
+"<div><i>{basename}</i> was not loaded due to an error:<p style='white-space: "
+"pre;'>{err}</p>"
+msgstr ""
+"<div><i>{basename}</i> 由于错误而未加载：<p style='white-space: pre;'>{err}</"
+"p>"
+
+#: Orange/widgets/data/owcsvimport.py:1291
+#, python-format
+msgid "Failed to restore '%s'"
+msgstr "未能恢复\"%s\""
+
+#: Orange/widgets/data/owdatainfo.py:18
+msgid "Data Info"
+msgstr "数据信息"
+
+#: Orange/widgets/data/owdatainfo.py:20
+msgid ""
+"Display basic information about the dataset, such\n"
+"    as the number and type of variables in the columns and the number of "
+"rows."
+msgstr ""
+"显示有关数据集的基本信息，例如\n"
+"    列中变量的数量和类型以及行数。"
+
+#: Orange/widgets/data/owdatainfo.py:39
+msgid "Data Set Name"
+msgstr "数据集名称"
+
+#: Orange/widgets/data/owdatainfo.py:39
+msgid "Data Set Size"
+msgstr "数据集大小"
+
+#: Orange/widgets/data/owdatainfo.py:39
+msgid "Features"
+msgstr "特征"
+
+#: Orange/widgets/data/owdatainfo.py:39
+msgid "Targets"
+msgstr "目标"
+
+#: Orange/widgets/data/owdatainfo.py:40
+msgid "Meta Attributes"
+msgstr "元属性"
+
+#: Orange/widgets/data/owdatainfo.py:40
+msgid "Location"
+msgstr "位置"
+
+#: Orange/widgets/data/owdatainfo.py:40
+msgid "Data Attributes"
+msgstr "数据属性"
+
+#: Orange/widgets/data/owdatainfo.py:46
+msgid "Categorical outcome with 123 values"
+msgstr "包含数值123的分类结果"
+
+#: Orange/widgets/data/owdatainfo.py:96
+msgid "Categorical"
+msgstr "分类"
+
+#: Orange/widgets/data/owdatainfo.py:97
+msgid "Numeric"
+msgstr "数值"
+
+#: Orange/widgets/data/owdatainfo.py:98
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:256
+msgid "Text"
+msgstr "文字"
+
+#: Orange/widgets/data/owdatainfo.py:108
+msgid "<p>Sparse representation: {}</p>"
+msgstr "<p>稀疏表示：{}</p>"
+
+#: Orange/widgets/data/owdatainfo.py:113 Orange/widgets/data/owdatainfo.py:118
+msgid "Rows"
+msgstr "行"
+
+#: Orange/widgets/data/owdatainfo.py:114 Orange/widgets/data/owdatainfo.py:119
+msgid "Columns"
+msgstr "数据列"
+
+#: Orange/widgets/data/owdatainfo.py:123
+msgid "N/A"
+msgstr "N/A"
+
+#: Orange/widgets/data/owdatainfo.py:129
+msgid "Numeric target variable"
+msgstr "数值目标变量"
+
+#: Orange/widgets/data/owdatainfo.py:131
+msgid "Categorical outcome with {} values"
+msgstr "包含数值{}的分类结果"
+
+#: Orange/widgets/data/owdatainfo.py:137
+msgid ""
+"Multi-target data,\n"
+"{} categorical targets"
+msgstr ""
+"多目标数据，\n"
+"{}分类目标"
+
+#: Orange/widgets/data/owdatainfo.py:140
+msgid ""
+"Multi-target data,\n"
+"{} numeric targets"
+msgstr ""
+"多目标数据，\n"
+"{}数值目标"
+
+#: Orange/widgets/data/owdatainfo.py:143
+msgid "<p>Multi-target data</p>\n"
+msgstr "<p>多目标数据</p>\n"
+
+#: Orange/widgets/data/owdatainfo.py:167
+msgid ""
+"Table '{}', using connection:\n"
+"{}"
+msgstr ""
+"表\"{}\"，使用连接：\n"
+"{}"
+
+#: Orange/widgets/data/owdatainfo.py:171
+msgid "Data is stored in memory"
+msgstr "数据存储在内存中"
+
+#: Orange/widgets/data/owdatainfo.py:184
+msgid "categorical outcome '{}'"
+msgstr "分类结果 '{}'"
+
+#: Orange/widgets/data/owdatainfo.py:186
+msgid "numeric target '{}'"
+msgstr "数值目标变量 ‘{}’"
+
+#: Orange/widgets/data/owdatainfo.py:192
+#, python-brace-format
+msgid "{number} categorical outcome{s}"
+msgstr "{number} 分类结果{s}"
+
+#: Orange/widgets/data/owdatainfo.py:194
+#, python-brace-format
+msgid "{number} numeric target{s}"
+msgstr "{number} 数值目标变量{s}"
+
+#: Orange/widgets/data/owdatainfo.py:196
+msgid "{} categorical"
+msgstr "{} 分类"
+
+#: Orange/widgets/data/owdatainfo.py:197
+msgid "{} numeric"
+msgstr "{} 数值"
+
+#: Orange/widgets/data/owdatainfo.py:198
+msgid "{} text"
+msgstr "{} 文本"
+
+#: Orange/widgets/data/owdatasampler.py:19
+msgid "Data Sampler"
+msgstr "数据抽样"
+
+#: Orange/widgets/data/owdatasampler.py:20
+msgid "Randomly draw a subset of data points from the input dataset."
+msgstr "随机从输入数据集中抽取部分数据点。"
+
+#: Orange/widgets/data/owdatasampler.py:88
+#: Orange/widgets/data/owdatasampler.py:135
+msgid "Sampling Type"
+msgstr "样本类型"
+
+#: Orange/widgets/data/owdatasampler.py:98
+msgid "Fixed proportion of data:"
+msgstr "固定数据比例："
+
+#: Orange/widgets/data/owdatasampler.py:105
+msgid "Fixed sample size"
+msgstr "固定样本大小"
+
+#: Orange/widgets/data/owdatasampler.py:108
+msgid "Instances: "
+msgstr "记录: "
+
+#: Orange/widgets/data/owdatasampler.py:113
+msgid "Sample with replacement"
+msgstr "有放回抽样"
+
+#: Orange/widgets/data/owdatasampler.py:116
+msgid "Cross validation"
+msgstr "交叉验证"
+
+#: Orange/widgets/data/owdatasampler.py:122
+msgid "Number of subsets:"
+msgstr "子集数量："
+
+#: Orange/widgets/data/owdatasampler.py:130
+msgid "Unused subset:"
+msgstr "未使用的子集："
+
+#: Orange/widgets/data/owdatasampler.py:131
+msgid "Selected subset:"
+msgstr "选定的子集："
+
+#: Orange/widgets/data/owdatasampler.py:133
+#: Orange/widgets/data/owdatasampler.py:327
+msgid "Bootstrap"
+msgstr "引导程序"
+
+#: Orange/widgets/data/owdatasampler.py:143
+msgid "Percentage"
+msgstr "百分比"
+
+#: Orange/widgets/data/owdatasampler.py:154
+msgid "Replicable (deterministic) sampling"
+msgstr "可复现（确定性的）取样"
+
+#: Orange/widgets/data/owdatasampler.py:158
+msgid "Stratify sample (when possible)"
+msgstr "分层抽样（如果可能）"
+
+#: Orange/widgets/data/owdatasampler.py:160
+msgid "Download data to local memory"
+msgstr "将数据下载到本地内存"
+
+#: Orange/widgets/data/owdatasampler.py:164
+msgid "Sample Data"
+msgstr "样本数据"
+
+#: Orange/widgets/data/owdatasampler.py:313
+#, python-format
+msgid "Random sample with {} % of data"
+msgstr "随机抽取 {}% 数据作为样本"
+
+#: Orange/widgets/data/owdatasampler.py:317
+msgid "Random data instance"
+msgstr "随机数据记录"
+
+#: Orange/widgets/data/owdatasampler.py:319
+msgid "Random sample with {} data instances"
+msgstr "具有{}条记录的随机样本"
+
+#: Orange/widgets/data/owdatasampler.py:329
+msgid "Undefined"
+msgstr "未定义"
+
+#: Orange/widgets/data/owdatasampler.py:331
+msgid ", stratified (if possible)"
+msgstr "，分层（如果可能）"
+
+#: Orange/widgets/data/owdatasampler.py:333
+msgid ", deterministic"
+msgstr "，确定性的"
+
 #: Orange/widgets/data/owdatasets.py:141
 msgid "Datasets"
 msgstr "数据集"
@@ -436,6 +747,68 @@ msgstr "数据集"
 #: Orange/widgets/data/owdatasets.py:142
 msgid "Load a dataset from an online repository"
 msgstr "从在线资源库中下载数据集"
+
+#: Orange/widgets/data/owdatasets.py:161
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:42
+msgid "Title"
+msgstr "标题"
+
+#: Orange/widgets/data/owdatasets.py:162
+msgid "Size"
+msgstr "打消"
+
+#: Orange/widgets/data/owdatasets.py:163
+msgid "Instances"
+msgstr "实例"
+
+#: Orange/widgets/data/owdatasets.py:164 Orange/widgets/data/owtable.py:222
+msgid "Variables"
+msgstr "变量"
+
+#: Orange/widgets/data/owdatasets.py:165
+msgid "Target"
+msgstr "目标"
+
+#: Orange/widgets/data/owdatasets.py:166
+msgid "Tags"
+msgstr "标签"
+
+#: Orange/widgets/data/owdatasets.py:172
+msgid "Could not fetch dataset list"
+msgstr "无法获取数据集列表"
+
+#: Orange/widgets/data/owdatasets.py:175
+msgid "Could not fetch datasets list, only local cached datasets are shown"
+msgstr "无法获取数据集列表，仅显示本地缓存数据集"
+
+#: Orange/widgets/data/owdatasets.py:208
+msgid "Search for data set ..."
+msgstr "搜索数据集..."
+
+#: Orange/widgets/data/owdatasets.py:221
+msgid "Press Return or double-click to send"
+msgstr "按回车或者双击来发送"
+
+#: Orange/widgets/data/owdatasets.py:226
+#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:43
+msgid "Description"
+msgstr "描述"
+
+#: Orange/widgets/data/owdatasets.py:262
+msgid "Initializing"
+msgstr "正在初始化"
+
+#: Orange/widgets/data/owdatasets.py:363
+msgid "Error while fetching updated index"
+msgstr "获取更新的索引时出现错误"
+
+#: Orange/widgets/data/owdiscretize.py:256
+msgid "Discretize"
+msgstr "离散化"
+
+#: Orange/widgets/data/owdiscretize.py:257
+msgid "Discretize the numeric data features."
+msgstr "将数值类型特征离散化。"
 
 #: Orange/widgets/data/owdiscretize.py:300
 msgid "Default Discretization"
@@ -465,9 +838,45 @@ msgstr "等宽离散化"
 msgid "Remove numeric variables"
 msgstr "移除数值变量"
 
-#: Orange/widgets/data/owdiscretize.py:319 Orange/widgets/data/owrank.py:362
+#: Orange/widgets/data/owdiscretize.py:319
+#: Orange/widgets/data/owdiscretize.py:434 Orange/widgets/data/owrank.py:362
 msgid "Manual"
 msgstr "手动"
+
+#: Orange/widgets/data/owdiscretize.py:331
+msgid "Num. of intervals:"
+msgstr "间隔数："
+
+#: Orange/widgets/data/owdiscretize.py:346
+msgid ""
+"Enter fixed discretization cut points (a comma separated list of strictly "
+"increasing numbers e.g. 0.0, 0.5, 1.0)."
+msgstr ""
+"输入固定离散分割点（需要是严格递增的数字，用逗号分隔，比如0.0, 0.5, 1.0)。"
+
+#: Orange/widgets/data/owdiscretize.py:404 Orange/widgets/data/owimpute.py:243
+msgid "Individual Attribute Settings"
+msgstr "单个属性设置"
+
+#: Orange/widgets/data/owdiscretize.py:433
+msgid "Remove attribute"
+msgstr "移除属性"
+
+#: Orange/widgets/data/owdiscretize.py:456
+msgid "Copy the current cut points to manual mode"
+msgstr "将当前分割点复制到手动模式"
+
+#: Orange/widgets/data/owdiscretize.py:783
+msgid "Default method"
+msgstr "默认方法"
+
+#: Orange/widgets/data/owdiscretize.py:785
+msgid "Thresholds"
+msgstr "阈值"
+
+#: Orange/widgets/data/owdiscretize.py:787
+msgid "leave numeric"
+msgstr "保持数值不变"
 
 #: Orange/widgets/data/owfeatureconstructor.py:272
 msgid "Values (optional)"
@@ -486,10 +895,6 @@ msgstr "从文件或网络中读取数据并发送数据表到输出。"
 msgid "Source"
 msgstr "数据源"
 
-#: Orange/widgets/data/owfile.py:184
-msgid "Reload"
-msgstr "重新加载"
-
 #: Orange/widgets/data/owfile.py:229
 msgid "No data loaded."
 msgstr "没有加载数据。"
@@ -501,10 +906,6 @@ msgstr "数据列（双击编辑）"
 #: Orange/widgets/data/owfile.py:253
 msgid "Browse documentation datasets"
 msgstr "浏览测试数据"
-
-#: Orange/widgets/data/owimpute.py:243
-msgid "Individual Attribute Settings"
-msgstr "单个属性设置"
 
 #: Orange/widgets/data/owrank.py:360
 msgid "None"
@@ -525,10 +926,6 @@ msgstr "数据表"
 #: Orange/widgets/data/owtable.py:180
 msgid "View the dataset in a spreadsheet."
 msgstr "通过电子表格查看数据集。"
-
-#: Orange/widgets/data/owtable.py:222
-msgid "Variables"
-msgstr "变量"
 
 #: Orange/widgets/data/owtable.py:225
 msgid "Show variable labels (if present)"
@@ -1058,14 +1455,6 @@ msgstr "此节点没有文档。"
 msgid "No help found"
 msgstr "未找到帮助"
 
-#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:42
-msgid "Title"
-msgstr "标题"
-
-#: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:43
-msgid "Description"
-msgstr "描述"
-
 #: ../orange-canvas-core/orangecanvas/application/schemeinfo.py:132
 msgid "Show when I make a New Workflow."
 msgstr "在制作新工作流时展示。"
@@ -1435,10 +1824,6 @@ msgstr "清理"
 #: ../orange-canvas-core/orangecanvas/document/schemeedit.py:251
 msgid "Align widgets to a grid (Shift+A)"
 msgstr "将节点对齐到网格（Shift+A）"
-
-#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:256
-msgid "Text"
-msgstr "文字"
 
 #: ../orange-canvas-core/orangecanvas/document/schemeedit.py:258
 msgid "Add a text annotation to the workflow."

@@ -468,7 +468,7 @@ class OWCreateInstance(OWWidget):
                            "removed from the list."))
 
     want_main_area = False
-    ACTIONS = ["median", "mean", "random", "input"]
+    ACTIONS = [_("median"), _("mean"), _("random"), _("input")]
     HEADER = [["name", _("Variable")],
               ["variable", _("Value")]]
     Header = namedtuple(
@@ -556,14 +556,14 @@ class OWCreateInstance(OWWidget):
         return actions
 
     def _initialize_values(self, fun: str, indices: List[QModelIndex] = None):
-        cont_fun = {"median": np.nanmedian,
-                    "mean": np.nanmean,
-                    "random": cont_random,
-                    "input": np.nanmean}.get(fun, NotImplemented)
-        disc_fun = {"median": majority,
-                    "mean": majority,
-                    "random": disc_random,
-                    "input": majority}.get(fun, NotImplemented)
+        cont_fun = {_("median"): np.nanmedian,
+                    _("mean"): np.nanmean,
+                    _("random"): cont_random,
+                    _("input"): np.nanmean}.get(fun, NotImplemented)
+        disc_fun = {_("median"): majority,
+                    _("mean"): majority,
+                    _("random"): disc_random,
+                    _("input"): majority}.get(fun, NotImplemented)
 
         if not self.data or fun == "input" and not self.reference:
             return

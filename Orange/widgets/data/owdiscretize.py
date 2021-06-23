@@ -253,8 +253,8 @@ def show_tip(
 
 class OWDiscretize(widget.OWWidget):
     # pylint: disable=too-many-instance-attributes
-    name = "Discretize"
-    description = "Discretize the numeric data features."
+    name = _("Discretize")
+    description = _("Discretize the numeric data features.")
     icon = "icons/Discretize.svg"
     keywords = ["bin", "categorical", "nominal", "ordinal"]
 
@@ -328,7 +328,7 @@ class OWDiscretize(widget.OWWidget):
         def _intbox(parent, attr, callback):
             box = gui.indentedBox(parent)
             s = gui.spin(
-                box, self, attr, minv=2, maxv=10, label="Num. of intervals:",
+                box, self, attr, minv=2, maxv=10, label=_("Num. of intervals:"),
                 callback=callback)
             s.setMaximumWidth(60)
             s.setAlignment(Qt.AlignRight)
@@ -343,9 +343,9 @@ class OWDiscretize(widget.OWWidget):
             edit = QLineEdit(
                 text=text,
                 placeholderText="e.g. 0.0, 0.5, 1.0",
-                toolTip="Enter fixed discretization cut points (a comma "
+                toolTip=_("Enter fixed discretization cut points (a comma "
                         "separated list of strictly increasing numbers e.g. "
-                        "0.0, 0.5, 1.0).",
+                        "0.0, 0.5, 1.0)."),
                 enabled=enabled,
             )
             @edit.textChanged.connect
@@ -401,7 +401,7 @@ class OWDiscretize(widget.OWWidget):
         )
         vlayout = QHBoxLayout()
         box = gui.widgetBox(
-            self.controlArea, "Individual Attribute Settings",
+            self.controlArea, _("Individual Attribute Settings"),
             orientation=vlayout, spacing=8
         )
 
@@ -430,8 +430,8 @@ class OWDiscretize(widget.OWWidget):
 
         self.k_specific = _intbox(controlbox, "k", self._disc_method_changed)
 
-        gui.appendRadioButton(controlbox, "Remove attribute", id=Methods.Remove)
-        b = gui.appendRadioButton(controlbox, "Manual", id=Methods.Custom)
+        gui.appendRadioButton(controlbox, _("Remove attribute"), id=Methods.Remove)
+        b = gui.appendRadioButton(controlbox, _("Manual"), id=Methods.Custom)
 
         self.manual_cuts_specific = manual_cut_editline(
             text=", ".join(map(str, self.cutpoints)),
@@ -453,7 +453,7 @@ class OWDiscretize(widget.OWWidget):
         )
         ibox = gui.indentedBox(controlbox, orientation=Qt.Horizontal)
         self.copy_current_to_manual_button = b = FixedSizeButton(
-            text="CC", toolTip="Copy the current cut points to manual mode",
+            text="CC", toolTip=_("Copy the current cut points to manual mode"),
             enabled=False
         )
         b.clicked.connect(self._copy_to_manual)
@@ -780,11 +780,11 @@ class OWDiscretize(widget.OWWidget):
 
     def send_report(self):
         self.report_items((
-            ("Default method", self.options[self.default_method][1]),))
+            (_("Default method"), self.options[self.default_method][1]),))
         if self.varmodel:
-            self.report_items("Thresholds", [
+            self.report_items(_("Thresholds"), [
                 (var.name,
-                 DiscDelegate.cutsText(self.var_state[i], var.repr_val) or "leave numeric")
+                 DiscDelegate.cutsText(self.var_state[i], var.repr_val) or _("leave numeric"))
                 for i, var in enumerate(self.varmodel)])
 
     @classmethod

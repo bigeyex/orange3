@@ -16,9 +16,9 @@ from Orange.util import Reprable
 
 
 class OWDataSampler(OWWidget):
-    name = "Data Sampler"
-    description = "Randomly draw a subset of data points " \
-                  "from the input dataset."
+    name = _("Data Sampler")
+    description = _("Randomly draw a subset of data points " \
+                  "from the input dataset.")
     icon = "icons/DataSampler.svg"
     priority = 100
     category = "Data"
@@ -85,7 +85,7 @@ class OWDataSampler(OWWidget):
         self.indices = None
         self.sampled_instances = self.remaining_instances = None
 
-        self.sampling_box = gui.vBox(self.controlArea, "Sampling Type")
+        self.sampling_box = gui.vBox(self.controlArea, _("Sampling Type"))
         sampling = gui.radioButtons(self.sampling_box, self, "sampling_type",
                                     callback=self.sampling_type_changed)
 
@@ -95,31 +95,31 @@ class OWDataSampler(OWWidget):
                 self.sampling_type_changed()
             return set_sampling_type_i
 
-        gui.appendRadioButton(sampling, "Fixed proportion of data:")
+        gui.appendRadioButton(sampling, _("Fixed proportion of data:"))
         self.sampleSizePercentageSlider = gui.hSlider(
             gui.indentedBox(sampling), self,
             "sampleSizePercentage",
             minValue=0, maxValue=100, ticks=10, labelFormat="%d %%",
             callback=set_sampling_type(self.FixedProportion))
 
-        gui.appendRadioButton(sampling, "Fixed sample size")
+        gui.appendRadioButton(sampling, _("Fixed sample size"))
         ibox = gui.indentedBox(sampling)
         self.sampleSizeSpin = gui.spin(
-            ibox, self, "sampleSizeNumber", label="Instances: ",
+            ibox, self, "sampleSizeNumber", label=_("Instances: "),
             minv=1, maxv=self._MAX_SAMPLE_SIZE,
             callback=set_sampling_type(self.FixedSize),
             controlWidth=90)
         gui.checkBox(
-            ibox, self, "replacement", "Sample with replacement",
+            ibox, self, "replacement", _("Sample with replacement"),
             callback=set_sampling_type(self.FixedSize))
 
-        gui.appendRadioButton(sampling, "Cross validation")
+        gui.appendRadioButton(sampling, _("Cross validation"))
         form = QFormLayout(
             formAlignment=Qt.AlignLeft | Qt.AlignTop,
             labelAlignment=Qt.AlignLeft,
             fieldGrowthPolicy=QFormLayout.AllNonFixedFieldsGrow)
         ibox = gui.indentedBox(sampling, orientation=form)
-        form.addRow("Number of subsets:",
+        form.addRow(_("Number of subsets:"),
                     gui.spin(
                         ibox, self, "number_of_folds", 2, 100,
                         addToLayout=False,
@@ -127,12 +127,12 @@ class OWDataSampler(OWWidget):
         self.selected_fold_spin = gui.spin(
             ibox, self, "selectedFold", 1, self.number_of_folds,
             addToLayout=False, callback=self.fold_changed)
-        form.addRow("Unused subset:" if not self.compatibility_mode
-                    else "Selected subset:", self.selected_fold_spin)
+        form.addRow(_("Unused subset:") if not self.compatibility_mode
+                    else _("Selected subset:"), self.selected_fold_spin)
 
-        gui.appendRadioButton(sampling, "Bootstrap")
+        gui.appendRadioButton(sampling, _("Bootstrap"))
 
-        self.sql_box = gui.vBox(self.controlArea, "Sampling Type")
+        self.sql_box = gui.vBox(self.controlArea, _("Sampling Type"))
         sampling = gui.radioButtons(self.sql_box, self, "sampling_type",
                                     callback=self.sampling_type_changed)
         gui.appendRadioButton(sampling, "Time:")
@@ -140,7 +140,7 @@ class OWDataSampler(OWWidget):
         spin = gui.spin(ibox, self, "sampleSizeSqlTime", minv=1, maxv=3600,
                         callback=set_sampling_type(self.SqlTime))
         spin.setSuffix(" sec")
-        gui.appendRadioButton(sampling, "Percentage")
+        gui.appendRadioButton(sampling, _("Percentage"))
         ibox = gui.indentedBox(sampling)
         spin = gui.spin(ibox, self, "sampleSizeSqlPercentage", spinType=float,
                         minv=0.0001, maxv=100, step=0.1, decimals=4,
@@ -148,20 +148,20 @@ class OWDataSampler(OWWidget):
         spin.setSuffix(" %")
         self.sql_box.setVisible(False)
 
-        self.options_box = gui.vBox(self.controlArea, "Options", addSpaceBefore=False)
+        self.options_box = gui.vBox(self.controlArea, _("Options"), addSpaceBefore=False)
         self.cb_seed = gui.checkBox(
             self.options_box, self, "use_seed",
-            "Replicable (deterministic) sampling",
+            _("Replicable (deterministic) sampling"),
             callback=self.settings_changed)
         self.cb_stratify = gui.checkBox(
             self.options_box, self, "stratify",
-            "Stratify sample (when possible)", callback=self.settings_changed)
+            _("Stratify sample (when possible)"), callback=self.settings_changed)
         self.cb_sql_dl = gui.checkBox(
-            self.options_box, self, "sql_dl", "Download data to local memory",
+            self.options_box, self, "sql_dl", _("Download data to local memory"),
             callback=self.settings_changed)
         self.cb_sql_dl.setVisible(False)
 
-        gui.button(self.buttonsArea, self, "Sample Data",
+        gui.button(self.buttonsArea, self, _("Sample Data"),
                    callback=self.commit)
 
     def sampling_type_changed(self):
@@ -310,13 +310,13 @@ class OWDataSampler(OWWidget):
 
     def send_report(self):
         if self.sampling_type == self.FixedProportion:
-            tpe = "Random sample with {} % of data".format(
+            tpe = _("Random sample with {} % of data").format(
                 self.sampleSizePercentage)
         elif self.sampling_type == self.FixedSize:
             if self.sampleSizeNumber == 1:
-                tpe = "Random data instance"
+                tpe = _("Random data instance")
             else:
-                tpe = "Random sample with {} data instances".format(
+                tpe = _("Random sample with {} data instances").format(
                     self.sampleSizeNumber)
                 if self.replacement:
                     tpe += ", with replacement"
@@ -324,13 +324,13 @@ class OWDataSampler(OWWidget):
             tpe = f"{self.number_of_folds}-fold cross-validation " \
                   f"without subset #{self.selectedFold}"
         elif self.sampling_type == self.Bootstrap:
-            tpe = "Bootstrap"
+            tpe = _("Bootstrap")
         else:  # pragma: no cover
-            tpe = "Undefined"  # should not come here at all
+            tpe = _("Undefined")  # should not come here at all
         if self.stratify:
-            tpe += ", stratified (if possible)"
+            tpe += _(", stratified (if possible)")
         if self.use_seed:
-            tpe += ", deterministic"
+            tpe += _(", deterministic")
         items = [("Sampling type", tpe)]
         if self.sampled_instances is not None:
             items += [

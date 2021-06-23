@@ -158,22 +158,22 @@ class OWDataSets(OWWidget):
     # self.create_model
     HEADER_SCHEMA = [
         ['islocal', {'label': ''}],
-        ['title', {'label': 'Title'}],
-        ['size', {'label': 'Size'}],
-        ['instances', {'label': 'Instances'}],
-        ['variables', {'label': 'Variables'}],
-        ['target', {'label': 'Target'}],
-        ['tags', {'label': 'Tags'}]
+        ['title', {'label': _('Title')}],
+        ['size', {'label': _('Size')}],
+        ['instances', {'label': _('Instances')}],
+        ['variables', {'label': _('Variables')}],
+        ['target', {'label': _('Target')}],
+        ['tags', {'label': _('Tags')}]
     ]  # type: List[str, dict]
 
     IndicatorBrushes = (QBrush(Qt.darkGray), QBrush(QColor(0, 192, 0)))
 
     class Error(OWWidget.Error):
-        no_remote_datasets = Msg("Could not fetch dataset list")
+        no_remote_datasets = Msg(_("Could not fetch dataset list"))
 
     class Warning(OWWidget.Warning):
-        only_local_datasets = Msg("Could not fetch datasets list, only local "
-                                  "cached datasets are shown")
+        only_local_datasets = Msg(_("Could not fetch datasets list, only local "
+                                  "cached datasets are shown"))
 
     class Outputs:
         data = Output("Data", Orange.data.Table)
@@ -205,7 +205,7 @@ class OWDataSets(OWWidget):
         self.__awaiting_state = None  # type: Optional[_FetchState]
 
         self.filterLineEdit = QLineEdit(
-            textChanged=self.filter, placeholderText="Search for data set ..."
+            textChanged=self.filter, placeholderText=_("Search for data set ...")
         )
         self.mainArea.layout().addWidget(self.filterLineEdit)
 
@@ -218,12 +218,12 @@ class OWDataSets(OWWidget):
             rootIsDecorated=False,
             editTriggers=QTreeView.NoEditTriggers,
             uniformRowHeights=True,
-            toolTip="Press Return or double-click to send"
+            toolTip=_("Press Return or double-click to send")
         )
         # the method doesn't exists yet, pylint: disable=unnecessary-lambda
         self.view.doubleClicked.connect(self.commit)
         self.view.returnPressed.connect(self.commit)
-        box = gui.widgetBox(self.splitter, "Description", addToLayout=False)
+        box = gui.widgetBox(self.splitter, _("Description"), addToLayout=False)
         self.descriptionlabel = QLabel(
             wordWrap=True,
             textFormat=Qt.RichText,
@@ -259,7 +259,7 @@ class OWDataSets(OWWidget):
         self.assign_delegates()
 
         self.setBlocking(True)
-        self.setStatusMessage("Initializing")
+        self.setStatusMessage(_("Initializing"))
 
         self._executor = ThreadPoolExecutor(max_workers=1)
         f = self._executor.submit(list_remote, self.INDEX_URL)
@@ -360,7 +360,7 @@ class OWDataSets(OWWidget):
         try:
             self.allinfo_remote = f.result()
         except Exception:  # anytying can happen, pylint: disable=broad-except
-            log.exception("Error while fetching updated index")
+            log.exception(_("Error while fetching updated index"))
             if not self.allinfo_local:
                 self.Error.no_remote_datasets()
             else:
