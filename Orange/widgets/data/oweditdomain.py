@@ -1794,8 +1794,8 @@ class ReinterpretVariableEditor(VariableEditor):
 
 
 class OWEditDomain(widget.OWWidget):
-    name = "Edit Domain"
-    description = "Rename variables, edit categories and variable annotations."
+    name = _("Edit Domain")
+    description = _("Rename variables, edit categories and variable annotations.")
     icon = "icons/EditDomain.svg"
     priority = 3125
     keywords = ["rename", "drop", "reorder", "order"]
@@ -1807,7 +1807,7 @@ class OWEditDomain(widget.OWWidget):
         data = Output("Data", Orange.data.Table)
 
     class Error(widget.OWWidget.Error):
-        duplicate_var_name = widget.Msg("A variable name is duplicated.")
+        duplicate_var_name = widget.Msg(_("A variable name is duplicated."))
 
     settingsHandler = settings.DomainContextHandler()
     settings_version = 2
@@ -1828,7 +1828,7 @@ class OWEditDomain(widget.OWWidget):
         self.typeindex = 0
 
         main = gui.hBox(self.controlArea, spacing=6)
-        box = gui.vBox(main, "Variables")
+        box = gui.vBox(main, _("Variables"))
 
         self.variables_model = VariableListModel(parent=self)
         self.variables_view = self.domain_view = QListView(
@@ -1842,21 +1842,21 @@ class OWEditDomain(widget.OWWidget):
         )
         box.layout().addWidget(self.variables_view)
 
-        box = gui.vBox(main, "Edit")
+        box = gui.vBox(main, _("Edit"))
         self._editor = ReinterpretVariableEditor()
         box.layout().addWidget(self._editor)
 
         self.le_output_name = gui.lineEdit(
-            self.buttonsArea, self, "output_table_name", "Output table name: ",
+            self.buttonsArea, self, "output_table_name", _("Output table name: "),
             orientation=Qt.Horizontal)
 
         gui.rubber(self.buttonsArea)
 
         bbox = gui.hBox(self.buttonsArea)
         breset_all = gui.button(
-            bbox, self, "Reset All",
+            bbox, self, _("Reset All"),
             objectName="button-reset-all",
-            toolTip="Reset all variables to their input state.",
+            toolTip=_("Reset all variables to their input state."),
             autoDefault=False,
             callback=self.reset_all
         )
