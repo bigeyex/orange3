@@ -32,7 +32,9 @@ from Orange.classification import SimpleTreeLearner
 
 DisplayMethodRole = Qt.UserRole
 StateRole = DisplayMethodRole + 0xf4
-
+import gettext
+translation = gettext.translation('messages', 'locale', languages=['zh_CN'])
+_ = translation.gettext
 
 class DisplayFormatDelegate(QStyledItemDelegate):
     def initStyleOption(self, option, index):
@@ -131,8 +133,8 @@ DBL_MAX = np.finfo(float).max
 
 
 class OWImpute(OWWidget):
-    name = "Impute"
-    description = "Impute missing values in the data table."
+    name = _("Impute")
+    description = _("Impute missing values in the data table.")
     icon = "icons/Impute.svg"
     priority = 2130
     keywords = ["substitute", "missing"]
@@ -145,12 +147,12 @@ class OWImpute(OWWidget):
         data = Output("Data", Orange.data.Table)
 
     class Error(OWWidget.Error):
-        imputation_failed = Msg("Imputation failed for '{}'")
+        imputation_failed = Msg(_("Imputation failed for '{}'"))
         model_based_imputer_sparse = \
-            Msg("Model based imputer does not work for sparse data")
+            Msg(_("Model based imputer does not work for sparse data"))
 
     class Warning(OWWidget.Warning):
-        cant_handle_var = Msg("Default method can not handle '{}'")
+        cant_handle_var = Msg(_("Default method can not handle '{}'"))
 
     settingsHandler = settings.DomainContextHandler()
 
@@ -176,7 +178,9 @@ class OWImpute(OWWidget):
 
         main_layout = self.controlArea.layout()
 
-        box = gui.vBox(self.controlArea, "Default Method")
+        _ = translation.gettext
+
+        box = gui.vBox(self.controlArea, _("Default Method"))
 
         box_layout = QGridLayout()
         box_layout.setSpacing(8)
@@ -201,7 +205,9 @@ class OWImpute(OWWidget):
 
         hlayout = QHBoxLayout()
         box.layout().addLayout(hlayout)
-        button = QRadioButton("Fixed values; numeric variables:")
+
+        _ = translation.gettext
+        button = QRadioButton(_("Fixed values; numeric variables:"))
         button_group.addButton(button, Method.Default)
         button.setChecked(Method.Default == self.default_method_index)
         hlayout.addWidget(button)
@@ -288,7 +294,7 @@ class OWImpute(OWWidget):
         )
 
         self.reset_button = QPushButton(
-            "Restore All to Default", enabled=False, default=False,
+            _("Restore All to Default"), enabled=False, default=False,
             autoDefault=False, clicked=self.reset_variable_state,
         )
 
@@ -496,7 +502,7 @@ class OWImpute(OWWidget):
             except Exception:  # pylint: disable=broad-except
                 log = logging.getLogger(__name__)
                 log.info("Error", exc_info=True)
-                self.Error.imputation_failed("Unknown")
+                self.Error.imputation_failed(_("Unknown"))
                 return None
 
         self.__task = None

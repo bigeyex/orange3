@@ -118,14 +118,14 @@ class FeatureStatisticsTableModel(AbstractSortTableModel):
         @property
         def name(self):
             return {self.ICON: '',
-                    self.NAME: 'Name',
-                    self.DISTRIBUTION: 'Distribution',
-                    self.CENTER: 'Mean',
-                    self.MEDIAN: 'Median',
-                    self.DISPERSION: 'Dispersion',
-                    self.MIN: 'Min.',
-                    self.MAX: 'Max.',
-                    self.MISSING: 'Missing',
+                    self.NAME: _('Name'),
+                    self.DISTRIBUTION: _('Distribution'),
+                    self.CENTER: _('Mean'),
+                    self.MEDIAN: _('Median'),
+                    self.DISPERSION: _('Dispersion'),
+                    self.MIN: _('Min.'),
+                    self.MAX: _('Max.'),
+                    self.MISSING: _('Missing'),
                     }[self.value]
 
         @property
@@ -733,8 +733,8 @@ class DistributionDelegate(QStyledItemDelegate):
 
 
 class OWFeatureStatistics(widget.OWWidget):
-    name = 'Feature Statistics'
-    description = 'Show basic statistics for data features.'
+    name = _('Feature Statistics')
+    description = _('Show basic statistics for data features.')
     icon = 'icons/FeatureStatistics.svg'
 
     class Inputs:
@@ -771,11 +771,11 @@ class OWFeatureStatistics(widget.OWWidget):
 
         self.color_var_model = DomainModel(
             valid_types=(ContinuousVariable, DiscreteVariable),
-            placeholder='None',
+            placeholder=_('None'),
         )
         self.cb_color_var = gui.comboBox(
             self.buttonsArea, master=self, value='color_var', model=self.color_var_model,
-            label='Color:', orientation=Qt.Horizontal, contentsLength=13,
+            label=_('Color:'), orientation=Qt.Horizontal, contentsLength=13,
             searchable=True
         )
         self.cb_color_var.activated.connect(self.__color_var_changed)

@@ -74,7 +74,7 @@ class BaseImputeMethod(Reprable):
 
 
 class DoNotImpute(BaseImputeMethod):
-    name = "Don't impute"
+    name = _("Don't impute")
     short_name = "leave"
     description = ""
 
@@ -83,7 +83,7 @@ class DoNotImpute(BaseImputeMethod):
 
 
 class DropInstances(BaseImputeMethod):
-    name = "Remove instances with unknown values"
+    name = _("Remove instances with unknown values")
     short_name = "drop"
     description = ""
 
@@ -93,7 +93,7 @@ class DropInstances(BaseImputeMethod):
 
 
 class Average(BaseImputeMethod):
-    name = "Average/Most frequent"
+    name = _("Average/Most frequent")
     short_name = "average"
     description = "Replace with average/mode of the column"
 
@@ -107,7 +107,7 @@ class Average(BaseImputeMethod):
                 dist = distribution.get_distribution(data, variable)
                 value = dist.modus()
             else:
-                raise TypeError("Variable must be numeric or categorical.")
+                raise TypeError(_("Variable must be numeric or categorical."))
 
         a = variable.copy(compute_value=ReplaceUnknowns(variable, value))
         a.to_sql = ImputeSql(variable, value)
@@ -128,7 +128,7 @@ class ImputeSql(Reprable):
 
 
 class Default(BaseImputeMethod):
-    name = "Fixed value"
+    name = _("Fixed value")
     short_name = "value"
     description = ""
     columns_only = True
@@ -147,7 +147,7 @@ class Default(BaseImputeMethod):
 
 
 class FixedValueByType(BaseImputeMethod):
-    name = "Fixed value"
+    name = _("Fixed value")
     short_name = "Fixed Value"
     format = "{var.name}"
 
@@ -209,7 +209,7 @@ class ReplaceUnknownsModel(Reprable):
 
 
 class Model(BaseImputeMethod):
-    _name = "Model-based imputer"
+    _name = _("Model-based imputer")
     short_name = "model"
     description = ""
     format = BaseImputeMethod.format + " ({self.learner.name})"
@@ -267,7 +267,7 @@ class IsDefined(Transformation):
 
 
 class AsValue(BaseImputeMethod):
-    name = "As a distinct value"
+    name = _("As a distinct value")
     short_name = "new value"
     description = ""
 
@@ -329,8 +329,8 @@ class ReplaceUnknownsRandom(Transformation):
         elif variable.is_continuous:
             counts = np.array(distribution)[1, :]
         else:
-            raise TypeError("Only categorical and numeric "
-                            "variables are supported.")
+            raise TypeError(_("Only categorical and numeric "
+                            "variables are supported."))
         csum = np.sum(counts)
         if csum > 0:
             self.sample_prob = counts / csum
@@ -364,9 +364,9 @@ class ReplaceUnknownsRandom(Transformation):
 
 
 class Random(BaseImputeMethod):
-    name = "Random values"
+    name = _("Random values")
     short_name = "random"
-    description = "Replace with a random value"
+    description = _("Replace with a random value")
 
     def __call__(self, data, variable):
         variable = data.domain[variable]

@@ -13,21 +13,21 @@ from Orange.widgets.widget import OWWidget, Msg
 from Orange.widgets.utils.widgetpreview import WidgetPreview
 
 METRICS = [
-    ("Euclidean", distance.Euclidean),
-    ("Manhattan", distance.Manhattan),
-    ("Mahalanobis", distance.Mahalanobis),
-    ("Cosine", distance.Cosine),
-    ("Jaccard", distance.Jaccard),
-    ("Spearman", distance.SpearmanR),
-    ("Absolute Spearman", distance.SpearmanRAbsolute),
-    ("Pearson", distance.PearsonR),
-    ("Absolute Pearson", distance.PearsonRAbsolute),
+    (_("Euclidean"), distance.Euclidean),
+    (_("Manhattan"), distance.Manhattan),
+    (_("Mahalanobis"), distance.Mahalanobis),
+    (_("Cosine"), distance.Cosine),
+    (_("Jaccard"), distance.Jaccard),
+    (_("Spearman"), distance.SpearmanR),
+    (_("Absolute Spearman"), distance.SpearmanRAbsolute),
+    (_("Pearson"), distance.PearsonR),
+    (_("Absolute Pearson"), distance.PearsonRAbsolute),
 ]
 
 
 class OWNeighbors(OWWidget):
-    name = "Neighbors"
-    description = "Compute nearest neighbors in data according to reference."
+    name = _("Neighbors")
+    description = _("Compute nearest neighbors in data according to reference.")
     icon = "icons/Neighbors.svg"
 
     replaces = ["orangecontrib.prototypes.widgets.owneighbours.OWNeighbours"]
@@ -41,15 +41,15 @@ class OWNeighbors(OWWidget):
 
     class Info(OWWidget.Warning):
         removed_references = \
-            Msg("Input data includes reference instance(s).\n"
-                "Reference instances are excluded from the output.")
+            Msg(_("Input data includes reference instance(s).\n"
+                "Reference instances are excluded from the output."))
 
     class Warning(OWWidget.Warning):
         all_data_as_reference = \
-            Msg("Every data instance is same as some reference")
+            Msg(_("Every data instance is same as some reference"))
 
     class Error(OWWidget.Error):
-        diff_domains = Msg("Data and reference have different features")
+        diff_domains = Msg(_("Data and reference have different features"))
 
     n_neighbors: int
     distance_index: int
@@ -72,10 +72,10 @@ class OWNeighbors(OWWidget):
         box = gui.vBox(self.controlArea, box=True)
         gui.comboBox(
             box, self, "distance_index", orientation=Qt.Horizontal,
-            label="Distance metric: ", items=[d[0] for d in METRICS],
+            label=_("Distance metric: "), items=[d[0] for d in METRICS],
             callback=self.recompute)
         gui.spin(
-            box, self, "n_neighbors", label="Limit number of neighbors to:",
+            box, self, "n_neighbors", label=_("Limit number of neighbors to:"),
             step=1, spinType=int, minv=0, maxv=100, checked='limit_neighbors',
             # call apply by gui.auto_commit, pylint: disable=unnecessary-lambda
             checkCallback=lambda: self.apply(),

@@ -124,11 +124,11 @@ class FeatureEditor(QFrame):
                                    QSizePolicy.Fixed)
         )
         self.expressionedit = QLineEdit(
-            placeholderText="Expression...",
+            placeholderText=_("Expression..."),
             toolTip=self.ExpressionTooltip)
 
         self.attrs_model = itemmodels.VariableListModel(
-            ["Select Feature"], parent=self)
+            [_("Select Feature")], parent=self)
         self.attributescb = ComboBoxSearch(
             minimumContentsLength=16,
             sizeAdjustPolicy=QComboBox.AdjustToMinimumContentsLengthWithIcon,
@@ -140,7 +140,7 @@ class FeatureEditor(QFrame):
         self.funcs_model = itemmodels.PyListModelTooltip()
         self.funcs_model.setParent(self)
 
-        self.funcs_model[:] = chain(["Select Function"], sorted_funcs)
+        self.funcs_model[:] = chain([_("Select Function")], sorted_funcs)
         self.funcs_model.tooltips[:] = chain(
             [''],
             [self.FUNCTIONS[func].__doc__ for func in sorted_funcs])
@@ -185,7 +185,7 @@ class FeatureEditor(QFrame):
         self.expressionedit.setText(data.expression)
         self.setModified(False)
         self.featureChanged.emit()
-        self.attrs_model[:] = ["Select Feature"]
+        self.attrs_model[:] = [_("Select Feature")]
         if domain is not None and not domain.empty():
             self.attrs_model[:] += chain(domain.attributes,
                                          domain.class_vars,
@@ -362,9 +362,9 @@ class FeatureConstructorHandler(DomainContextHandler):
 
 
 class OWFeatureConstructor(OWWidget):
-    name = "Feature Constructor"
-    description = "Construct new features (data columns) from a set of " \
-                  "existing features in the input dataset."
+    name = _("Feature Constructor")
+    description = _("Construct new features (data columns) from a set of " \
+                  "existing features in the input dataset.")
     icon = "icons/FeatureConstructor.svg"
     keywords = ['function', 'lambda']
 
@@ -388,19 +388,19 @@ class OWFeatureConstructor(OWWidget):
     ]
 
     class Error(OWWidget.Error):
-        more_values_needed = Msg("Categorical feature {} needs more values.")
-        invalid_expressions = Msg("Invalid expressions: {}.")
+        more_values_needed = Msg(_("Categorical feature {} needs more values."))
+        invalid_expressions = Msg(_("Invalid expressions: {}."))
 
     class Warning(OWWidget.Warning):
-        renamed_var = Msg("Recently added variable has been renamed, "
-                           "to avoid duplicates.\n")
+        renamed_var = Msg(_("Recently added variable has been renamed, "
+                           "to avoid duplicates.\n"))
 
     def __init__(self):
         super().__init__()
         self.data = None
         self.editors = {}
 
-        box = gui.vBox(self.controlArea, "Variable Definitions")
+        box = gui.vBox(self.controlArea, _("Variable Definitions"))
 
         toplayout = QHBoxLayout()
         toplayout.setContentsMargins(0, 0, 0, 0)
@@ -423,7 +423,7 @@ class OWFeatureConstructor(OWWidget):
         buttonlayout.setContentsMargins(0, 0, 0, 0)
 
         self.addbutton = QPushButton(
-            "New", toolTip="Create a new variable",
+            _("New"), toolTip="Create a new variable",
             minimumWidth=120,
             shortcut=QKeySequence.New
         )
@@ -436,35 +436,35 @@ class OWFeatureConstructor(OWWidget):
             return unique_name(fmt, self.reserved_names())
 
         menu = QMenu(self.addbutton)
-        cont = menu.addAction("Numeric")
+        cont = menu.addAction(_("Numeric"))
         cont.triggered.connect(
             lambda: self.addFeature(
                 ContinuousDescriptor(generate_newname("X{}"), "", 3))
         )
-        disc = menu.addAction("Categorical")
+        disc = menu.addAction(_("Categorical"))
         disc.triggered.connect(
             lambda: self.addFeature(
                 DiscreteDescriptor(generate_newname("D{}"), "", (), False))
         )
-        string = menu.addAction("Text")
+        string = menu.addAction(_("Text"))
         string.triggered.connect(
             lambda: self.addFeature(
                 StringDescriptor(generate_newname("S{}"), ""))
         )
-        datetime = menu.addAction("Date/Time")
+        datetime = menu.addAction(_("Date/Time"))
         datetime.triggered.connect(
             lambda: self.addFeature(
                 DateTimeDescriptor(generate_newname("T{}"), ""))
         )
 
         menu.addSeparator()
-        self.duplicateaction = menu.addAction("Duplicate Selected Variable")
+        self.duplicateaction = menu.addAction(_("Duplicate Selected Variable"))
         self.duplicateaction.triggered.connect(self.duplicateFeature)
         self.duplicateaction.setEnabled(False)
         self.addbutton.setMenu(menu)
 
         self.removebutton = QPushButton(
-            "Remove", toolTip="Remove selected variable",
+            _("Remove"), toolTip="Remove selected variable",
             minimumWidth=120,
             shortcut=QKeySequence.Delete
         )
@@ -497,7 +497,7 @@ class OWFeatureConstructor(OWWidget):
 
         box.layout().addLayout(layout, 1)
 
-        gui.button(self.buttonsArea, self, "Send", callback=self.apply, default=True)
+        gui.button(self.buttonsArea, self, _("Send"), callback=self.apply, default=True)
 
     def setCurrentIndex(self, index):
         index = min(index, len(self.featuremodel) - 1)

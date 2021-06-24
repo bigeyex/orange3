@@ -39,7 +39,7 @@ def run(data: Table, learner: Learner, state: TaskState) -> Results:
         if state.is_interruption_requested():
             raise Exception
 
-    callback(0, "Initializing...")
+    callback(0, _("Initializing..."))
     model = learner(data, wrap_callback(callback, end=0.6))
     pred = model(data, wrap_callback(callback, start=0.6, end=0.99))
 
@@ -81,14 +81,14 @@ class SVMEditor(ParametersEditor):
     def __init__(self, parent):
         super().__init__(parent)
 
-        tooltip = "An upper bound on the fraction of training errors and a " \
-                  "lower bound of the fraction of support vectors"
-        gui.widgetLabel(self.param_box, "Nu:", tooltip=tooltip)
+        tooltip = _("An upper bound on the fraction of training errors and a " \
+                  "lower bound of the fraction of support vectors")
+        gui.widgetLabel(self.param_box, _("Nu:"), tooltip=tooltip)
         gui.hSlider(self.param_box, self, "nu", minValue=1, maxValue=100,
                     ticks=10, labelFormat="%d %%", tooltip=tooltip,
                     callback=self.parameter_changed)
         gui.doubleSpin(self.param_box, self, "gamma",
-                       label="Kernel coefficient:", step=1e-2, minv=0.01,
+                       label=_("Kernel coefficient:"), step=1e-2, minv=0.01,
                        maxv=10, callback=self.parameter_changed)
 
     def get_parameters(self):
@@ -104,14 +104,14 @@ class CovarianceEditor(ParametersEditor):
     def __init__(self, parent):
         super().__init__(parent)
 
-        gui.widgetLabel(self.param_box, "Contamination:")
+        gui.widgetLabel(self.param_box, _("Contamination:"))
         gui.hSlider(self.param_box, self, "cont", minValue=0,
                     maxValue=100, ticks=10, labelFormat="%d %%",
                     callback=self.parameter_changed)
 
         ebox = gui.hBox(self.param_box)
         gui.checkBox(ebox, self, "empirical_covariance",
-                     "Support fraction:", callback=self.parameter_changed)
+                     _("Support fraction:"), callback=self.parameter_changed)
         gui.doubleSpin(ebox, self, "support_fraction", step=1e-1,
                        minv=0.1, maxv=10, callback=self.parameter_changed)
 
@@ -132,13 +132,13 @@ class LocalOutlierFactorEditor(ParametersEditor):
     def __init__(self, parent):
         super().__init__(parent)
 
-        gui.widgetLabel(self.param_box, "Contamination:")
+        gui.widgetLabel(self.param_box, _("Contamination:"))
         gui.hSlider(self.param_box, self, "cont", minValue=1,
                     maxValue=50, ticks=5, labelFormat="%d %%",
                     callback=self.parameter_changed)
-        gui.spin(self.param_box, self, "n_neighbors", label="Neighbors:",
+        gui.spin(self.param_box, self, "n_neighbors", label=_("Neighbors:"),
                  minv=1, maxv=100000, callback=self.parameter_changed)
-        gui.comboBox(self.param_box, self, "metric_index", label="Metric:",
+        gui.comboBox(self.param_box, self, "metric_index", label=_("Metric:"),
                      orientation=Qt.Horizontal,
                      items=[m.capitalize() for m in self.METRICS],
                      callback=self.parameter_changed)
@@ -157,12 +157,12 @@ class IsolationForestEditor(ParametersEditor):
     def __init__(self, parent):
         super().__init__(parent)
 
-        gui.widgetLabel(self.param_box, "Contamination:")
+        gui.widgetLabel(self.param_box, _("Contamination:"))
         gui.hSlider(self.param_box, self, "cont", minValue=0,
                     maxValue=100, ticks=10, labelFormat="%d %%",
                     callback=self.parameter_changed)
         gui.checkBox(self.param_box, self, "replicable",
-                     "Replicable training", callback=self.parameter_changed)
+                     _("Replicable training"), callback=self.parameter_changed)
 
     def get_parameters(self):
         return {"contamination": self.cont / 100,
@@ -170,8 +170,8 @@ class IsolationForestEditor(ParametersEditor):
 
 
 class OWOutliers(OWWidget, ConcurrentWidgetMixin):
-    name = "Outliers"
-    description = "Detect outliers."
+    name = _("Outliers")
+    description = _("Detect outliers.")
     icon = "icons/Outliers.svg"
     priority = 3000
     category = "Data"
@@ -203,11 +203,11 @@ class OWOutliers(OWWidget, ConcurrentWidgetMixin):
     MAX_FEATURES = 1500
 
     class Warning(OWWidget.Warning):
-        disabled_cov = Msg("Too many features for covariance estimation.")
+        disabled_cov = Msg(_("Too many features for covariance estimation."))
 
     class Error(OWWidget.Error):
-        singular_cov = Msg("Singular covariance matrix.")
-        memory_error = Msg("Not enough memory")
+        singular_cov = Msg(_("Singular covariance matrix."))
+        memory_error = Msg(_("Not enough memory"))
 
     def __init__(self):
         OWWidget.__init__(self)
@@ -221,7 +221,7 @@ class OWOutliers(OWWidget, ConcurrentWidgetMixin):
         self.init_gui()
 
     def init_gui(self):
-        box = gui.vBox(self.controlArea, "Method")
+        box = gui.vBox(self.controlArea, _("Method"))
         self.method_combo = gui.comboBox(box, self, "outlier_method",
                                          items=[m.name for m in self.METHODS],
                                          callback=self.__method_changed)
@@ -236,7 +236,7 @@ class OWOutliers(OWWidget, ConcurrentWidgetMixin):
         self.lof_editor = LocalOutlierFactorEditor(self)
         self.isf_editor = IsolationForestEditor(self)
 
-        box = gui.vBox(self.controlArea, "Parameters")
+        box = gui.vBox(self.controlArea, _("Parameters"))
         self.editors = (self.svm_editor, self.cov_editor,
                         self.lof_editor, self.isf_editor)
         for editor in self.editors:

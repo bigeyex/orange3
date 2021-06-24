@@ -310,7 +310,7 @@ class OWDataSampler(OWWidget):
 
     def send_report(self):
         if self.sampling_type == self.FixedProportion:
-            tpe = _("Random sample with {} % of data").format(
+            tpe = "Random sample with {} % of data".format(
                 self.sampleSizePercentage)
         elif self.sampling_type == self.FixedSize:
             if self.sampleSizeNumber == 1:

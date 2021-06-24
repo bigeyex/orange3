@@ -438,7 +438,7 @@ class OWFile(widget.OWWidget, RecentPathsWComboMixin):
         if descs:
             text += f"<p>{'<br/>'.join(descs)}</p>"
 
-        text += f"<p>{len(table)} instance(s)"
+        text += _(f"<p>{len(table)} instance(s)")
 
         missing_in_attr = missing_prop(table.has_missing_attribute()
                                        and table.get_nan_frequency_attribute())

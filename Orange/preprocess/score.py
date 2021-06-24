@@ -1,3 +1,5 @@
+# This Python file uses the following encoding: utf-8
+
 import re
 from collections import defaultdict
 from itertools import chain

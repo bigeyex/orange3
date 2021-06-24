@@ -22,8 +22,8 @@ from Orange.widgets.utils.sql import check_sql_input
 from Orange.widgets.utils.widgetpreview import WidgetPreview
 from Orange.widgets.widget import Input, Output, Msg
 
-INSTANCEID = "Instance id"
-INDEX = "Row index"
+INSTANCEID = _("Instance id")
+INDEX = _("Row index")
 
 
 class ConditionBox(QWidget):
@@ -248,8 +248,8 @@ class MergeDataContextHandler(ContextHandler):
 
 
 class OWMergeData(widget.OWWidget):
-    name = "Merge Data"
-    description = "Merge datasets based on the values of selected features."
+    name = _("Merge Data")
+    description = _("Merge datasets based on the values of selected features.")
     icon = "icons/MergeData.svg"
     priority = 1110
     keywords = ["join"]
@@ -264,22 +264,22 @@ class OWMergeData(widget.OWWidget):
                       replaces=["Merged Data A+B", "Merged Data B+A", "Merged Data"])
 
     LeftJoin, InnerJoin, OuterJoin = range(3)
-    OptionNames = ("Append columns from Extra data",
-                   "Find matching pairs of rows",
-                   "Concatenate tables")
+    OptionNames = (_("Append columns from Extra data"),
+                   _("Find matching pairs of rows"),
+                   _("Concatenate tables"))
     OptionDescriptions = (
-        "The first table may contain, for instance, city names,\n"
+        _("The first table may contain, for instance, city names,\n"
         "and the second would be a list of cities and their coordinates.\n"
-        "Columns with coordinates would then be appended to the output.",
+        "Columns with coordinates would then be appended to the output."),
 
-        "Input tables contain different features describing the same data "
+        _("Input tables contain different features describing the same data "
         "instances.\n"
-        "Output contains matched instances. Rows without matches are removed.",
+        "Output contains matched instances. Rows without matches are removed."),
 
-        "Input tables contain different features describing the same data "
+        _("Input tables contain different features describing the same data "
         "instances.\n"
         "Output contains all instances. Data from merged instances is "
-        "merged into single rows."
+        "merged into single rows.")
     )
 
     UserAdviceMessages = [
@@ -297,23 +297,23 @@ class OWMergeData(widget.OWWidget):
     resizing_enabled = False
 
     class Warning(widget.OWWidget.Warning):
-        renamed_vars = Msg("Some variables have been renamed "
-                           "to avoid duplicates.\n{}")
+        renamed_vars = Msg(_("Some variables have been renamed "
+                           "to avoid duplicates.\n{}"))
 
     class Error(widget.OWWidget.Error):
         matching_numeric_with_nonnum = Msg(
-            "Numeric and non-numeric columns ({} and {}) cannot be matched.")
-        matching_index_with_sth = Msg("Row index cannot be matched with {}.")
-        matching_id_with_sth = Msg("Instance cannot be matched with {}.")
+            _("Numeric and non-numeric columns ({} and {}) cannot be matched."))
+        matching_index_with_sth = Msg(_("Row index cannot be matched with {}."))
+        matching_id_with_sth = Msg(_("Instance cannot be matched with {}."))
         nonunique_left = Msg(
-            "Some combinations of values on the left appear in multiple rows.\n"
+            _("Some combinations of values on the left appear in multiple rows.\n"
             "For this type of merging, every possible combination of values "
-            "on the left should appear at most once.")
+            "on the left should appear at most once."))
         nonunique_right = Msg(
-            "Some combinations of values on the right appear in multiple rows."
+            _("Some combinations of values on the right appear in multiple rows."
             "\n"
             "Every possible combination of values on the right should appear "
-            "at most once.")
+            "at most once."))
 
     def __init__(self):
         super().__init__()
@@ -328,14 +328,14 @@ class OWMergeData(widget.OWWidget):
         self.extra_model = DomainModelWithTooltips(content)
 
         grp = gui.radioButtons(
-            self.controlArea, self, "merging", box="Merging",
+            self.controlArea, self, "merging", box=_("Merging"),
             btnLabels=self.OptionNames, tooltips=self.OptionDescriptions,
             callback=self.change_merging)
 
         self.attr_boxes = ConditionBox(
-            self, self.model, self.extra_model, "", "matches")
+            self, self.model, self.extra_model, "", _("matches"))
         self.attr_boxes.add_row()
-        box = gui.vBox(self.controlArea, box="Row matching")
+        box = gui.vBox(self.controlArea, box=_("Row matching"))
         box.layout().addWidget(self.attr_boxes)
 
         gui.auto_apply(self.buttonsArea, self)

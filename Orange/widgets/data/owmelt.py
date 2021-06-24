@@ -58,8 +58,8 @@ class MeltContextHandler(ContextHandler):
 
 
 class OWMelt(widget.OWWidget):
-    name = "Melt"
-    description = "Convert wide data to narrow data, a list of item-value pairs"
+    name = _("Melt")
+    description = _("Convert wide data to narrow data, a list of item-value pairs")
     icon = "icons/Melt.svg"
     keywords = ["shopping list", "wide", "narrow"]
 
@@ -91,33 +91,33 @@ class OWMelt(widget.OWWidget):
         self.data: Optional[Table] = None
         self._output_desc: Optional[Dict[str, str]] = None
 
-        box = gui.widgetBox(self.controlArea, "Unique Row Identifier")
+        box = gui.widgetBox(self.controlArea, _("Unique Row Identifier"))
         self.idvar_model = itemmodels.VariableListModel(
-            [None], placeholder="Row number")
+            [None], placeholder=_("Row number"))
         self.var_cb = gui.comboBox(
             box, self, "idvar", model=self.idvar_model,
             callback=self._invalidate, minimumContentsLength=16,
-            tooltip="A column with identifier, like customer's id")
+            tooltip=_("A column with identifier, like customer's id"))
 
-        box = gui.widgetBox(self.controlArea, "Filter")
+        box = gui.widgetBox(self.controlArea, _("Filter"))
         gui.checkBox(
-            box, self, "only_numeric", "Ignore non-numeric features",
+            box, self, "only_numeric", _("Ignore non-numeric features"),
             callback=self._invalidate)
         gui.checkBox(
-            box, self, "exclude_zeros", "Exclude zero values",
+            box, self, "exclude_zeros", _("Exclude zero values"),
             callback=self._invalidate,
-            tooltip="Besides missing values, also omit items with zero values")
+            tooltip=_("Besides missing values, also omit items with zero values"))
 
         form = QFormLayout()
         gui.widgetBox(
-            self.controlArea, "Names for generated features", orientation=form)
-        form.addRow("Item:",
+            self.controlArea, _("Names for generated features"), orientation=form)
+        form.addRow(_("Item:"),
                     gui.lineEdit(
                         None, self, "item_var_name",
                         callback=self._invalidate,
                         placeholderText=DEFAULT_ITEM_NAME,
                         styleSheet="padding-left: 3px"))
-        form.addRow("Value:",
+        form.addRow(_("Value:"),
                     gui.lineEdit(
                         None, self, "value_var_name",
                         callback=self._invalidate,

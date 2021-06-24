@@ -446,7 +446,7 @@ class DictItemsModel(QStandardItemModel):
     def __init__(self, parent=None, a_dict=None):
         super().__init__(parent)
         self._dict = {}
-        self.setHorizontalHeaderLabels(["Key", "Value"])
+        self.setHorizontalHeaderLabels([_("Key"), _("Value")])
         if a_dict is not None:
             self.set_dict(a_dict)
 
@@ -496,15 +496,15 @@ class VariableEditor(QWidget):
         self.name_edit.editingFinished.connect(
             lambda: self.name_edit.isModified() and self.on_name_changed()
         )
-        form.addRow("Name:", self.name_edit)
+        form.addRow(_("Name:"), self.name_edit)
 
         self.unlink_var_cb = QCheckBox(
-            "Unlink variable from its source variable", self,
-            toolTip="Make Orange forget that the variable is derived from "
+            _("Unlink variable from its source variable"), self,
+            toolTip=_("Make Orange forget that the variable is derived from "
                     "another.\n"
                     "Use this for instance when you want to consider variables "
                     "with the same name but from different sources as the same "
-                    "variable."
+                    "variable.")
         )
         self.unlink_var_cb.toggled.connect(self._set_unlink)
         form.addRow("", self.unlink_var_cb)
@@ -581,7 +581,7 @@ class VariableEditor(QWidget):
         hlayout.addWidget(button)
         hlayout.addStretch(10)
         vlayout.addLayout(hlayout)
-        form.addRow("Labels:", vlayout)
+        form.addRow(_("Labels:"), vlayout)
 
     def set_data(self, var, transform=()):
         # type: (Optional[Variable], Sequence[Transform]) -> None
@@ -670,15 +670,15 @@ class GroupItemsDialog(QDialog):
         self.selected_attributes = selected_attributes
 
         # grouping strategy
-        self.selected_radio = radio1 = QRadioButton("Group selected values")
+        self.selected_radio = radio1 = QRadioButton(_("Group selected values"))
         self.frequent_abs_radio = radio2 = QRadioButton(
-            "Group values with less than"
+            _("Group values with less than")
         )
         self.frequent_rel_radio = radio3 = QRadioButton(
-            "Group values with less than"
+            _("Group values with less than")
         )
         self.n_values_radio = radio4 = QRadioButton(
-            "Group all except"
+            _("Group all except")
         )
 
         # if selected attributes available check the first radio button,
@@ -1246,7 +1246,7 @@ class DiscreteVariableEditor(VariableEditor):
         hlayout.addStretch(10)
         vlayout.addLayout(hlayout)
 
-        form.insertRow(2, "Values:", vlayout)
+        form.insertRow(2, _("Values:"), vlayout)
 
         QWidget.setTabOrder(self.name_edit, self.values_edit)
         QWidget.setTabOrder(self.values_edit, button1)
@@ -1640,12 +1640,12 @@ class ReinterpretVariableEditor(VariableEditor):
             form = editor.layout().itemAt(0)
             assert isinstance(form, QFormLayout)
             typecb = QComboBox(objectName="type-combo")
-            typecb.addItem(variable_icon(Categorical), "Categorical", Categorical)
-            typecb.addItem(variable_icon(Real), "Numeric", Real)
-            typecb.addItem(variable_icon(String), "Text", String)
-            typecb.addItem(variable_icon(Time), "Time", Time)
+            typecb.addItem(variable_icon(Categorical), _("Categorical"), Categorical)
+            typecb.addItem(variable_icon(Real), _("Numeric"), Real)
+            typecb.addItem(variable_icon(String), _("Text"), String)
+            typecb.addItem(variable_icon(Time), _("Time"), Time)
             typecb.activated[int].connect(self.__reinterpret_activated)
-            form.insertRow(1, "Type:", typecb)
+            form.insertRow(1, _("Type:"), typecb)
             # Insert the typecb after name edit in the focus chain
             name_edit = editor.findChild(QLineEdit, )
             if name_edit is not None:
@@ -1861,16 +1861,16 @@ class OWEditDomain(widget.OWWidget):
             callback=self.reset_all
         )
         breset = gui.button(
-            bbox, self, "Reset Selected",
+            bbox, self, _("Reset Selected"),
             objectName="button-reset",
-            toolTip="Rest selected variable to its input state.",
+            toolTip=_("Rest selected variable to its input state."),
             autoDefault=False,
             callback=self.reset_selected
         )
         bapply = gui.button(
-            bbox, self, "Apply",
+            bbox, self, _("Apply"),
             objectName="button-apply",
-            toolTip="Apply changes and commit data on output.",
+            toolTip=_("Apply changes and commit data on output."),
             default=True,
             autoDefault=False,
             callback=self.commit
@@ -2345,7 +2345,7 @@ def report_transform(var, trs):
 
     annotate_section = None
     if annotate is not None:
-        annotate_section = ("Labels", [])
+        annotate_section = (_("Labels"), [])
         lines = annotate_section[1]
         old = dict(var.annotations)
         new = dict(annotate.annotations)
