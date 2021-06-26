@@ -154,9 +154,9 @@ def _plural(s):
 
 
 class OWSelectRows(widget.OWWidget):
-    name = "Select Rows"
+    name = _("Select Rows")
     id = "Orange.widgets.data.file"
-    description = "Select rows from the data based on values of variables."
+    description = _("Select rows from the data based on values of variables.")
     icon = "icons/SelectRows.svg"
     priority = 100
     category = "Data"
@@ -183,35 +183,35 @@ class OWSelectRows(widget.OWWidget):
 
     Operators = {
         ContinuousVariable: [
-            (FilterContinuous.Equal, "equals"),
-            (FilterContinuous.NotEqual, "is not"),
-            (FilterContinuous.Less, "is below"),
-            (FilterContinuous.LessEqual, "is at most"),
-            (FilterContinuous.Greater, "is greater than"),
-            (FilterContinuous.GreaterEqual, "is at least"),
-            (FilterContinuous.Between, "is between"),
-            (FilterContinuous.Outside, "is outside"),
-            (FilterContinuous.IsDefined, "is defined"),
+            (FilterContinuous.Equal, _("equals")),
+            (FilterContinuous.NotEqual, _("is not")),
+            (FilterContinuous.Less, _("is below")),
+            (FilterContinuous.LessEqual, _("is at most")),
+            (FilterContinuous.Greater, _("is greater than")),
+            (FilterContinuous.GreaterEqual, _("is at least")),
+            (FilterContinuous.Between, _("is between")),
+            (FilterContinuous.Outside, _("is outside")),
+            (FilterContinuous.IsDefined, _("is defined")),
         ],
         DiscreteVariable: [
-            (FilterDiscreteType.Equal, "is"),
-            (FilterDiscreteType.NotEqual, "is not"),
-            (FilterDiscreteType.In, "is one of"),
-            (FilterDiscreteType.IsDefined, "is defined")
+            (FilterDiscreteType.Equal, _("is")),
+            (FilterDiscreteType.NotEqual, _("is not")),
+            (FilterDiscreteType.In, _("is one of")),
+            (FilterDiscreteType.IsDefined, _("is defined"))
         ],
         StringVariable: [
-            (FilterString.Equal, "equals"),
-            (FilterString.NotEqual, "is not"),
-            (FilterString.Less, "is before"),
-            (FilterString.LessEqual, "is equal or before"),
-            (FilterString.Greater, "is after"),
-            (FilterString.GreaterEqual, "is equal or after"),
-            (FilterString.Between, "is between"),
-            (FilterString.Outside, "is outside"),
-            (FilterString.Contains, "contains"),
-            (FilterString.StartsWith, "begins with"),
-            (FilterString.EndsWith, "ends with"),
-            (FilterString.IsDefined, "is defined"),
+            (FilterString.Equal, _("equals")),
+            (FilterString.NotEqual, _("is not")),
+            (FilterString.Less, _("is before")),
+            (FilterString.LessEqual, _("is equal or before")),
+            (FilterString.Greater, _("is after")),
+            (FilterString.GreaterEqual, _("is equal or after")),
+            (FilterString.Between, _("is between")),
+            (FilterString.Outside, _("is outside")),
+            (FilterString.Contains, _("contains")),
+            (FilterString.StartsWith, _("begins with")),
+            (FilterString.EndsWith, _("ends with")),
+            (FilterString.IsDefined, _("is defined")),
         ]
     }
 
@@ -219,11 +219,11 @@ class OWSelectRows(widget.OWWidget):
 
     AllTypes = {}
     for _all_name, _all_type, _all_ops in (
-            ("All variables", 0,
-             [(None, "are defined")]),
-            ("All numeric variables", 2,
+            (_("All variables"), 0,
+             [(None, _("are defined"))]),
+            (_("All numeric variables"), 2,
              [(v, _plural(t)) for v, t in Operators[ContinuousVariable]]),
-            ("All string variables", 3,
+            (_("All string variables"), 3,
              [(v, _plural(t)) for v, t in Operators[StringVariable]])):
         Operators[_all_name] = _all_ops
         AllTypes[_all_name] = _all_type
@@ -247,7 +247,7 @@ class OWSelectRows(widget.OWWidget):
             [list(self.AllTypes), DomainModel.Separator,
              DomainModel.CLASSES, DomainModel.ATTRIBUTES, DomainModel.METAS])
 
-        box = gui.vBox(self.controlArea, 'Conditions', stretch=100)
+        box = gui.vBox(self.controlArea, _('Conditions'), stretch=100)
         self.cond_list = QTableWidget(
             box, showGrid=False, selectionMode=QTableWidget.NoSelection)
         box.layout().addWidget(self.cond_list)
@@ -263,19 +263,19 @@ class OWSelectRows(widget.OWWidget):
         box2 = gui.hBox(box)
         gui.rubber(box2)
         self.add_button = gui.button(
-            box2, self, "Add Condition", callback=self.add_row)
+            box2, self, _("Add Condition"), callback=self.add_row)
         self.add_all_button = gui.button(
-            box2, self, "Add All Variables", callback=self.add_all)
+            box2, self, _("Add All Variables"), callback=self.add_all)
         self.remove_all_button = gui.button(
-            box2, self, "Remove All", callback=self.remove_all)
+            box2, self, _("Remove All"), callback=self.remove_all)
         gui.rubber(box2)
 
         box_setting = gui.vBox(self.buttonsArea)
         self.cb_pa = gui.checkBox(
-            box_setting, self, "purge_attributes", "Remove unused features",
+            box_setting, self, "purge_attributes", _("Remove unused features"),
             callback=self.conditions_changed)
         self.cb_pc = gui.checkBox(
-            box_setting, self, "purge_classes", "Remove unused classes",
+            box_setting, self, "purge_classes", _("Remove unused classes"),
             callback=self.conditions_changed)
 
         self.report_button.setFixedWidth(120)
@@ -319,9 +319,9 @@ class OWSelectRows(widget.OWWidget):
         if self.cond_list.rowCount():
             Mb = QMessageBox
             if Mb.question(
-                    self, "Remove existing filters",
+                    self, _("Remove existing filters",
                     "This will replace the existing filters with "
-                    "filters for all variables.", Mb.Ok | Mb.Cancel) != Mb.Ok:
+                    "filters for all variables."), Mb.Ok | Mb.Cancel) != Mb.Ok:
                 return
             self.remove_all()
         for attr in self.variable_model[len(self.AllTypes) + 1:]:

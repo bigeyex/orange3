@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-24 23:21+0800\n"
+"POT-Creation-Date: 2021-06-26 16:36+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,18 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: Orange/widgets/data/__init__.py:5
+msgid "Widgets for data manipulation."
+msgstr ""
+
+#: Orange/widgets/data/__init__.py:7
+msgid ""
+"\n"
+"This category contains widgets for data manipulation. This includes\n"
+"loading, importing, saving, preprocessing, selection, etc.\n"
+"\n"
+msgstr ""
 
 #: Orange/widgets/data/owaggregatecolumns.py:19
 msgid "Aggregate Columns"
@@ -85,6 +97,7 @@ msgid "Numeric Variables"
 msgstr ""
 
 #: Orange/widgets/data/owcolor.py:576
+#: Orange/widgets/utils/save/owsavebase.py:94
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:435
 msgid "Save"
 msgstr ""
@@ -94,6 +107,7 @@ msgid "Load"
 msgstr ""
 
 #: Orange/widgets/data/owcolor.py:578 Orange/widgets/data/owfile.py:239
+#: Orange/widgets/data/owselectcolumns.py:298
 msgid "Reset"
 msgstr ""
 
@@ -109,7 +123,7 @@ msgstr ""
 msgid "Inputs must be of the same type."
 msgstr ""
 
-#: Orange/widgets/data/owconcatenate.py:50
+#: Orange/widgets/data/owconcatenate.py:50 Orange/widgets/data/owrank.py:292
 msgid "Variables with duplicated names have been renamed."
 msgstr ""
 
@@ -170,6 +184,7 @@ msgid "Place:"
 msgstr ""
 
 #: Orange/widgets/data/owcontinuize.py:21
+#: Orange/widgets/data/owpreprocess.py:991
 msgid "Continuize"
 msgstr ""
 
@@ -201,11 +216,13 @@ msgstr ""
 
 #: Orange/widgets/data/owcontinuize.py:53
 #: Orange/widgets/data/owcontinuize.py:67
+#: Orange/widgets/data/owpreprocess.py:201
 msgid "Treat as ordinal"
 msgstr ""
 
 #: Orange/widgets/data/owcontinuize.py:54
 #: Orange/widgets/data/owcontinuize.py:68
+#: Orange/widgets/data/owpreprocess.py:202
 msgid "Divide by number of values"
 msgstr ""
 
@@ -214,22 +231,27 @@ msgid "Leave them as they are"
 msgstr ""
 
 #: Orange/widgets/data/owcontinuize.py:58
+#: Orange/widgets/data/owpreprocess.py:746
 msgid "Standardize to μ=0, σ²=1"
 msgstr ""
 
 #: Orange/widgets/data/owcontinuize.py:59
+#: Orange/widgets/data/owpreprocess.py:747
 msgid "Center to μ=0"
 msgstr ""
 
 #: Orange/widgets/data/owcontinuize.py:60
+#: Orange/widgets/data/owpreprocess.py:748
 msgid "Scale to σ²=1"
 msgstr ""
 
 #: Orange/widgets/data/owcontinuize.py:61
+#: Orange/widgets/data/owpreprocess.py:749
 msgid "Normalize to interval [-1, 1]"
 msgstr ""
 
 #: Orange/widgets/data/owcontinuize.py:62
+#: Orange/widgets/data/owpreprocess.py:750
 msgid "Normalize to interval [0, 1]"
 msgstr ""
 
@@ -421,7 +443,8 @@ msgid "File:"
 msgstr ""
 
 #: Orange/widgets/data/owcsvimport.py:716 Orange/widgets/data/owfile.py:228
-#: Orange/widgets/data/owtable.py:218
+#: Orange/widgets/data/owpythonscript.py:472 Orange/widgets/data/owtable.py:218
+#: Orange/widgets/data/owtransform.py:38
 #: ../orange-canvas-core/orangecanvas/application/settings.py:403
 msgid "Info"
 msgstr ""
@@ -537,10 +560,12 @@ msgid "<p>Sparse representation: {}</p>"
 msgstr ""
 
 #: Orange/widgets/data/owdatainfo.py:113 Orange/widgets/data/owdatainfo.py:118
+#: Orange/widgets/data/owpivot.py:782
 msgid "Rows"
 msgstr ""
 
 #: Orange/widgets/data/owdatainfo.py:114 Orange/widgets/data/owdatainfo.py:119
+#: Orange/widgets/data/owpivot.py:789
 msgid "Columns"
 msgstr ""
 
@@ -663,6 +688,8 @@ msgid "Bootstrap"
 msgstr ""
 
 #: Orange/widgets/data/owdatasampler.py:143
+#: Orange/widgets/data/owpreprocess.py:284
+#: Orange/widgets/data/owpreprocess.py:654
 msgid "Percentage"
 msgstr ""
 
@@ -674,7 +701,7 @@ msgstr ""
 msgid "Stratify sample (when possible)"
 msgstr ""
 
-#: Orange/widgets/data/owdatasampler.py:160
+#: Orange/widgets/data/owdatasampler.py:160 Orange/widgets/data/owsql.py:143
 msgid "Download data to local memory"
 msgstr ""
 
@@ -729,6 +756,7 @@ msgid "Variables"
 msgstr ""
 
 #: Orange/widgets/data/owdatasets.py:165
+#: Orange/widgets/data/owselectcolumns.py:247
 msgid "Target"
 msgstr ""
 
@@ -766,6 +794,7 @@ msgid "Error while fetching updated index"
 msgstr ""
 
 #: Orange/widgets/data/owdiscretize.py:256
+#: Orange/widgets/data/owpreprocess.py:985
 msgid "Discretize"
 msgstr ""
 
@@ -786,6 +815,7 @@ msgid "Leave numeric"
 msgstr ""
 
 #: Orange/widgets/data/owdiscretize.py:315
+#: Orange/widgets/data/owpreprocess.py:72
 msgid "Entropy-MDL discretization"
 msgstr ""
 
@@ -929,6 +959,7 @@ msgid "Apply changes and commit data on output."
 msgstr ""
 
 #: Orange/widgets/data/oweditdomain.py:2348
+#: Orange/widgets/data/owpaintdata.py:840
 msgid "Labels"
 msgstr ""
 
@@ -1030,6 +1061,7 @@ msgid "Show basic statistics for data features."
 msgstr ""
 
 #: Orange/widgets/data/owfeaturestatistics.py:774
+#: Orange/widgets/data/owpreprocess.py:68 Orange/widgets/data/owrandomize.py:56
 #: Orange/widgets/data/owrank.py:360
 msgid "None"
 msgstr ""
@@ -1067,7 +1099,7 @@ msgstr ""
 msgid "<p>{len(table)} instance(s)"
 msgstr ""
 
-#: Orange/widgets/data/owimpute.py:136
+#: Orange/widgets/data/owimpute.py:136 Orange/widgets/data/owpreprocess.py:997
 msgid "Impute"
 msgstr ""
 
@@ -1200,6 +1232,7 @@ msgid ""
 msgstr ""
 
 #: Orange/widgets/data/owmergedata.py:300
+#: Orange/widgets/data/owpaintdata.py:773
 msgid ""
 "Some variables have been renamed to avoid duplicates.\n"
 "{}"
@@ -1375,12 +1408,971 @@ msgstr ""
 msgid "Parameters"
 msgstr ""
 
-#: Orange/widgets/data/owrank.py:361
+#: Orange/widgets/data/owpaintdata.py:731
+msgid "Brush"
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:732
+msgid "Put"
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:733
+msgid "Select"
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:735
+msgid "Jitter"
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:736
+msgid "Magnet"
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:737
+msgid "Clear"
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:740
+msgid "Paint Data"
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:741
+msgid "Create data by painting data points on a plane."
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:770
+msgid "Input data has no variables"
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:771
+msgid "Numeric target value can not be used."
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:772
+msgid "Sparse data is ignored."
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:778
+msgid "Paint Data uses data from the first two attributes."
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:824
+msgid "Names"
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:827
+msgid "Variable X: "
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:832
+msgid "Variable Y: "
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:849
+msgid "Add new class label"
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:855
+msgid "Remove selected class label"
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:866
+msgid "Tools"
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:918
+msgid "Radius:"
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:925
+msgid "Intensity:"
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:932
+msgid "Symbol:"
+msgstr ""
+
+#: Orange/widgets/data/owpaintdata.py:935
+msgid "Reset to Input Data"
+msgstr ""
+
+#: Orange/widgets/data/owpivot.py:93
+msgid "Row variable should be DiscreteVariable or ContinuousVariable"
+msgstr ""
+
+#: Orange/widgets/data/owpivot.py:96
+msgid "Column variable should be DiscreteVariable"
+msgstr ""
+
+#: Orange/widgets/data/owpivot.py:726
+msgid "Pivot Table"
+msgstr ""
+
+#: Orange/widgets/data/owpivot.py:727
+msgid "Reshape data table based on column values."
+msgstr ""
+
+#: Orange/widgets/data/owpivot.py:742
+msgid "Column feature should be selected."
+msgstr ""
+
+#: Orange/widgets/data/owpivot.py:743
+msgid "Some aggregations ({}) cannot be computed."
+msgstr ""
+
+#: Orange/widgets/data/owpivot.py:744
+msgid ""
+"Some variables have been renamed in some tablesto avoid duplicates.\n"
+"{}"
+msgstr ""
+
+#: Orange/widgets/data/owpivot.py:746
+msgid "Selected variable has too many values."
+msgstr ""
+
+#: Orange/widgets/data/owpivot.py:771
+msgid "Var"
+msgstr ""
+
+#: Orange/widgets/data/owpivot.py:771
+msgid "Mode"
+msgstr ""
+
+#: Orange/widgets/data/owpivot.py:771
+msgid "Majority"
+msgstr ""
+
+#: Orange/widgets/data/owpivot.py:771
+msgid "Count defined"
+msgstr ""
+
+#: Orange/widgets/data/owpivot.py:793
+msgid "(Same as rows)"
+msgstr ""
+
+#: Orange/widgets/data/owpivot.py:797
+msgid "Values"
+msgstr ""
+
+#: Orange/widgets/data/owpivot.py:801
+msgid "(None)"
+msgstr ""
+
+#: Orange/widgets/data/owpivot.py:818
+msgid "Aggregations"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:69
+msgid "Equal width discretization"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:70
+msgid "Equal frequency discretization"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:71
+msgid "Remove numeric features"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:96
+msgid "Number of intervals (for equal width/frequency)"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:188
+msgid ", Number of intervals: {}"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:197
+msgid "Most frequent is base"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:198
+msgid "One feature per value"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:199
+msgid "Remove non-binary features"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:200
+msgid "Remove categorical features"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:267
+msgid "Remove features with too many"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:268
+msgid "missing values"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:269
+msgid "zeros"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:279
+msgid "Threshold:"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:291
+#: Orange/widgets/data/owpreprocess.py:643
+msgid "Fixed"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:369
+msgid "Don't impute."
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:370
+msgid "Replace with constant"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:371 Orange/preprocess/impute.py:96
+msgid "Average/Most frequent"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:372
+msgid "Model based imputer"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:373
+msgid "Replace with random value"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:374
+msgid "Remove rows with missing values."
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:450
+msgid "Score"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:459
+#: Orange/widgets/data/owpreprocess.py:638
+msgid "Number of features"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:464
+msgid "Fixed:"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:475
+msgid "Proportion:"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:561
+#: Orange/widgets/data/owpreprocess.py:582 Orange/widgets/data/owrank.py:56
+msgid "Information Gain"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:562
+msgid "Gain ratio"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:563
+msgid "Gini index"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:564
+#: Orange/widgets/data/owpreprocess.py:585 Orange/widgets/data/owrank.py:66
+msgid "ReliefF"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:565
+#: Orange/widgets/data/owpreprocess.py:586
+msgid "Fast Correlation Based Filter"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:566
+#: Orange/widgets/data/owpreprocess.py:587 Orange/widgets/data/owrank.py:62
+msgid "ANOVA"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:567
+#: Orange/widgets/data/owpreprocess.py:588
+msgid "Chi2"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:568
+#: Orange/widgets/data/owpreprocess.py:589 Orange/widgets/data/owrank.py:74
+msgid "RReliefF"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:569
+#: Orange/widgets/data/owpreprocess.py:590
+msgid "Univariate Linear Regression"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:583
+msgid "Gain Ratio"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:584
+msgid "Gini Index"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:620
+msgid "Score: {}, Strategy (Fixed): {}"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:818
+#: Orange/widgets/data/owpurgedomain.py:165
+#: Orange/widgets/data/owrandomize.py:45
+msgid "Classes"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:819
+#: Orange/widgets/data/owpurgedomain.py:78
+#: Orange/widgets/data/owpurgedomain.py:164
+#: Orange/widgets/data/owrandomize.py:48
+#: Orange/widgets/data/owselectcolumns.py:224
+msgid "Features"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:820
+msgid "Meta data"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:828
+msgid "Randomize:"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:829
+msgid "Replicable shuffling:"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:851
+msgid "Replicable"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:852
+msgid "Not replicable"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:868
+msgid "Components:"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:889
+msgid "Components: {}"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:911
+msgid "Rank:"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:912
+msgid "Relative error:"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:941
+msgid "Rank: {}, Relative error: {}"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:985
+msgid "Discretization"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:986
+msgid "Discretize Continuous Variables"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:991
+msgid "Continuization"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:992
+msgid "Continuize Discrete Variables"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:998
+msgid "Impute Missing Values"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1003
+#: Orange/widgets/data/owpreprocess.py:1028
+msgid "Feature Selection"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1004
+msgid "Select Relevant Features"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1009
+#: Orange/widgets/data/owpreprocess.py:1010
+msgid "Random Feature Selection"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1011
+msgid "Select Random Features"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1016
+msgid "Normalize"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1016
+msgid "Scale"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1017
+msgid "Normalize Features"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1022
+#: Orange/widgets/data/owpreprocess.py:1023
+#: Orange/widgets/data/owrandomize.py:15
+msgid "Randomize"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1022
+msgid "Randomization"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1028
+msgid "Remove Sparse"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1029
+msgid "Remove Sparse Features"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1034
+msgid "PCA"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1035
+msgid "Principal Component Analysis"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1040
+msgid "CUR"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1041
+msgid "CUR Matrix Decomposition"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1068
+msgid "Preprocess"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1069
+msgid "Construct a data preprocessing pipeline."
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1108
+msgid "Preprocessors"
+msgstr ""
+
+#: Orange/widgets/data/owpreprocess.py:1151
+msgid "Drag items from the list on the left"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:13
+msgid "Purge Domain"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:14
+msgid "Remove redundant values and features from the dataset. Sort values."
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:39
+msgid "Sort categorical feature values"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:40
+msgid "Remove unused feature values"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:41
+msgid "Remove constant features"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:43
+msgid "Sort categorical class values"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:44
+msgid "Remove unused class variable values"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:45
+msgid "Remove constant class variables"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:47
+msgid "Remove unused meta attribute values"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:48
+msgid "Remove constant meta attributes"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:50
+msgid "Sorted features"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:51
+msgid "Reduced features"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:52
+msgid "Removed features"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:53
+msgid "Sorted classes"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:54
+msgid "Reduced classes"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:55
+msgid "Removed classes"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:56
+msgid "Reduced metas"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:57
+msgid "Removed metas"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:84
+#, python-format
+msgid ""
+"Sorted: %(resortedAttrs)s, reduced: %(reducedAttrs)s, removed: "
+"%(removedAttrs)s"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:93
+#, python-format
+msgid ""
+"Sorted: %(resortedClasses)s,reduced: %(reducedClasses)s, removed: "
+"%(removedClasses)s"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:102
+#, python-format
+msgid "Reduced: %(reducedMetas)s, removed: %(removedMetas)s"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:163
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:558
+msgid "Settings"
+msgstr ""
+
+#: Orange/widgets/data/owpurgedomain.py:166
+#: Orange/widgets/data/owrandomize.py:51
+#: Orange/widgets/data/owselectcolumns.py:261
+msgid "Metas"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:418
+#: Orange/widgets/data/owpythonscript.py:558
+msgid "Python Script"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:419
+msgid "Write a Python script and run it on input data or models."
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:475
+msgid "<p>Execute python script.</p><p>Input variables:<ul><li> "
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:477
+msgid "</ul></p><p>Output variables:<ul><li>"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:488
+msgid "Library"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:508
+msgid "Add a new script to the library"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:513
+msgid "Remove script from library"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:517
+msgid "Update"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:518
+msgid "Save changes in the editor to library"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:523
+msgid "More"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:523
+msgid "More actions"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:525
+msgid "Import Script from File"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:526
+msgid "Save Selected Script to File"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:527
+msgid "Undo Changes to Selected Script"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:546
+msgid "Run"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:548
+msgid "Run script"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:566
+msgid "&Save"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:567
+msgid "Save script to file"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:572
+msgid "Console"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:644
+msgid "New script"
+msgstr ""
+
+#: Orange/widgets/data/owpythonscript.py:725
+msgid "Save Python Script"
+msgstr ""
+
+#: Orange/widgets/data/owrandomize.py:16
+msgid "Randomize features, class and/or metas in data table."
+msgstr ""
+
+#: Orange/widgets/data/owrandomize.py:42
+msgid "Shuffled columns"
+msgstr ""
+
+#: Orange/widgets/data/owrandomize.py:54
+msgid "Shuffled rows"
+msgstr ""
+
+#: Orange/widgets/data/owrandomize.py:60 Orange/widgets/data/owrank.py:361
 msgid "All"
+msgstr ""
+
+#: Orange/widgets/data/owrandomize.py:66
+msgid "Replicable shuffling"
+msgstr ""
+
+#: Orange/widgets/data/owrank.py:58
+msgid "Information Gain Ratio"
+msgstr ""
+
+#: Orange/widgets/data/owrank.py:60
+msgid "Gini Decrease"
+msgstr ""
+
+#: Orange/widgets/data/owrank.py:64
+msgid "χ²"
+msgstr ""
+
+#: Orange/widgets/data/owrank.py:68
+msgid "FCBF"
+msgstr ""
+
+#: Orange/widgets/data/owrank.py:72
+msgid "Univariate Regression"
+msgstr ""
+
+#: Orange/widgets/data/owrank.py:251
+msgid "Rank"
+msgstr ""
+
+#: Orange/widgets/data/owrank.py:252
+msgid "Rank and filter data features by their relevance."
+msgstr ""
+
+#: Orange/widgets/data/owrank.py:282
+msgid "Data does not have a (single) target variable."
+msgstr ""
+
+#: Orange/widgets/data/owrank.py:283
+msgid "Missing values will be imputed as needed."
+msgstr ""
+
+#: Orange/widgets/data/owrank.py:286
+msgid "Cannot handle target variable type {}"
+msgstr ""
+
+#: Orange/widgets/data/owrank.py:287
+msgid "Scorer {} inadequate: {}"
+msgstr ""
+
+#: Orange/widgets/data/owrank.py:288
+msgid "Data does not have a single attribute."
+msgstr ""
+
+#: Orange/widgets/data/owrank.py:331
+msgid "Scoring Methods"
+msgstr ""
+
+#: Orange/widgets/data/owrank.py:345
+msgid "Select Attributes"
 msgstr ""
 
 #: Orange/widgets/data/owrank.py:363
 msgid "Best ranked:"
+msgstr ""
+
+#: Orange/widgets/data/owsave.py:17
+msgid "Save Data"
+msgstr ""
+
+#: Orange/widgets/data/owsave.py:18
+msgid "Save data to an output file."
+msgstr ""
+
+#: Orange/widgets/data/owsave.py:29
+msgid "Use Pickle format for sparse data."
+msgstr ""
+
+#: Orange/widgets/data/owsave.py:40
+msgid "Add type annotations to header"
+msgstr ""
+
+#: Orange/widgets/data/owsave.py:42
+msgid ""
+"Some formats (Tab-delimited, Comma-separated) can include \n"
+"additional information about variables types in header rows."
+msgstr ""
+
+#: Orange/widgets/data/owselectbydataindex.py:13
+msgid "Select by Data Index"
+msgstr ""
+
+#: Orange/widgets/data/owselectbydataindex.py:14
+msgid "Match instances by index from data subset."
+msgstr ""
+
+#: Orange/widgets/data/owselectbydataindex.py:49
+#: Orange/widgets/data/owtransform.py:100
+msgid "Data"
+msgstr ""
+
+#: Orange/widgets/data/owselectbydataindex.py:51
+msgid "Data Subset"
+msgstr ""
+
+#: Orange/widgets/data/owselectbydataindex.py:71
+msgid "No data."
+msgstr ""
+
+#: Orange/widgets/data/owselectbydataindex.py:73
+msgid ""
+"{}\n"
+"{} instances\n"
+"{} variables"
+msgstr ""
+
+#: Orange/widgets/data/owselectcolumns.py:149
+msgid "Select Columns"
+msgstr ""
+
+#: Orange/widgets/data/owselectcolumns.py:150
+msgid ""
+"Select columns from the data table and assign them to data features, classes "
+"or meta variables."
+msgstr ""
+
+#: Orange/widgets/data/owselectcolumns.py:174
+msgid "Features and data domain do not match"
+msgstr ""
+
+#: Orange/widgets/data/owselectcolumns.py:175
+msgid "Most widgets do not support multiple targets"
+msgstr ""
+
+#: Orange/widgets/data/owselectcolumns.py:204
+msgid "Ignored"
+msgstr ""
+
+#: Orange/widgets/data/owselectcolumns.py:305
+msgid "Ignore new variables by default"
+msgstr ""
+
+#: Orange/widgets/data/owselectcolumns.py:306
+msgid ""
+"When the widget receives data with additional columns they are added to the "
+"available attributes column if <i>Ignore new variables by default</i> is "
+"checked."
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:157
+msgid "Select Rows"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:159
+msgid "Select rows from the data based on values of variables."
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:186
+#: Orange/widgets/data/owselectrows.py:203
+msgid "equals"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:187
+#: Orange/widgets/data/owselectrows.py:198
+#: Orange/widgets/data/owselectrows.py:204
+msgid "is not"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:188
+msgid "is below"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:189
+msgid "is at most"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:190
+msgid "is greater than"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:191
+msgid "is at least"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:192
+#: Orange/widgets/data/owselectrows.py:209
+msgid "is between"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:193
+#: Orange/widgets/data/owselectrows.py:210
+msgid "is outside"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:194
+#: Orange/widgets/data/owselectrows.py:200
+#: Orange/widgets/data/owselectrows.py:214
+msgid "is defined"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:197
+msgid "is"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:199
+msgid "is one of"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:205
+msgid "is before"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:206
+msgid "is equal or before"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:207
+msgid "is after"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:208
+msgid "is equal or after"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:211
+msgid "contains"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:212
+msgid "begins with"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:213
+msgid "ends with"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:222
+msgid "All variables"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:223
+msgid "are defined"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:224
+msgid "All numeric variables"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:226
+msgid "All string variables"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:250
+msgid "Conditions"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:266
+msgid "Add Condition"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:268
+msgid "Add All Variables"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:270
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1733
+msgid "Remove All"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:275
+msgid "Remove unused features"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:278
+msgid "Remove unused classes"
+msgstr ""
+
+#: Orange/widgets/data/owselectrows.py:322
+msgid "Remove existing filters"
+msgstr ""
+
+#: Orange/widgets/data/owsql.py:40
+msgid "SQL Table"
+msgstr ""
+
+#: Orange/widgets/data/owsql.py:42
+msgid "Load dataset from SQL."
+msgstr ""
+
+#: Orange/widgets/data/owsql.py:65
+msgid "Data description was generated from a sample."
+msgstr ""
+
+#: Orange/widgets/data/owsql.py:68
+msgid "Database is missing extensions: {}"
+msgstr ""
+
+#: Orange/widgets/data/owsql.py:71
+msgid "Please install a backend to use this widget."
+msgstr ""
+
+#: Orange/widgets/data/owsql.py:139
+msgid "Auto-discover categorical variables"
 msgstr ""
 
 #: Orange/widgets/data/owtable.py:179
@@ -1419,16 +2411,133 @@ msgstr ""
 msgid "Show rows in the original order"
 msgstr ""
 
+#: Orange/widgets/data/owtransform.py:12
+msgid "Apply Domain"
+msgstr ""
+
+#: Orange/widgets/data/owtransform.py:13
+msgid "Applies template domain on data table."
+msgstr ""
+
+#: Orange/widgets/data/owtransform.py:26
+msgid ""
+"An error occurred while transforming data.\n"
+"{}"
+msgstr ""
+
+#: Orange/widgets/data/owtransform.py:46
+msgid "No data on input."
+msgstr ""
+
+#: Orange/widgets/data/owtransform.py:48
+msgid "Input data with {:,} instances and {:,} features."
+msgstr ""
+
+#: Orange/widgets/data/owtransform.py:54
+msgid "No template data on input."
+msgstr ""
+
+#: Orange/widgets/data/owtransform.py:56
+msgid "Template domain applied."
+msgstr ""
+
+#: Orange/widgets/data/owtransform.py:58
+msgid "Template data includes {:,} features."
+msgstr ""
+
+#: Orange/widgets/data/owtransform.py:65
+msgid "Output data includes {:,} features."
+msgstr ""
+
+#: Orange/widgets/data/owtransform.py:102
+msgid "Template data"
+msgstr ""
+
+#: Orange/widgets/data/owtransform.py:104
+msgid "Transformed data"
+msgstr ""
+
+#: Orange/widgets/data/owtranspose.py:36
+msgid "Transpose"
+msgstr ""
+
+#: Orange/widgets/data/owtranspose.py:37
+msgid "Transpose data table."
+msgstr ""
+
+#: Orange/widgets/data/owtranspose.py:63
+msgid ""
+"Values are not unique.\n"
+"To avoid multiple features with the same name, values \n"
+"of '{}' have been augmented with indices."
+msgstr ""
+
+#: Orange/widgets/data/owtranspose.py:66
+msgid "Categorical features have been encoded as numbers."
+msgstr ""
+
+#: Orange/widgets/data/owtranspose.py:78
+msgid "Feature names"
+msgstr ""
+
+#: Orange/widgets/data/owtranspose.py:81
+msgid "Generic"
+msgstr ""
+
+#: Orange/widgets/data/owtranspose.py:85
+msgid "Type a prefix ..."
+msgstr ""
+
+#: Orange/widgets/data/owtranspose.py:88
+msgid "From variable:"
+msgstr ""
+
+#: Orange/widgets/data/owtranspose.py:99
+msgid "Remove redundant instance"
+msgstr ""
+
+#: Orange/widgets/data/owunique.py:14
+msgid "Unique"
+msgstr ""
+
+#: Orange/widgets/data/owunique.py:16
+msgid "Filter instances unique by specified key attribute(s)."
+msgstr ""
+
+#: Orange/widgets/data/owunique.py:26
+msgid "Last instance"
+msgstr ""
+
+#: Orange/widgets/data/owunique.py:27
+msgid "First instance"
+msgstr ""
+
+#: Orange/widgets/data/owunique.py:28
+msgid "Middle instance"
+msgstr ""
+
+#: Orange/widgets/data/owunique.py:29
+msgid "Random instance"
+msgstr ""
+
+#: Orange/widgets/data/owunique.py:30
+msgid "Discard non-unique instances"
+msgstr ""
+
+#: Orange/widgets/data/owunique.py:46
+msgid "Group by"
+msgstr ""
+
+#: Orange/widgets/data/owunique.py:52
+msgid "Instance to select in each group:"
+msgstr ""
+
 #: Orange/preprocess/impute.py:77
 msgid "Don't impute"
 msgstr ""
 
 #: Orange/preprocess/impute.py:86
 msgid "Remove instances with unknown values"
-msgstr ""
-
-#: Orange/preprocess/impute.py:96
-msgid "Average/Most frequent"
 msgstr ""
 
 #: Orange/preprocess/impute.py:110
@@ -1457,6 +2566,27 @@ msgstr ""
 
 #: Orange/preprocess/impute.py:369
 msgid "Replace with a random value"
+msgstr ""
+
+#: Orange/widgets/utils/save/owsavebase.py:42
+msgid "Empty input; nothing was saved."
+msgstr ""
+
+#: Orange/widgets/utils/save/owsavebase.py:45
+msgid "File name is not set."
+msgstr ""
+
+#: Orange/widgets/utils/save/owsavebase.py:89
+msgid "Autosave when receiving new data"
+msgstr ""
+
+#: Orange/widgets/utils/save/owsavebase.py:94
+#, python-brace-format
+msgid "Save as {self.stored_name}"
+msgstr ""
+
+#: Orange/widgets/utils/save/owsavebase.py:96
+msgid "Save as ..."
 msgstr ""
 
 #: ../orange-widget-base/orangewidget/gui.py:1814
@@ -1702,10 +2832,6 @@ msgstr ""
 
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:551
 msgid "Show workflow properties."
-msgstr ""
-
-#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:558
-msgid "Settings"
 msgstr ""
 
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:560
@@ -2409,10 +3535,6 @@ msgstr ""
 
 #: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1728
 msgid "Open All"
-msgstr ""
-
-#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1733
-msgid "Remove All"
 msgstr ""
 
 #: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1964

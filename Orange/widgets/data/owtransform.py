@@ -9,8 +9,8 @@ from Orange.widgets.widget import OWWidget, Input, Output, Msg
 
 
 class OWTransform(OWWidget):
-    name = "Apply Domain"
-    description = "Applies template domain on data table."
+    name = _("Apply Domain")
+    description = _("Applies template domain on data table.")
     icon = "icons/Transform.svg"
     priority = 2110
     keywords = ["transform"]
@@ -23,7 +23,7 @@ class OWTransform(OWWidget):
         transformed_data = Output("Transformed Data", Table)
 
     class Error(OWWidget.Error):
-        error = Msg("An error occurred while transforming data.\n{}")
+        error = Msg(_("An error occurred while transforming data.\n{}"))
 
     resizing_enabled = False
     want_main_area = False
@@ -35,7 +35,7 @@ class OWTransform(OWWidget):
         self.template_data = None  # type: Optional[Table]
         self.transformed_info = describe_data(None)  # type: OrderedDict
 
-        info_box = gui.widgetBox(self.controlArea, "Info")
+        info_box = gui.widgetBox(self.controlArea, _("Info"))
         self.input_label = gui.widgetLabel(info_box, "")
         self.template_label = gui.widgetLabel(info_box, "")
         self.output_label = gui.widgetLabel(info_box, "")
@@ -43,26 +43,26 @@ class OWTransform(OWWidget):
         self.set_template_label_text()
 
     def set_input_label_text(self):
-        text = "No data on input."
+        text = _("No data on input.")
         if self.data:
-            text = "Input data with {:,} instances and {:,} features.".format(
+            text = _("Input data with {:,} instances and {:,} features.").format(
                 len(self.data),
                 len(self.data.domain.attributes))
         self.input_label.setText(text)
 
     def set_template_label_text(self):
-        text = "No template data on input."
+        text = _("No template data on input.")
         if self.data and self.template_data:
-            text = "Template domain applied."
+            text = _("Template domain applied.")
         elif self.template_data:
-            text = "Template data includes {:,} features.".format(
+            text = _("Template data includes {:,} features.").format(
                 len(self.template_data.domain.attributes))
         self.template_label.setText(text)
 
     def set_output_label_text(self, data):
         text = ""
         if data:
-            text = "Output data includes {:,} features.".format(
+            text = _("Output data includes {:,} features.").format(
                 len(data.domain.attributes))
         self.output_label.setText(text)
 
@@ -97,11 +97,11 @@ class OWTransform(OWWidget):
 
     def send_report(self):
         if self.data:
-            self.report_data("Data", self.data)
+            self.report_data(_("Data"), self.data)
         if self.template_data:
-            self.report_domain("Template data", self.template_data.domain)
+            self.report_domain(_("Template data"), self.template_data.domain)
         if self.transformed_info:
-            self.report_items("Transformed data", self.transformed_info)
+            self.report_items(_("Transformed data"), self.transformed_info)
 
 
 if __name__ == "__main__":  # pragma: no cover

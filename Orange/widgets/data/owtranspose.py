@@ -33,8 +33,8 @@ def run(data: Table,
 
 
 class OWTranspose(OWWidget, ConcurrentWidgetMixin):
-    name = "Transpose"
-    description = "Transpose data table."
+    name = _("Transpose")
+    description = _("Transpose data table.")
     icon = "icons/Transpose.svg"
     priority = 2000
     keywords = []
@@ -60,10 +60,10 @@ class OWTranspose(OWWidget, ConcurrentWidgetMixin):
     auto_apply = Setting(True)
 
     class Warning(OWWidget.Warning):
-        duplicate_names = Msg("Values are not unique.\nTo avoid multiple "
+        duplicate_names = Msg(_("Values are not unique.\nTo avoid multiple "
                               "features with the same name, values \nof "
-                              "'{}' have been augmented with indices.")
-        discrete_attrs = Msg("Categorical features have been encoded as numbers.")
+                              "'{}' have been augmented with indices."))
+        discrete_attrs = Msg(_("Categorical features have been encoded as numbers."))
 
     class Error(OWWidget.Error):
         value_error = Msg("{}")
@@ -75,17 +75,17 @@ class OWTranspose(OWWidget, ConcurrentWidgetMixin):
 
         # self.apply is changed later, pylint: disable=unnecessary-lambda
         box = gui.radioButtons(
-            self.controlArea, self, "feature_type", box="Feature names",
+            self.controlArea, self, "feature_type", box=_("Feature names"),
             callback=lambda: self.apply())
 
-        button = gui.appendRadioButton(box, "Generic")
+        button = gui.appendRadioButton(box, _("Generic"))
         edit = gui.lineEdit(
             gui.indentedBox(box, gui.checkButtonOffsetHint(button)), self,
             "feature_name",
-            placeholderText="Type a prefix ...", toolTip="Custom feature name")
+            placeholderText=_("Type a prefix ..."), toolTip="Custom feature name")
         edit.editingFinished.connect(self._apply_editing)
 
-        self.meta_button = gui.appendRadioButton(box, "From variable:")
+        self.meta_button = gui.appendRadioButton(box, _("From variable:"))
         self.feature_model = DomainModel(
             valid_types=(ContinuousVariable, StringVariable),
             alphabetical=False)
@@ -96,7 +96,7 @@ class OWTranspose(OWWidget, ConcurrentWidgetMixin):
 
         self.remove_check = gui.checkBox(
             gui.indentedBox(box, gui.checkButtonOffsetHint(button)), self,
-            "remove_redundant_inst", "Remove redundant instance",
+            "remove_redundant_inst", _("Remove redundant instance"),
             callback=lambda: self.apply())
 
         gui.auto_apply(self.buttonsArea, self, commit=self.apply)

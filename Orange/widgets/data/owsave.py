@@ -14,8 +14,8 @@ _userhome = os.path.expanduser(f"~{os.sep}")
 
 
 class OWSave(OWSaveBase):
-    name = "Save Data"
-    description = "Save data to an output file."
+    name = _("Save Data")
+    description = _("Save data to an output file.")
     icon = "icons/Save.svg"
     category = "Data"
     keywords = ["export"]
@@ -26,7 +26,7 @@ class OWSave(OWSaveBase):
         data = Input("Data", Table)
 
     class Error(OWSaveBase.Error):
-        unsupported_sparse = widget.Msg("Use Pickle format for sparse data.")
+        unsupported_sparse = widget.Msg(_("Use Pickle format for sparse data."))
 
     add_type_annotations = Setting(True)
 
@@ -37,10 +37,10 @@ class OWSave(OWSaveBase):
         self.grid.addWidget(
             gui.checkBox(
                 None, self, "add_type_annotations",
-                "Add type annotations to header",
+                _("Add type annotations to header"),
                 tooltip=
-                "Some formats (Tab-delimited, Comma-separated) can include \n"
-                "additional information about variables types in header rows.",
+                _("Some formats (Tab-delimited, Comma-separated) can include \n"
+                "additional information about variables types in header rows."),
                 callback=self.update_messages),
             0, 0, 1, 2)
         self.grid.setRowMinimumHeight(1, 8)

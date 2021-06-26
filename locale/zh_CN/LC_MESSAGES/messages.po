@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-24 23:21+0800\n"
-"PO-Revision-Date: 2021-06-24 23:22+0800\n"
+"POT-Creation-Date: 2021-06-26 16:36+0800\n"
+"PO-Revision-Date: 2021-06-26 16:47+0800\n"
 "Last-Translator: yu <bigeyex@gmail.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -17,6 +17,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: Orange/widgets/data/__init__.py:5
+msgid "Widgets for data manipulation."
+msgstr "数据处理节点。"
+
+#: Orange/widgets/data/__init__.py:7
+msgid ""
+"\n"
+"This category contains widgets for data manipulation. This includes\n"
+"loading, importing, saving, preprocessing, selection, etc.\n"
+"\n"
+msgstr ""
+"\n"
+"此类别包含数据处理节点。包括\n"
+"装载、导入、保存、预处理、选择等。\n"
+"\n"
 
 #: Orange/widgets/data/owaggregatecolumns.py:19
 msgid "Aggregate Columns"
@@ -86,6 +102,7 @@ msgid "Numeric Variables"
 msgstr "数值变量"
 
 #: Orange/widgets/data/owcolor.py:576
+#: Orange/widgets/utils/save/owsavebase.py:94
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:435
 msgid "Save"
 msgstr "保存"
@@ -95,6 +112,7 @@ msgid "Load"
 msgstr "加载"
 
 #: Orange/widgets/data/owcolor.py:578 Orange/widgets/data/owfile.py:239
+#: Orange/widgets/data/owselectcolumns.py:298
 msgid "Reset"
 msgstr "重置"
 
@@ -110,7 +128,7 @@ msgstr "链接（追加到末尾）两个或多个数据表。"
 msgid "Inputs must be of the same type."
 msgstr "输入必须是同一类型。"
 
-#: Orange/widgets/data/owconcatenate.py:50
+#: Orange/widgets/data/owconcatenate.py:50 Orange/widgets/data/owrank.py:292
 msgid "Variables with duplicated names have been renamed."
 msgstr "已重命名有重复名称的变量。"
 
@@ -173,6 +191,7 @@ msgid "Place:"
 msgstr "位置："
 
 #: Orange/widgets/data/owcontinuize.py:21
+#: Orange/widgets/data/owpreprocess.py:991
 msgid "Continuize"
 msgstr "连续化"
 
@@ -204,11 +223,13 @@ msgstr "移除分类属性"
 
 #: Orange/widgets/data/owcontinuize.py:53
 #: Orange/widgets/data/owcontinuize.py:67
+#: Orange/widgets/data/owpreprocess.py:201
 msgid "Treat as ordinal"
 msgstr "作为定序变量处理"
 
 #: Orange/widgets/data/owcontinuize.py:54
 #: Orange/widgets/data/owcontinuize.py:68
+#: Orange/widgets/data/owpreprocess.py:202
 msgid "Divide by number of values"
 msgstr "除以数值数目"
 
@@ -217,22 +238,27 @@ msgid "Leave them as they are"
 msgstr "保持不变"
 
 #: Orange/widgets/data/owcontinuize.py:58
+#: Orange/widgets/data/owpreprocess.py:746
 msgid "Standardize to μ=0, σ²=1"
 msgstr "标准化为μ=0，σ²=1"
 
 #: Orange/widgets/data/owcontinuize.py:59
+#: Orange/widgets/data/owpreprocess.py:747
 msgid "Center to μ=0"
 msgstr "中心移动到μ=0"
 
 #: Orange/widgets/data/owcontinuize.py:60
+#: Orange/widgets/data/owpreprocess.py:748
 msgid "Scale to σ²=1"
 msgstr "缩放为σ²=1"
 
 #: Orange/widgets/data/owcontinuize.py:61
+#: Orange/widgets/data/owpreprocess.py:749
 msgid "Normalize to interval [-1, 1]"
 msgstr "归一化到区间 [-1, 1]"
 
 #: Orange/widgets/data/owcontinuize.py:62
+#: Orange/widgets/data/owpreprocess.py:750
 msgid "Normalize to interval [0, 1]"
 msgstr "归一化到区间 [0, 1]"
 
@@ -424,7 +450,8 @@ msgid "File:"
 msgstr "文件："
 
 #: Orange/widgets/data/owcsvimport.py:716 Orange/widgets/data/owfile.py:228
-#: Orange/widgets/data/owtable.py:218
+#: Orange/widgets/data/owpythonscript.py:472 Orange/widgets/data/owtable.py:218
+#: Orange/widgets/data/owtransform.py:38
 #: ../orange-canvas-core/orangecanvas/application/settings.py:403
 msgid "Info"
 msgstr "信息"
@@ -548,10 +575,12 @@ msgid "<p>Sparse representation: {}</p>"
 msgstr "<p>稀疏表示：{}</p>"
 
 #: Orange/widgets/data/owdatainfo.py:113 Orange/widgets/data/owdatainfo.py:118
+#: Orange/widgets/data/owpivot.py:782
 msgid "Rows"
 msgstr "行"
 
 #: Orange/widgets/data/owdatainfo.py:114 Orange/widgets/data/owdatainfo.py:119
+#: Orange/widgets/data/owpivot.py:789
 msgid "Columns"
 msgstr "数据列"
 
@@ -680,6 +709,8 @@ msgid "Bootstrap"
 msgstr "引导程序"
 
 #: Orange/widgets/data/owdatasampler.py:143
+#: Orange/widgets/data/owpreprocess.py:284
+#: Orange/widgets/data/owpreprocess.py:654
 msgid "Percentage"
 msgstr "百分比"
 
@@ -691,7 +722,7 @@ msgstr "可复现（确定性的）取样"
 msgid "Stratify sample (when possible)"
 msgstr "分层抽样（如果可能）"
 
-#: Orange/widgets/data/owdatasampler.py:160
+#: Orange/widgets/data/owdatasampler.py:160 Orange/widgets/data/owsql.py:143
 msgid "Download data to local memory"
 msgstr "将数据下载到本地内存"
 
@@ -746,6 +777,7 @@ msgid "Variables"
 msgstr "变量"
 
 #: Orange/widgets/data/owdatasets.py:165
+#: Orange/widgets/data/owselectcolumns.py:247
 msgid "Target"
 msgstr "目标"
 
@@ -783,6 +815,7 @@ msgid "Error while fetching updated index"
 msgstr "获取更新的索引时出现错误"
 
 #: Orange/widgets/data/owdiscretize.py:256
+#: Orange/widgets/data/owpreprocess.py:985
 msgid "Discretize"
 msgstr "离散化"
 
@@ -803,6 +836,7 @@ msgid "Leave numeric"
 msgstr "保持数值"
 
 #: Orange/widgets/data/owdiscretize.py:315
+#: Orange/widgets/data/owpreprocess.py:72
 msgid "Entropy-MDL discretization"
 msgstr "熵-MDL 离散化"
 
@@ -949,6 +983,7 @@ msgid "Apply changes and commit data on output."
 msgstr "应用更改并提交数据到输出。"
 
 #: Orange/widgets/data/oweditdomain.py:2348
+#: Orange/widgets/data/owpaintdata.py:840
 msgid "Labels"
 msgstr "标签"
 
@@ -1050,6 +1085,7 @@ msgid "Show basic statistics for data features."
 msgstr "显示特征的基本统计数据。"
 
 #: Orange/widgets/data/owfeaturestatistics.py:774
+#: Orange/widgets/data/owpreprocess.py:68 Orange/widgets/data/owrandomize.py:56
 #: Orange/widgets/data/owrank.py:360
 msgid "None"
 msgstr "无"
@@ -1087,7 +1123,7 @@ msgstr "浏览测试数据"
 msgid "<p>{len(table)} instance(s)"
 msgstr "<p>{len(table)} 条记录"
 
-#: Orange/widgets/data/owimpute.py:136
+#: Orange/widgets/data/owimpute.py:136 Orange/widgets/data/owpreprocess.py:997
 msgid "Impute"
 msgstr "填补"
 
@@ -1227,6 +1263,7 @@ msgstr ""
 "输出包含所有记录。来自合并记录的数据合并为单行。"
 
 #: Orange/widgets/data/owmergedata.py:300
+#: Orange/widgets/data/owpaintdata.py:773
 msgid ""
 "Some variables have been renamed to avoid duplicates.\n"
 "{}"
@@ -1408,13 +1445,982 @@ msgstr "方法"
 msgid "Parameters"
 msgstr "参数"
 
-#: Orange/widgets/data/owrank.py:361
+#: Orange/widgets/data/owpaintdata.py:731
+msgid "Brush"
+msgstr "刷子"
+
+#: Orange/widgets/data/owpaintdata.py:732
+msgid "Put"
+msgstr "放置"
+
+#: Orange/widgets/data/owpaintdata.py:733
+msgid "Select"
+msgstr "选择"
+
+#: Orange/widgets/data/owpaintdata.py:735
+msgid "Jitter"
+msgstr "Jitter"
+
+#: Orange/widgets/data/owpaintdata.py:736
+msgid "Magnet"
+msgstr "磁铁"
+
+#: Orange/widgets/data/owpaintdata.py:737
+msgid "Clear"
+msgstr "清除"
+
+#: Orange/widgets/data/owpaintdata.py:740
+msgid "Paint Data"
+msgstr "绘制数据"
+
+#: Orange/widgets/data/owpaintdata.py:741
+msgid "Create data by painting data points on a plane."
+msgstr "通过在平面上绘制数据点来创建数据。"
+
+#: Orange/widgets/data/owpaintdata.py:770
+msgid "Input data has no variables"
+msgstr "输入数据没有变量"
+
+#: Orange/widgets/data/owpaintdata.py:771
+msgid "Numeric target value can not be used."
+msgstr "无法使用数值型目标值。"
+
+#: Orange/widgets/data/owpaintdata.py:772
+msgid "Sparse data is ignored."
+msgstr "已忽略稀疏数据。"
+
+#: Orange/widgets/data/owpaintdata.py:778
+msgid "Paint Data uses data from the first two attributes."
+msgstr "使用前两个属性的数据来绘制数据。"
+
+#: Orange/widgets/data/owpaintdata.py:824
+msgid "Names"
+msgstr "名称"
+
+#: Orange/widgets/data/owpaintdata.py:827
+msgid "Variable X: "
+msgstr "变量 X: "
+
+#: Orange/widgets/data/owpaintdata.py:832
+msgid "Variable Y: "
+msgstr "变量 Y: "
+
+#: Orange/widgets/data/owpaintdata.py:849
+msgid "Add new class label"
+msgstr "增加新分类标签"
+
+#: Orange/widgets/data/owpaintdata.py:855
+msgid "Remove selected class label"
+msgstr "删除选定分类标签"
+
+#: Orange/widgets/data/owpaintdata.py:866
+msgid "Tools"
+msgstr "工具"
+
+#: Orange/widgets/data/owpaintdata.py:918
+msgid "Radius:"
+msgstr "半径："
+
+#: Orange/widgets/data/owpaintdata.py:925
+msgid "Intensity:"
+msgstr "强度："
+
+#: Orange/widgets/data/owpaintdata.py:932
+msgid "Symbol:"
+msgstr "符号:"
+
+#: Orange/widgets/data/owpaintdata.py:935
+msgid "Reset to Input Data"
+msgstr "重置为输入数据"
+
+#: Orange/widgets/data/owpivot.py:93
+msgid "Row variable should be DiscreteVariable or ContinuousVariable"
+msgstr "行变量应为离散变量或连续变量"
+
+#: Orange/widgets/data/owpivot.py:96
+msgid "Column variable should be DiscreteVariable"
+msgstr "列变量需要是离散变量"
+
+#: Orange/widgets/data/owpivot.py:726
+msgid "Pivot Table"
+msgstr "透视表"
+
+#: Orange/widgets/data/owpivot.py:727
+msgid "Reshape data table based on column values."
+msgstr "根据列值重塑数据表。"
+
+#: Orange/widgets/data/owpivot.py:742
+msgid "Column feature should be selected."
+msgstr "需要选中列特征。"
+
+#: Orange/widgets/data/owpivot.py:743
+msgid "Some aggregations ({}) cannot be computed."
+msgstr "无法计算某些聚合（{}）。"
+
+#: Orange/widgets/data/owpivot.py:744
+msgid ""
+"Some variables have been renamed in some tablesto avoid duplicates.\n"
+"{}"
+msgstr "部分变量已重命名，以避免重复。"
+
+#: Orange/widgets/data/owpivot.py:746
+msgid "Selected variable has too many values."
+msgstr "选中变量数值过多。"
+
+#: Orange/widgets/data/owpivot.py:771
+msgid "Var"
+msgstr "方差"
+
+#: Orange/widgets/data/owpivot.py:771
+msgid "Mode"
+msgstr "众数"
+
+#: Orange/widgets/data/owpivot.py:771
+msgid "Majority"
+msgstr "众数"
+
+#: Orange/widgets/data/owpivot.py:771
+msgid "Count defined"
+msgstr "计数有效值"
+
+#: Orange/widgets/data/owpivot.py:793
+msgid "(Same as rows)"
+msgstr "（与行相同）"
+
+#: Orange/widgets/data/owpivot.py:797
+msgid "Values"
+msgstr "数值"
+
+#: Orange/widgets/data/owpivot.py:801
+msgid "(None)"
+msgstr "(无)"
+
+#: Orange/widgets/data/owpivot.py:818
+msgid "Aggregations"
+msgstr "合计"
+
+#: Orange/widgets/data/owpreprocess.py:69
+msgid "Equal width discretization"
+msgstr "等宽离散化"
+
+#: Orange/widgets/data/owpreprocess.py:70
+msgid "Equal frequency discretization"
+msgstr "等频率离散化"
+
+#: Orange/widgets/data/owpreprocess.py:71
+msgid "Remove numeric features"
+msgstr "删除数值特征"
+
+#: Orange/widgets/data/owpreprocess.py:96
+msgid "Number of intervals (for equal width/frequency)"
+msgstr "间隔数（用于等宽度/频率）"
+
+#: Orange/widgets/data/owpreprocess.py:188
+msgid ", Number of intervals: {}"
+msgstr "，间隔次数：{}"
+
+#: Orange/widgets/data/owpreprocess.py:197
+msgid "Most frequent is base"
+msgstr "以最常见的值为基础"
+
+#: Orange/widgets/data/owpreprocess.py:198
+msgid "One feature per value"
+msgstr "每个值一个特征"
+
+#: Orange/widgets/data/owpreprocess.py:199
+msgid "Remove non-binary features"
+msgstr "删除非二元特征"
+
+#: Orange/widgets/data/owpreprocess.py:200
+msgid "Remove categorical features"
+msgstr "删除分类特征"
+
+#: Orange/widgets/data/owpreprocess.py:267
+msgid "Remove features with too many"
+msgstr "删除特征，如果有太多的"
+
+#: Orange/widgets/data/owpreprocess.py:268
+msgid "missing values"
+msgstr "缺失值"
+
+#: Orange/widgets/data/owpreprocess.py:269
+msgid "zeros"
+msgstr "零"
+
+#: Orange/widgets/data/owpreprocess.py:279
+msgid "Threshold:"
+msgstr "阈值："
+
+#: Orange/widgets/data/owpreprocess.py:291
+#: Orange/widgets/data/owpreprocess.py:643
+msgid "Fixed"
+msgstr "固定"
+
+#: Orange/widgets/data/owpreprocess.py:369
+msgid "Don't impute."
+msgstr "不要填补。"
+
+#: Orange/widgets/data/owpreprocess.py:370
+msgid "Replace with constant"
+msgstr "替换为常数"
+
+#: Orange/widgets/data/owpreprocess.py:371 Orange/preprocess/impute.py:96
+msgid "Average/Most frequent"
+msgstr "平均/最大频数"
+
+#: Orange/widgets/data/owpreprocess.py:372
+msgid "Model based imputer"
+msgstr "基于模型填补"
+
+#: Orange/widgets/data/owpreprocess.py:373
+msgid "Replace with random value"
+msgstr "替换为随机值"
+
+#: Orange/widgets/data/owpreprocess.py:374
+msgid "Remove rows with missing values."
+msgstr "删除有缺失值的行。"
+
+#: Orange/widgets/data/owpreprocess.py:450
+msgid "Score"
+msgstr "得分"
+
+#: Orange/widgets/data/owpreprocess.py:459
+#: Orange/widgets/data/owpreprocess.py:638
+msgid "Number of features"
+msgstr "盒子数量"
+
+#: Orange/widgets/data/owpreprocess.py:464
+msgid "Fixed:"
+msgstr "固定："
+
+#: Orange/widgets/data/owpreprocess.py:475
+msgid "Proportion:"
+msgstr "比例："
+
+#: Orange/widgets/data/owpreprocess.py:561
+#: Orange/widgets/data/owpreprocess.py:582 Orange/widgets/data/owrank.py:56
+msgid "Information Gain"
+msgstr "信息增益"
+
+#: Orange/widgets/data/owpreprocess.py:562
+msgid "Gain ratio"
+msgstr "增益比率"
+
+#: Orange/widgets/data/owpreprocess.py:563
+msgid "Gini index"
+msgstr "吉尼指数"
+
+#: Orange/widgets/data/owpreprocess.py:564
+#: Orange/widgets/data/owpreprocess.py:585 Orange/widgets/data/owrank.py:66
+msgid "ReliefF"
+msgstr "ReliefF"
+
+#: Orange/widgets/data/owpreprocess.py:565
+#: Orange/widgets/data/owpreprocess.py:586
+msgid "Fast Correlation Based Filter"
+msgstr "基于快速相关性过滤"
+
+#: Orange/widgets/data/owpreprocess.py:566
+#: Orange/widgets/data/owpreprocess.py:587 Orange/widgets/data/owrank.py:62
+msgid "ANOVA"
+msgstr "ANOVA"
+
+#: Orange/widgets/data/owpreprocess.py:567
+#: Orange/widgets/data/owpreprocess.py:588
+msgid "Chi2"
+msgstr "卡方"
+
+#: Orange/widgets/data/owpreprocess.py:568
+#: Orange/widgets/data/owpreprocess.py:589 Orange/widgets/data/owrank.py:74
+msgid "RReliefF"
+msgstr "RReliefF"
+
+#: Orange/widgets/data/owpreprocess.py:569
+#: Orange/widgets/data/owpreprocess.py:590
+msgid "Univariate Linear Regression"
+msgstr "单变量线性回归"
+
+#: Orange/widgets/data/owpreprocess.py:583
+msgid "Gain Ratio"
+msgstr "增益比率"
+
+#: Orange/widgets/data/owpreprocess.py:584
+msgid "Gini Index"
+msgstr "吉尼指数"
+
+#: Orange/widgets/data/owpreprocess.py:620
+msgid "Score: {}, Strategy (Fixed): {}"
+msgstr "分数：{}，策略（固定）：{}"
+
+#: Orange/widgets/data/owpreprocess.py:818
+#: Orange/widgets/data/owpurgedomain.py:165
+#: Orange/widgets/data/owrandomize.py:45
+msgid "Classes"
+msgstr "分类"
+
+#: Orange/widgets/data/owpreprocess.py:819
+#: Orange/widgets/data/owpurgedomain.py:78
+#: Orange/widgets/data/owpurgedomain.py:164
+#: Orange/widgets/data/owrandomize.py:48
+#: Orange/widgets/data/owselectcolumns.py:224
+msgid "Features"
+msgstr "特征"
+
+#: Orange/widgets/data/owpreprocess.py:820
+msgid "Meta data"
+msgstr "元数据"
+
+#: Orange/widgets/data/owpreprocess.py:828
+msgid "Randomize:"
+msgstr "随机："
+
+#: Orange/widgets/data/owpreprocess.py:829
+msgid "Replicable shuffling:"
+msgstr "可复现打乱："
+
+#: Orange/widgets/data/owpreprocess.py:851
+msgid "Replicable"
+msgstr "可复现"
+
+#: Orange/widgets/data/owpreprocess.py:852
+msgid "Not replicable"
+msgstr "不可复现"
+
+#: Orange/widgets/data/owpreprocess.py:868
+msgid "Components:"
+msgstr "组件："
+
+#: Orange/widgets/data/owpreprocess.py:889
+msgid "Components: {}"
+msgstr "组件: {}"
+
+#: Orange/widgets/data/owpreprocess.py:911
+msgid "Rank:"
+msgstr "排名："
+
+#: Orange/widgets/data/owpreprocess.py:912
+msgid "Relative error:"
+msgstr "相对误差："
+
+#: Orange/widgets/data/owpreprocess.py:941
+msgid "Rank: {}, Relative error: {}"
+msgstr "排序：{}，相对误差：{}"
+
+#: Orange/widgets/data/owpreprocess.py:985
+msgid "Discretization"
+msgstr "离散化"
+
+#: Orange/widgets/data/owpreprocess.py:986
+msgid "Discretize Continuous Variables"
+msgstr "离散化连续变量"
+
+#: Orange/widgets/data/owpreprocess.py:991
+msgid "Continuization"
+msgstr "连续化"
+
+#: Orange/widgets/data/owpreprocess.py:992
+msgid "Continuize Discrete Variables"
+msgstr "连续化离散变量"
+
+#: Orange/widgets/data/owpreprocess.py:998
+msgid "Impute Missing Values"
+msgstr "填补缺失值"
+
+#: Orange/widgets/data/owpreprocess.py:1003
+#: Orange/widgets/data/owpreprocess.py:1028
+msgid "Feature Selection"
+msgstr "特征选择"
+
+#: Orange/widgets/data/owpreprocess.py:1004
+msgid "Select Relevant Features"
+msgstr "选择相关特征"
+
+#: Orange/widgets/data/owpreprocess.py:1009
+#: Orange/widgets/data/owpreprocess.py:1010
+msgid "Random Feature Selection"
+msgstr "随机选择特征"
+
+#: Orange/widgets/data/owpreprocess.py:1011
+msgid "Select Random Features"
+msgstr "选择随机特征"
+
+#: Orange/widgets/data/owpreprocess.py:1016
+msgid "Normalize"
+msgstr "归一化"
+
+#: Orange/widgets/data/owpreprocess.py:1016
+msgid "Scale"
+msgstr "规模"
+
+#: Orange/widgets/data/owpreprocess.py:1017
+msgid "Normalize Features"
+msgstr "归一化特征"
+
+#: Orange/widgets/data/owpreprocess.py:1022
+#: Orange/widgets/data/owpreprocess.py:1023
+#: Orange/widgets/data/owrandomize.py:15
+msgid "Randomize"
+msgstr "随机"
+
+#: Orange/widgets/data/owpreprocess.py:1022
+msgid "Randomization"
+msgstr "随机化"
+
+#: Orange/widgets/data/owpreprocess.py:1028
+msgid "Remove Sparse"
+msgstr "移除稀疏特征"
+
+#: Orange/widgets/data/owpreprocess.py:1029
+msgid "Remove Sparse Features"
+msgstr "移除稀疏特征"
+
+#: Orange/widgets/data/owpreprocess.py:1034
+msgid "PCA"
+msgstr "PCA"
+
+#: Orange/widgets/data/owpreprocess.py:1035
+msgid "Principal Component Analysis"
+msgstr "主成分分析"
+
+#: Orange/widgets/data/owpreprocess.py:1040
+msgid "CUR"
+msgstr "CUR"
+
+#: Orange/widgets/data/owpreprocess.py:1041
+msgid "CUR Matrix Decomposition"
+msgstr "CUR矩阵分解"
+
+#: Orange/widgets/data/owpreprocess.py:1068
+msgid "Preprocess"
+msgstr "预处理"
+
+#: Orange/widgets/data/owpreprocess.py:1069
+msgid "Construct a data preprocessing pipeline."
+msgstr "构建数据预处理流程。"
+
+#: Orange/widgets/data/owpreprocess.py:1108
+msgid "Preprocessors"
+msgstr "预处理器"
+
+#: Orange/widgets/data/owpreprocess.py:1151
+msgid "Drag items from the list on the left"
+msgstr "从左侧列表中拖动项目"
+
+#: Orange/widgets/data/owpurgedomain.py:13
+msgid "Purge Domain"
+msgstr "清除范畴"
+
+#: Orange/widgets/data/owpurgedomain.py:14
+msgid "Remove redundant values and features from the dataset. Sort values."
+msgstr "从数据集中删除多余的值和特征。排序值。"
+
+#: Orange/widgets/data/owpurgedomain.py:39
+msgid "Sort categorical feature values"
+msgstr "排序分类特征值"
+
+#: Orange/widgets/data/owpurgedomain.py:40
+msgid "Remove unused feature values"
+msgstr "删除未使用的特征值"
+
+#: Orange/widgets/data/owpurgedomain.py:41
+msgid "Remove constant features"
+msgstr "删除常数特征"
+
+#: Orange/widgets/data/owpurgedomain.py:43
+msgid "Sort categorical class values"
+msgstr "排序分类类型值"
+
+#: Orange/widgets/data/owpurgedomain.py:44
+msgid "Remove unused class variable values"
+msgstr "删除未使用的类变量值"
+
+#: Orange/widgets/data/owpurgedomain.py:45
+msgid "Remove constant class variables"
+msgstr "删除常数类型变量"
+
+#: Orange/widgets/data/owpurgedomain.py:47
+msgid "Remove unused meta attribute values"
+msgstr "删除未使用的元属性值"
+
+#: Orange/widgets/data/owpurgedomain.py:48
+msgid "Remove constant meta attributes"
+msgstr "删除常数元属性"
+
+#: Orange/widgets/data/owpurgedomain.py:50
+msgid "Sorted features"
+msgstr "排序特征"
+
+#: Orange/widgets/data/owpurgedomain.py:51
+msgid "Reduced features"
+msgstr "减少特征"
+
+#: Orange/widgets/data/owpurgedomain.py:52
+msgid "Removed features"
+msgstr "已删除的特征"
+
+#: Orange/widgets/data/owpurgedomain.py:53
+msgid "Sorted classes"
+msgstr "排序类型"
+
+#: Orange/widgets/data/owpurgedomain.py:54
+msgid "Reduced classes"
+msgstr "减少类型"
+
+#: Orange/widgets/data/owpurgedomain.py:55
+msgid "Removed classes"
+msgstr "删除类型"
+
+#: Orange/widgets/data/owpurgedomain.py:56
+msgid "Reduced metas"
+msgstr "减少元属性"
+
+#: Orange/widgets/data/owpurgedomain.py:57
+msgid "Removed metas"
+msgstr "去除元属性"
+
+#: Orange/widgets/data/owpurgedomain.py:84
+#, python-format
+msgid ""
+"Sorted: %(resortedAttrs)s, reduced: %(reducedAttrs)s, removed: "
+"%(removedAttrs)s"
+msgstr ""
+"已排序: %(resortedAttrs)s, 减少: %(reducedAttrs)s, 移除: %(removedAttrs)s"
+
+#: Orange/widgets/data/owpurgedomain.py:93
+#, python-format
+msgid ""
+"Sorted: %(resortedClasses)s,reduced: %(reducedClasses)s, removed: "
+"%(removedClasses)s"
+msgstr ""
+"已排序: %(resortedClasses)s,已减少: %(reducedClasses)s, 已删除: "
+"%(removedClasses)s"
+
+#: Orange/widgets/data/owpurgedomain.py:102
+#, python-format
+msgid "Reduced: %(reducedMetas)s, removed: %(removedMetas)s"
+msgstr "已减少: %(reducedMetas)s, 已删除: %(removedMetas)s"
+
+#: Orange/widgets/data/owpurgedomain.py:163
+#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:558
+msgid "Settings"
+msgstr "设置"
+
+#: Orange/widgets/data/owpurgedomain.py:166
+#: Orange/widgets/data/owrandomize.py:51
+#: Orange/widgets/data/owselectcolumns.py:261
+msgid "Metas"
+msgstr "元"
+
+#: Orange/widgets/data/owpythonscript.py:418
+#: Orange/widgets/data/owpythonscript.py:558
+msgid "Python Script"
+msgstr "Python 脚本"
+
+#: Orange/widgets/data/owpythonscript.py:419
+msgid "Write a Python script and run it on input data or models."
+msgstr "编写 Python 脚本，来处理输入数据或模型。"
+
+#: Orange/widgets/data/owpythonscript.py:475
+msgid "<p>Execute python script.</p><p>Input variables:<ul><li> "
+msgstr "<p>执行Python脚本。</p><p>输入变量:<ul><li> "
+
+#: Orange/widgets/data/owpythonscript.py:477
+msgid "</ul></p><p>Output variables:<ul><li>"
+msgstr "</ul></p><p>输出变量:<ul><li>"
+
+#: Orange/widgets/data/owpythonscript.py:488
+msgid "Library"
+msgstr "库"
+
+#: Orange/widgets/data/owpythonscript.py:508
+msgid "Add a new script to the library"
+msgstr "向库添加新脚本"
+
+#: Orange/widgets/data/owpythonscript.py:513
+msgid "Remove script from library"
+msgstr "从库中删除脚本"
+
+#: Orange/widgets/data/owpythonscript.py:517
+msgid "Update"
+msgstr "更新"
+
+#: Orange/widgets/data/owpythonscript.py:518
+msgid "Save changes in the editor to library"
+msgstr "将编辑器中的更改保存到库"
+
+#: Orange/widgets/data/owpythonscript.py:523
+msgid "More"
+msgstr "更多"
+
+#: Orange/widgets/data/owpythonscript.py:523
+msgid "More actions"
+msgstr "更多操作"
+
+#: Orange/widgets/data/owpythonscript.py:525
+msgid "Import Script from File"
+msgstr "从文件导入脚本"
+
+#: Orange/widgets/data/owpythonscript.py:526
+msgid "Save Selected Script to File"
+msgstr "将选定的脚本保存到文件中"
+
+#: Orange/widgets/data/owpythonscript.py:527
+msgid "Undo Changes to Selected Script"
+msgstr "撤消对选定脚本的更改"
+
+#: Orange/widgets/data/owpythonscript.py:546
+msgid "Run"
+msgstr "运行"
+
+#: Orange/widgets/data/owpythonscript.py:548
+msgid "Run script"
+msgstr "运行脚本"
+
+#: Orange/widgets/data/owpythonscript.py:566
+msgid "&Save"
+msgstr "保存"
+
+#: Orange/widgets/data/owpythonscript.py:567
+msgid "Save script to file"
+msgstr "将脚本保存到文件中"
+
+#: Orange/widgets/data/owpythonscript.py:572
+msgid "Console"
+msgstr "控制台"
+
+#: Orange/widgets/data/owpythonscript.py:644
+msgid "New script"
+msgstr "新脚本"
+
+#: Orange/widgets/data/owpythonscript.py:725
+msgid "Save Python Script"
+msgstr "保存 Python 脚本"
+
+#: Orange/widgets/data/owrandomize.py:16
+msgid "Randomize features, class and/or metas in data table."
+msgstr "随机化数据表中的特征、分类和/或元信息。"
+
+#: Orange/widgets/data/owrandomize.py:42
+msgid "Shuffled columns"
+msgstr "打乱列"
+
+#: Orange/widgets/data/owrandomize.py:54
+msgid "Shuffled rows"
+msgstr "打乱行"
+
+#: Orange/widgets/data/owrandomize.py:60 Orange/widgets/data/owrank.py:361
 msgid "All"
 msgstr "所有"
+
+#: Orange/widgets/data/owrandomize.py:66
+msgid "Replicable shuffling"
+msgstr "可复现打乱"
+
+#: Orange/widgets/data/owrank.py:58
+msgid "Information Gain Ratio"
+msgstr "信息获取比率"
+
+#: Orange/widgets/data/owrank.py:60
+msgid "Gini Decrease"
+msgstr "吉尼减少"
+
+#: Orange/widgets/data/owrank.py:64
+msgid "χ²"
+msgstr "χ²"
+
+#: Orange/widgets/data/owrank.py:68
+msgid "FCBF"
+msgstr "FCBF"
+
+#: Orange/widgets/data/owrank.py:72
+msgid "Univariate Regression"
+msgstr "单变量回归"
+
+#: Orange/widgets/data/owrank.py:251
+msgid "Rank"
+msgstr "排名"
+
+#: Orange/widgets/data/owrank.py:252
+msgid "Rank and filter data features by their relevance."
+msgstr "按其相关性对数据特征进行排名和筛选。"
+
+#: Orange/widgets/data/owrank.py:282
+msgid "Data does not have a (single) target variable."
+msgstr "数据没有（任何）目标变量。"
+
+#: Orange/widgets/data/owrank.py:283
+msgid "Missing values will be imputed as needed."
+msgstr "缺失的值将根据需要进行填补。"
+
+#: Orange/widgets/data/owrank.py:286
+msgid "Cannot handle target variable type {}"
+msgstr "无法处理目标变量类型 {}"
+
+#: Orange/widgets/data/owrank.py:287
+msgid "Scorer {} inadequate: {}"
+msgstr "得分 {} 不足：{}"
+
+#: Orange/widgets/data/owrank.py:288
+msgid "Data does not have a single attribute."
+msgstr "数据没有任何属性。"
+
+#: Orange/widgets/data/owrank.py:331
+msgid "Scoring Methods"
+msgstr "评分方法"
+
+#: Orange/widgets/data/owrank.py:345
+msgid "Select Attributes"
+msgstr "选择属性"
 
 #: Orange/widgets/data/owrank.py:363
 msgid "Best ranked:"
 msgstr "排名在前："
+
+#: Orange/widgets/data/owsave.py:17
+msgid "Save Data"
+msgstr "保存数据"
+
+#: Orange/widgets/data/owsave.py:18
+msgid "Save data to an output file."
+msgstr "将数据保存到输出文件。"
+
+#: Orange/widgets/data/owsave.py:29
+msgid "Use Pickle format for sparse data."
+msgstr "对稀疏数据Pickle格式保存。"
+
+#: Orange/widgets/data/owsave.py:40
+msgid "Add type annotations to header"
+msgstr "在标题中添加类型注释"
+
+#: Orange/widgets/data/owsave.py:42
+msgid ""
+"Some formats (Tab-delimited, Comma-separated) can include \n"
+"additional information about variables types in header rows."
+msgstr ""
+"某些格式（tab分隔，逗号分隔）可以包括\n"
+"关于头行中变量类型的其他信息。"
+
+#: Orange/widgets/data/owselectbydataindex.py:13
+msgid "Select by Data Index"
+msgstr "按数据索引选择"
+
+#: Orange/widgets/data/owselectbydataindex.py:14
+msgid "Match instances by index from data subset."
+msgstr "按数据子集的索引匹配记录。"
+
+#: Orange/widgets/data/owselectbydataindex.py:49
+#: Orange/widgets/data/owtransform.py:100
+msgid "Data"
+msgstr "数据"
+
+#: Orange/widgets/data/owselectbydataindex.py:51
+msgid "Data Subset"
+msgstr "数据子集"
+
+#: Orange/widgets/data/owselectbydataindex.py:71
+msgid "No data."
+msgstr "没有数据。"
+
+#: Orange/widgets/data/owselectbydataindex.py:73
+msgid ""
+"{}\n"
+"{} instances\n"
+"{} variables"
+msgstr ""
+"{}\n"
+"{} 记录\n"
+"{} 变量"
+
+#: Orange/widgets/data/owselectcolumns.py:149
+msgid "Select Columns"
+msgstr "选择列"
+
+#: Orange/widgets/data/owselectcolumns.py:150
+msgid ""
+"Select columns from the data table and assign them to data features, classes "
+"or meta variables."
+msgstr "从数据表中选择列，并将它们分配给数据特征、类或元信息。"
+
+#: Orange/widgets/data/owselectcolumns.py:174
+msgid "Features and data domain do not match"
+msgstr "特征和数据范畴不匹配"
+
+#: Orange/widgets/data/owselectcolumns.py:175
+msgid "Most widgets do not support multiple targets"
+msgstr "大多数节点不支持多个目标变量"
+
+#: Orange/widgets/data/owselectcolumns.py:204
+msgid "Ignored"
+msgstr "忽略"
+
+#: Orange/widgets/data/owselectcolumns.py:305
+msgid "Ignore new variables by default"
+msgstr "默认情况下忽略新变量"
+
+#: Orange/widgets/data/owselectcolumns.py:306
+msgid ""
+"When the widget receives data with additional columns they are added to the "
+"available attributes column if <i>Ignore new variables by default</i> is "
+"checked."
+msgstr ""
+"当节点接收具有更多列的数据时，如果选中 <i>默认检查忽略新变量</i> ，则将数据添"
+"加到可用属性列中。"
+
+#: Orange/widgets/data/owselectrows.py:157
+msgid "Select Rows"
+msgstr "选择行"
+
+#: Orange/widgets/data/owselectrows.py:159
+msgid "Select rows from the data based on values of variables."
+msgstr "根据变量值从数据中选择行。"
+
+#: Orange/widgets/data/owselectrows.py:186
+#: Orange/widgets/data/owselectrows.py:203
+msgid "equals"
+msgstr "等于"
+
+#: Orange/widgets/data/owselectrows.py:187
+#: Orange/widgets/data/owselectrows.py:198
+#: Orange/widgets/data/owselectrows.py:204
+msgid "is not"
+msgstr "不是"
+
+#: Orange/widgets/data/owselectrows.py:188
+msgid "is below"
+msgstr "小于"
+
+#: Orange/widgets/data/owselectrows.py:189
+msgid "is at most"
+msgstr "不大于"
+
+#: Orange/widgets/data/owselectrows.py:190
+msgid "is greater than"
+msgstr "大于"
+
+#: Orange/widgets/data/owselectrows.py:191
+msgid "is at least"
+msgstr "不小于"
+
+#: Orange/widgets/data/owselectrows.py:192
+#: Orange/widgets/data/owselectrows.py:209
+msgid "is between"
+msgstr "介于"
+
+#: Orange/widgets/data/owselectrows.py:193
+#: Orange/widgets/data/owselectrows.py:210
+msgid "is outside"
+msgstr "不介于"
+
+#: Orange/widgets/data/owselectrows.py:194
+#: Orange/widgets/data/owselectrows.py:200
+#: Orange/widgets/data/owselectrows.py:214
+msgid "is defined"
+msgstr "有值"
+
+#: Orange/widgets/data/owselectrows.py:197
+msgid "is"
+msgstr "是"
+
+#: Orange/widgets/data/owselectrows.py:199
+msgid "is one of"
+msgstr "是其之一"
+
+#: Orange/widgets/data/owselectrows.py:205
+msgid "is before"
+msgstr "之前"
+
+#: Orange/widgets/data/owselectrows.py:206
+msgid "is equal or before"
+msgstr "等于或在其之前"
+
+#: Orange/widgets/data/owselectrows.py:207
+msgid "is after"
+msgstr "之后"
+
+#: Orange/widgets/data/owselectrows.py:208
+msgid "is equal or after"
+msgstr "等于或在其之后"
+
+#: Orange/widgets/data/owselectrows.py:211
+msgid "contains"
+msgstr "包含"
+
+#: Orange/widgets/data/owselectrows.py:212
+msgid "begins with"
+msgstr "开始于"
+
+#: Orange/widgets/data/owselectrows.py:213
+msgid "ends with"
+msgstr "结束于"
+
+#: Orange/widgets/data/owselectrows.py:222
+msgid "All variables"
+msgstr "所有变量"
+
+#: Orange/widgets/data/owselectrows.py:223
+msgid "are defined"
+msgstr "有值"
+
+#: Orange/widgets/data/owselectrows.py:224
+msgid "All numeric variables"
+msgstr "所有数值型变量"
+
+#: Orange/widgets/data/owselectrows.py:226
+msgid "All string variables"
+msgstr "所有字符串变量"
+
+#: Orange/widgets/data/owselectrows.py:250
+msgid "Conditions"
+msgstr "条件"
+
+#: Orange/widgets/data/owselectrows.py:266
+msgid "Add Condition"
+msgstr "添加条件"
+
+#: Orange/widgets/data/owselectrows.py:268
+msgid "Add All Variables"
+msgstr "添加所有变量"
+
+#: Orange/widgets/data/owselectrows.py:270
+#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1733
+msgid "Remove All"
+msgstr "移除所有"
+
+#: Orange/widgets/data/owselectrows.py:275
+msgid "Remove unused features"
+msgstr "删除未使用的特征"
+
+#: Orange/widgets/data/owselectrows.py:278
+msgid "Remove unused classes"
+msgstr "删除未使用的分类"
+
+#: Orange/widgets/data/owselectrows.py:322
+msgid "Remove existing filters"
+msgstr "删除现有过滤器"
+
+#: Orange/widgets/data/owsql.py:40
+msgid "SQL Table"
+msgstr "SQL 表"
+
+#: Orange/widgets/data/owsql.py:42
+msgid "Load dataset from SQL."
+msgstr "使用 SQL 加载数据集。"
+
+#: Orange/widgets/data/owsql.py:65
+msgid "Data description was generated from a sample."
+msgstr "数据描述从样本生成。"
+
+#: Orange/widgets/data/owsql.py:68
+msgid "Database is missing extensions: {}"
+msgstr "数据库缺少扩展：{}"
+
+#: Orange/widgets/data/owsql.py:71
+msgid "Please install a backend to use this widget."
+msgstr "请安装后端以使用此节点。"
+
+#: Orange/widgets/data/owsql.py:139
+msgid "Auto-discover categorical variables"
+msgstr "自动发现分类变量"
 
 #: Orange/widgets/data/owtable.py:179
 msgid "Data Table"
@@ -1452,6 +2458,132 @@ msgstr "恢复原始顺序"
 msgid "Show rows in the original order"
 msgstr "按原始顺序显示行"
 
+#: Orange/widgets/data/owtransform.py:12
+msgid "Apply Domain"
+msgstr "应用范畴"
+
+#: Orange/widgets/data/owtransform.py:13
+msgid "Applies template domain on data table."
+msgstr "在数据表上应用模板范畴。"
+
+#: Orange/widgets/data/owtransform.py:26
+msgid ""
+"An error occurred while transforming data.\n"
+"{}"
+msgstr ""
+"在转换数据时发生错误。\n"
+"{}"
+
+#: Orange/widgets/data/owtransform.py:46
+msgid "No data on input."
+msgstr "没有输入数据。"
+
+#: Orange/widgets/data/owtransform.py:48
+msgid "Input data with {:,} instances and {:,} features."
+msgstr "输入数据有 {:,} 记录和 {:,} 特征。"
+
+#: Orange/widgets/data/owtransform.py:54
+msgid "No template data on input."
+msgstr "没有输入模板数据。"
+
+#: Orange/widgets/data/owtransform.py:56
+msgid "Template domain applied."
+msgstr "应用了模板范畴。"
+
+#: Orange/widgets/data/owtransform.py:58
+msgid "Template data includes {:,} features."
+msgstr "模板数据包含 {:,} 特征。"
+
+#: Orange/widgets/data/owtransform.py:65
+msgid "Output data includes {:,} features."
+msgstr "输出数据包含 {:,} 特征。"
+
+#: Orange/widgets/data/owtransform.py:102
+msgid "Template data"
+msgstr "模板数据"
+
+#: Orange/widgets/data/owtransform.py:104
+msgid "Transformed data"
+msgstr "已转换的数据"
+
+#: Orange/widgets/data/owtranspose.py:36
+msgid "Transpose"
+msgstr "转置"
+
+#: Orange/widgets/data/owtranspose.py:37
+msgid "Transpose data table."
+msgstr "转置数据表。"
+
+#: Orange/widgets/data/owtranspose.py:63
+msgid ""
+"Values are not unique.\n"
+"To avoid multiple features with the same name, values \n"
+"of '{}' have been augmented with indices."
+msgstr ""
+"值并非独一无二。\n"
+"为了避免同样的名字、数值有多个特征 \n"
+"\"{}\" 已增加索引。"
+
+#: Orange/widgets/data/owtranspose.py:66
+msgid "Categorical features have been encoded as numbers."
+msgstr "分类特征已编码为数字。"
+
+#: Orange/widgets/data/owtranspose.py:78
+msgid "Feature names"
+msgstr "特征名称"
+
+#: Orange/widgets/data/owtranspose.py:81
+msgid "Generic"
+msgstr "通用"
+
+#: Orange/widgets/data/owtranspose.py:85
+msgid "Type a prefix ..."
+msgstr "键入前缀..."
+
+#: Orange/widgets/data/owtranspose.py:88
+msgid "From variable:"
+msgstr "从变量："
+
+#: Orange/widgets/data/owtranspose.py:99
+msgid "Remove redundant instance"
+msgstr "删除冗余记录"
+
+#: Orange/widgets/data/owunique.py:14
+msgid "Unique"
+msgstr "唯一值"
+
+#: Orange/widgets/data/owunique.py:16
+msgid "Filter instances unique by specified key attribute(s)."
+msgstr "按指定的关键属性筛选唯一记录。"
+
+#: Orange/widgets/data/owunique.py:26
+msgid "Last instance"
+msgstr "最后一条记录"
+
+#: Orange/widgets/data/owunique.py:27
+msgid "First instance"
+msgstr "第一条记录"
+
+#: Orange/widgets/data/owunique.py:28
+msgid "Middle instance"
+msgstr "中间的记录"
+
+#: Orange/widgets/data/owunique.py:29
+msgid "Random instance"
+msgstr "随机记录"
+
+#: Orange/widgets/data/owunique.py:30
+msgid "Discard non-unique instances"
+msgstr "丢弃非唯一的记录"
+
+#: Orange/widgets/data/owunique.py:46
+msgid "Group by"
+msgstr "按此分组"
+
+#: Orange/widgets/data/owunique.py:52
+msgid "Instance to select in each group:"
+msgstr "在每个组中选择的记录："
+
 #: Orange/preprocess/impute.py:77
 msgid "Don't impute"
 msgstr "不要填补"
@@ -1459,10 +2591,6 @@ msgstr "不要填补"
 #: Orange/preprocess/impute.py:86
 msgid "Remove instances with unknown values"
 msgstr "删除具有未知值的记录"
-
-#: Orange/preprocess/impute.py:96
-msgid "Average/Most frequent"
-msgstr "平均/最大频数"
 
 #: Orange/preprocess/impute.py:110
 msgid "Variable must be numeric or categorical."
@@ -1491,6 +2619,27 @@ msgstr "随机值"
 #: Orange/preprocess/impute.py:369
 msgid "Replace with a random value"
 msgstr "替换为随机值"
+
+#: Orange/widgets/utils/save/owsavebase.py:42
+msgid "Empty input; nothing was saved."
+msgstr "空输入; 没有保存任何东西。"
+
+#: Orange/widgets/utils/save/owsavebase.py:45
+msgid "File name is not set."
+msgstr "未设置文件名称。"
+
+#: Orange/widgets/utils/save/owsavebase.py:89
+msgid "Autosave when receiving new data"
+msgstr "接收新数据时自动保存"
+
+#: Orange/widgets/utils/save/owsavebase.py:94
+#, python-brace-format
+msgid "Save as {self.stored_name}"
+msgstr "保存为 {self.stored_name}"
+
+#: Orange/widgets/utils/save/owsavebase.py:96
+msgid "Save as ..."
+msgstr "保存为..."
 
 #: ../orange-widget-base/orangewidget/gui.py:1814
 msgid "Send Selection"
@@ -1739,10 +2888,6 @@ msgstr "工作流信息"
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:551
 msgid "Show workflow properties."
 msgstr "显示工作流属性。"
-
-#: ../orange-canvas-core/orangecanvas/application/canvasmain.py:558
-msgid "Settings"
-msgstr "设置"
 
 #: ../orange-canvas-core/orangecanvas/application/canvasmain.py:560
 msgid "Set application settings."
@@ -2451,10 +3596,6 @@ msgstr "对齐网格"
 msgid "Open All"
 msgstr "打开所有"
 
-#: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1733
-msgid "Remove All"
-msgstr "移除所有"
-
 #: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1964
 msgid "Sorry there is no documentation available for this widget."
 msgstr "此节点没有文档。"
@@ -2540,9 +3681,6 @@ msgstr "前置这个节点的所有直接前序节点"
 
 #~ msgid "Data Attributes"
 #~ msgstr "数据属性"
-
-#~ msgid "Data"
-#~ msgstr "数据"
 
 #~ msgid "and send a data table to the output."
 #~ msgstr "输出数据表"

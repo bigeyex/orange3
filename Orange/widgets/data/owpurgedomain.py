@@ -10,9 +10,9 @@ from Orange.widgets.widget import Input, Output
 
 
 class OWPurgeDomain(widget.OWWidget):
-    name = "Purge Domain"
-    description = "Remove redundant values and features from the dataset. " \
-                  "Sort values."
+    name = _("Purge Domain")
+    description = _("Remove redundant values and features from the dataset. " \
+                  "Sort values.")
     icon = "icons/PurgeDomain.svg"
     category = "Data"
     keywords = ["remove", "delete", "unused"]
@@ -36,25 +36,25 @@ class OWPurgeDomain(widget.OWWidget):
     want_main_area = False
     resizing_enabled = False
 
-    feature_options = (('sortValues', 'Sort categorical feature values'),
-                       ('removeValues', 'Remove unused feature values'),
-                       ('removeAttributes', 'Remove constant features'))
+    feature_options = (('sortValues', _('Sort categorical feature values')),
+                       ('removeValues', _('Remove unused feature values')),
+                       ('removeAttributes', _('Remove constant features')))
 
-    class_options = (('sortClasses', 'Sort categorical class values'),
-                     ('removeClasses', 'Remove unused class variable values'),
-                     ('removeClassAttribute', 'Remove constant class variables'))
+    class_options = (('sortClasses', _('Sort categorical class values')),
+                     ('removeClasses', _('Remove unused class variable values')),
+                     ('removeClassAttribute', _('Remove constant class variables')))
 
-    meta_options = (('removeMetaAttributeValues', 'Remove unused meta attribute values'),
-                    ('removeMetaAttributes', 'Remove constant meta attributes'))
+    meta_options = (('removeMetaAttributeValues', _('Remove unused meta attribute values')),
+                    ('removeMetaAttributes', _('Remove constant meta attributes')))
 
-    stat_labels = (('Sorted features', 'resortedAttrs'),
-                   ('Reduced features', 'reducedAttrs'),
-                   ('Removed features', 'removedAttrs'),
-                   ('Sorted classes', 'resortedClasses'),
-                   ('Reduced classes', 'reducedClasses'),
-                   ('Removed classes', 'removedClasses'),
-                   ('Reduced metas', 'reducedMetas'),
-                   ('Removed metas', 'removedMetas'))
+    stat_labels = ((_('Sorted features'), 'resortedAttrs'),
+                   (_('Reduced features'), 'reducedAttrs'),
+                   (_('Removed features'), 'removedAttrs'),
+                   (_('Sorted classes'), 'resortedClasses'),
+                   (_('Reduced classes'), 'reducedClasses'),
+                   (_('Removed classes'), 'removedClasses'),
+                   (_('Reduced metas'), 'reducedMetas'),
+                   (_('Removed metas'), 'removedMetas'))
 
     def __init__(self):
         super().__init__()
@@ -75,14 +75,14 @@ class OWPurgeDomain(widget.OWWidget):
             frame.setFrameShadow(QFrame.Sunken)
             parent.layout().addWidget(frame)
 
-        boxAt = gui.vBox(self.controlArea, "Features")
+        boxAt = gui.vBox(self.controlArea, _("Features"))
         for value, label in self.feature_options:
             gui.checkBox(boxAt, self, value, label,
                          callback=self.optionsChanged)
         add_line(boxAt)
         gui.label(boxAt, self,
-                  "Sorted: %(resortedAttrs)s, "
-                  "reduced: %(reducedAttrs)s, removed: %(removedAttrs)s")
+                  _("Sorted: %(resortedAttrs)s, "
+                  "reduced: %(reducedAttrs)s, removed: %(removedAttrs)s"))
 
         boxAt = gui.vBox(self.controlArea, "Classes")
         for value, label in self.class_options:
@@ -90,8 +90,8 @@ class OWPurgeDomain(widget.OWWidget):
                          callback=self.optionsChanged)
         add_line(boxAt)
         gui.label(boxAt, self,
-                  "Sorted: %(resortedClasses)s,"
-                  "reduced: %(reducedClasses)s, removed: %(removedClasses)s")
+                  _("Sorted: %(resortedClasses)s,"
+                  "reduced: %(reducedClasses)s, removed: %(removedClasses)s"))
 
         boxAt = gui.vBox(self.controlArea, "Meta attributes")
         for value, label in self.meta_options:
@@ -99,7 +99,7 @@ class OWPurgeDomain(widget.OWWidget):
                          callback=self.optionsChanged)
         add_line(boxAt)
         gui.label(boxAt, self,
-                  "Reduced: %(reducedMetas)s, removed: %(removedMetas)s")
+                  _("Reduced: %(reducedMetas)s, removed: %(removedMetas)s"))
 
         gui.auto_send(self.buttonsArea, self, "autoSend")
 
@@ -160,10 +160,10 @@ class OWPurgeDomain(widget.OWWidget):
                              for value, label in opts
                              if getattr(self, value)) or "no changes"
 
-        self.report_items("Settings", (
-            ("Features", list_opts(self.feature_options)),
-            ("Classes", list_opts(self.class_options)),
-            ("Metas", list_opts(self.meta_options))))
+        self.report_items(_("Settings"), (
+            (_("Features"), list_opts(self.feature_options)),
+            (_("Classes"), list_opts(self.class_options)),
+            (_("Metas"), list_opts(self.meta_options))))
         if self.data:
             self.report_items("Statistics", (
                 (label, getattr(self, value))

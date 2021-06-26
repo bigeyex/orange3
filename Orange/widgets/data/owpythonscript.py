@@ -415,8 +415,8 @@ if TYPE_CHECKING:
 
 
 class OWPythonScript(OWWidget):
-    name = "Python Script"
-    description = "Write a Python script and run it on input data or models."
+    name = _("Python Script")
+    description = _("Write a Python script and run it on input data or models.")
     icon = "icons/PythonScript.svg"
     priority = 3150
     keywords = ["file", "program", "function"]
@@ -469,12 +469,12 @@ class OWPythonScript(OWWidget):
 
         self._cachedDocuments = {}
 
-        self.infoBox = gui.vBox(self.controlArea, 'Info')
+        self.infoBox = gui.vBox(self.controlArea, _('Info'))
         gui.label(
             self.infoBox, self,
-            "<p>Execute python script.</p><p>Input variables:<ul><li> " +
+            _("<p>Execute python script.</p><p>Input variables:<ul><li> ") +
             "<li>".join(map("in_{0}, in_{0}s".format, self.signal_names)) +
-            "</ul></p><p>Output variables:<ul><li>" +
+            _("</ul></p><p>Output variables:<ul><li>") +
             "<li>".join(map("out_{0}".format, self.signal_names)) +
             "</ul></p>"
         )
@@ -485,7 +485,7 @@ class OWPythonScript(OWWidget):
 
         self.libraryList.wrap(self.libraryListSource)
 
-        self.controlBox = gui.vBox(self.controlArea, 'Library')
+        self.controlBox = gui.vBox(self.controlArea, _('Library'))
         self.controlBox.layout().setSpacing(1)
 
         self.libraryView = QListView(
@@ -505,26 +505,26 @@ class OWPythonScript(OWWidget):
         w = itemmodels.ModelActionsWidget()
 
         self.addNewScriptAction = action = QAction("+", self)
-        action.setToolTip("Add a new script to the library")
+        action.setToolTip(_("Add a new script to the library"))
         action.triggered.connect(self.onAddScript)
         w.addAction(action)
 
         action = QAction(unicodedata.lookup("MINUS SIGN"), self)
-        action.setToolTip("Remove script from library")
+        action.setToolTip(_("Remove script from library"))
         action.triggered.connect(self.onRemoveScript)
         w.addAction(action)
 
-        action = QAction("Update", self)
-        action.setToolTip("Save changes in the editor to library")
+        action = QAction(_("Update"), self)
+        action.setToolTip(_("Save changes in the editor to library"))
         action.setShortcut(QKeySequence(QKeySequence.Save))
         action.triggered.connect(self.commitChangesToLibrary)
         w.addAction(action)
 
-        action = QAction("More", self, toolTip="More actions")
+        action = QAction(_("More"), self, toolTip=_("More actions"))
 
-        new_from_file = QAction("Import Script from File", self)
-        save_to_file = QAction("Save Selected Script to File", self)
-        restore_saved = QAction("Undo Changes to Selected Script", self)
+        new_from_file = QAction(_("Import Script from File"), self)
+        save_to_file = QAction(_("Save Selected Script to File"), self)
+        restore_saved = QAction(_("Undo Changes to Selected Script"), self)
         save_to_file.setShortcut(QKeySequence(QKeySequence.SaveAs))
 
         new_from_file.triggered.connect(self.onAddScriptFromFile)
@@ -543,9 +543,9 @@ class OWPythonScript(OWWidget):
 
         self.controlBox.layout().addWidget(w)
 
-        self.execute_button = gui.button(self.buttonsArea, self, 'Run', callback=self.commit)
+        self.execute_button = gui.button(self.buttonsArea, self, _('Run'), callback=self.commit)
 
-        run = QAction("Run script", self, triggered=self.commit,
+        run = QAction(_("Run script"), self, triggered=self.commit,
                       shortcut=QKeySequence(Qt.ControlModifier | Qt.Key_R))
         self.addAction(run)
 
@@ -555,7 +555,7 @@ class OWPythonScript(OWWidget):
         self.defaultFont = defaultFont = \
             "Monaco" if sys.platform == "darwin" else "Courier"
 
-        self.textBox = gui.vBox(self.splitCanvas, 'Python Script')
+        self.textBox = gui.vBox(self.splitCanvas, _('Python Script'))
         self.text = PythonScriptEditor(self)
         self.textBox.layout().addWidget(self.text)
 
@@ -563,13 +563,13 @@ class OWPythonScript(OWWidget):
 
         self.text.modificationChanged[bool].connect(self.onModificationChanged)
 
-        self.saveAction = action = QAction("&Save", self.text)
-        action.setToolTip("Save script to file")
+        self.saveAction = action = QAction(_("&Save"), self.text)
+        action.setToolTip(_("Save script to file"))
         action.setShortcut(QKeySequence(QKeySequence.Save))
         action.setShortcutContext(Qt.WidgetWithChildrenShortcut)
         action.triggered.connect(self.saveScript)
 
-        self.consoleBox = gui.vBox(self.splitCanvas, 'Console')
+        self.consoleBox = gui.vBox(self.splitCanvas, _('Console'))
         self.console = PythonConsole({}, self)
         self.consoleBox.layout().addWidget(self.console)
         self.console.document().setDefaultFont(QFont(defaultFont))
@@ -641,7 +641,7 @@ class OWPythonScript(OWWidget):
         select_row(self.libraryView, index)
 
     def onAddScript(self, *_):
-        self.libraryList.append(Script("New script", self.text.toPlainText(), 0))
+        self.libraryList.append(Script(_("New script"), self.text.toPlainText(), 0))
         self.setSelectedScript(len(self.libraryList) - 1)
 
     def onAddScriptFromFile(self, *_):
@@ -722,7 +722,7 @@ class OWPythonScript(OWWidget):
             filename = os.path.expanduser("~/")
 
         filename, _ = QFileDialog.getSaveFileName(
-            self, 'Save Python Script',
+            self, _('Save Python Script'),
             filename,
             'Python files (*.py)\nAll files(*.*)'
         )

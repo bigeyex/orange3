@@ -146,9 +146,9 @@ class SelectAttributesDomainContextHandler(DomainContextHandler):
 
 class OWSelectAttributes(widget.OWWidget):
     # pylint: disable=too-many-instance-attributes
-    name = "Select Columns"
-    description = "Select columns from the data table and assign them to " \
-                  "data features, classes or meta variables."
+    name = _("Select Columns")
+    description = _("Select columns from the data table and assign them to " \
+                  "data features, classes or meta variables.")
     icon = "icons/SelectColumns.svg"
     priority = 100
     keywords = ["filter", "attributes", "target", "variable"]
@@ -171,8 +171,8 @@ class OWSelectAttributes(widget.OWWidget):
     auto_commit = Setting(True)
 
     class Warning(widget.OWWidget.Warning):
-        mismatching_domain = Msg("Features and data domain do not match")
-        multiple_targets = Msg("Most widgets do not support multiple targets")
+        mismatching_domain = Msg(_("Features and data domain do not match"))
+        multiple_targets = Msg(_("Most widgets do not support multiple targets"))
 
     def __init__(self):
         super().__init__()
@@ -201,7 +201,7 @@ class OWSelectAttributes(widget.OWWidget):
         layout = QGridLayout()
         self.controlArea.setLayout(layout)
         layout.setContentsMargins(0, 0, 0, 0)
-        box = gui.vBox(self.controlArea, "Ignored",
+        box = gui.vBox(self.controlArea, _("Ignored"),
                        addToLayout=False)
 
         self.available_attrs = VariablesListItemModel()
@@ -221,7 +221,7 @@ class OWSelectAttributes(widget.OWWidget):
         layout.addWidget(box, 0, 0, 3, 1)
 
         # 3rd column
-        box = gui.vBox(self.controlArea, "Features", addToLayout=False)
+        box = gui.vBox(self.controlArea, _("Features"), addToLayout=False)
         self.used_attrs = VariablesListItemModel()
         filter_edit, self.used_attrs_view = variables_filter(
             parent=self, model=self.used_attrs,
@@ -244,7 +244,7 @@ class OWSelectAttributes(widget.OWWidget):
         box.layout().addWidget(self.used_attrs_view)
         layout.addWidget(box, 0, 2, 1, 1)
 
-        box = gui.vBox(self.controlArea, "Target", addToLayout=False)
+        box = gui.vBox(self.controlArea, _("Target"), addToLayout=False)
         self.class_attrs = VariablesListItemModel()
         self.class_attrs_view = VariablesListItemView(
             acceptedType=(Orange.data.DiscreteVariable,
@@ -258,7 +258,7 @@ class OWSelectAttributes(widget.OWWidget):
         box.layout().addWidget(self.class_attrs_view)
         layout.addWidget(box, 1, 2, 1, 1)
 
-        box = gui.vBox(self.controlArea, "Metas", addToLayout=False)
+        box = gui.vBox(self.controlArea, _("Metas"), addToLayout=False)
         self.meta_attrs = VariablesListItemModel()
         self.meta_attrs_view = VariablesListItemView(
             acceptedType=Orange.data.Variable)
@@ -295,17 +295,17 @@ class OWSelectAttributes(widget.OWWidget):
         layout.addWidget(bbox, 2, 1, 1, 1)
 
         # footer
-        gui.button(self.buttonsArea, self, "Reset", callback=self.reset)
+        gui.button(self.buttonsArea, self, _("Reset"), callback=self.reset)
 
         bbox = gui.vBox(self.buttonsArea)
         gui.checkBox(
             widget=bbox,
             master=self,
             value="ignore_new_features",
-            label="Ignore new variables by default",
-            tooltip="When the widget receives data with additional columns "
+            label=_("Ignore new variables by default"),
+            tooltip=_("When the widget receives data with additional columns "
                     "they are added to the available attributes column if "
-                    "<i>Ignore new variables by default</i> is checked."
+                    "<i>Ignore new variables by default</i> is checked.")
         )
 
         gui.rubber(self.buttonsArea)

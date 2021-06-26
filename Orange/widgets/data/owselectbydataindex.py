@@ -10,8 +10,8 @@ from Orange.widgets.utils.annotated_data import (create_annotated_table)
 
 
 class OWSelectByDataIndex(widget.OWWidget):
-    name = "Select by Data Index"
-    description = "Match instances by index from data subset."
+    name = _("Select by Data Index")
+    description = _("Match instances by index from data subset.")
     icon = "icons/SelectByDataIndex.svg"
     priority = 1112
 
@@ -46,9 +46,9 @@ class OWSelectByDataIndex(widget.OWWidget):
 
         box = gui.hBox(self.controlArea, box=None)
         self.infoBoxData = gui.label(
-            box, self, self.data_info_text(None), box="Data")
+            box, self, self.data_info_text(None), box=_("Data"))
         self.infoBoxExtraData = gui.label(
-            box, self, self.data_info_text(None), box="Data Subset")
+            box, self, self.data_info_text(None), box=_("Data Subset"))
 
     @Inputs.data
     @check_sql_input
@@ -68,9 +68,9 @@ class OWSelectByDataIndex(widget.OWWidget):
     @staticmethod
     def data_info_text(data):
         if data is None:
-            return "No data."
+            return _("No data.")
         else:
-            return "{}\n{} instances\n{} variables".format(
+            return _("{}\n{} instances\n{} variables").format(
                 data.name, len(data), len(data.domain.variables) + len(data.domain.metas))
 
     def commit(self):

@@ -11,9 +11,9 @@ from Orange.widgets.utils.widgetpreview import WidgetPreview
 
 
 class OWUnique(widget.OWWidget):
-    name = 'Unique'
+    name = _('Unique')
     icon = 'icons/Unique.svg'
-    description = 'Filter instances unique by specified key attribute(s).'
+    description = _('Filter instances unique by specified key attribute(s).')
 
     class Inputs:
         data = widget.Input("Data", Table)
@@ -23,11 +23,11 @@ class OWUnique(widget.OWWidget):
 
     want_main_area = False
 
-    TIEBREAKERS = {'Last instance': itemgetter(-1),
-                   'First instance': itemgetter(0),
-                   'Middle instance': lambda seq: seq[len(seq) // 2],
-                   'Random instance': np.random.choice,
-                   'Discard non-unique instances':
+    TIEBREAKERS = {_('Last instance'): itemgetter(-1),
+                   _('First instance'): itemgetter(0),
+                   _('Middle instance'): lambda seq: seq[len(seq) // 2],
+                   _('Random instance'): np.random.choice,
+                   _('Discard non-unique instances'):
                    lambda seq: seq[0] if len(seq) == 1 else None}
 
     settingsHandler = settings.DomainContextHandler()
@@ -43,13 +43,13 @@ class OWUnique(widget.OWWidget):
 
         self.var_model = DomainModel(parent=self, order=DomainModel.MIXED)
         var_list = gui.listView(
-            self.controlArea, self, "selected_vars", box="Group by",
+            self.controlArea, self, "selected_vars", box=_("Group by"),
             model=self.var_model, callback=lambda: self.commit())
         var_list.setSelectionMode(var_list.ExtendedSelection)
 
         gui.comboBox(
             self.controlArea, self, 'tiebreaker', box=True,
-            label='Instance to select in each group:',
+            label=_('Instance to select in each group:'),
             items=tuple(self.TIEBREAKERS),
             callback=lambda: self.commit(), sendSelectedValue=True)
         gui.auto_commit(

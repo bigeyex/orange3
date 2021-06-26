@@ -37,9 +37,9 @@ class BackendModel(PyListModel):
 
 
 class OWSql(OWBaseSql):
-    name = "SQL Table"
+    name = _("SQL Table")
     id = "orange.widgets.data.sql"
-    description = "Load dataset from SQL."
+    description = _("Load dataset from SQL.")
     icon = "icons/SQLTable.svg"
     priority = 30
     category = "Data"
@@ -62,13 +62,13 @@ class OWSql(OWBaseSql):
     materialize_table_name = Setting("")
 
     class Information(OWBaseSql.Information):
-        data_sampled = Msg("Data description was generated from a sample.")
+        data_sampled = Msg(_("Data description was generated from a sample."))
 
     class Warning(OWBaseSql.Warning):
-        missing_extension = Msg("Database is missing extensions: {}")
+        missing_extension = Msg(_("Database is missing extensions: {}"))
 
     class Error(OWBaseSql.Error):
-        no_backends = Msg("Please install a backend to use this widget.")
+        no_backends = Msg(_("Please install a backend to use this widget."))
 
     def __init__(self):
         # Lint
@@ -136,11 +136,11 @@ class OWSql(OWBaseSql):
         box.layout().addWidget(self.custom_sql)
 
         gui.checkBox(box, self, "guess_values",
-                     "Auto-discover categorical variables",
+                     _("Auto-discover categorical variables"),
                      callback=self.open_table)
 
         self.downloadcb = gui.checkBox(box, self, "download",
-                                       "Download data to local memory",
+                                       _("Download data to local memory"),
                                        callback=self.open_table)
 
     def highlight_error(self, text=""):

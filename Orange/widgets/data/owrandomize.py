@@ -12,8 +12,8 @@ from Orange.widgets import gui
 
 
 class OWRandomize(OWWidget):
-    name = "Randomize"
-    description = "Randomize features, class and/or metas in data table."
+    name = _("Randomize")
+    description = _("Randomize features, class and/or metas in data table.")
     icon = "icons/Random.svg"
     priority = 2100
     keywords = []
@@ -39,31 +39,31 @@ class OWRandomize(OWWidget):
         self.data = None
 
         # GUI
-        box = gui.hBox(self.controlArea, "Shuffled columns")
+        box = gui.hBox(self.controlArea, _("Shuffled columns"))
         box.layout().setSpacing(20)
         self.class_check = gui.checkBox(
-            box, self, "shuffle_class", "Classes",
+            box, self, "shuffle_class", _("Classes"),
             callback=self._shuffle_check_changed)
         self.attrs_check = gui.checkBox(
-            box, self, "shuffle_attrs", "Features",
+            box, self, "shuffle_attrs", _("Features"),
             callback=self._shuffle_check_changed)
         self.metas_check = gui.checkBox(
-            box, self, "shuffle_metas", "Metas",
+            box, self, "shuffle_metas", _("Metas"),
             callback=self._shuffle_check_changed)
 
-        box = gui.vBox(self.controlArea, "Shuffled rows")
+        box = gui.vBox(self.controlArea, _("Shuffled rows"))
         hbox = gui.hBox(box)
-        gui.widgetLabel(hbox, "None")
+        gui.widgetLabel(hbox, _("None"))
         self.scope_slider = gui.hSlider(
             hbox, self, "scope_prop", minValue=0, maxValue=100, width=140,
             createLabel=False, callback=self._scope_slider_changed)
-        gui.widgetLabel(hbox, "All")
+        gui.widgetLabel(hbox, _("All"))
         self.scope_label = gui.widgetLabel(
             box, "", alignment=Qt.AlignCenter,
             sizePolicy=(QSizePolicy.MinimumExpanding, QSizePolicy.Fixed))
         self._set_scope_label()
         self.replicable_check = gui.checkBox(
-            box, self, "random_seed", "Replicable shuffling",
+            box, self, "random_seed", _("Replicable shuffling"),
             callback=self._shuffle_check_changed)
 
         gui.auto_apply(self.buttonsArea, self, commit=self.apply)

@@ -90,10 +90,10 @@ class Pivot:
         if not table:
             return
         if not self._row_var.is_primitive():
-            raise TypeError("Row variable should be DiscreteVariable"
-                            " or ContinuousVariable")
+            raise TypeError(_("Row variable should be DiscreteVariable"
+                            " or ContinuousVariable"))
         if self._col_var and not self._col_var.is_discrete:
-            raise TypeError("Column variable should be DiscreteVariable")
+            raise TypeError(_("Column variable should be DiscreteVariable"))
 
         self._row_var_col = table.get_column_view(row_var)[0].astype(np.float)
         self._col_var_col = table.get_column_view(self._col_var)[0].astype(np.float)
@@ -723,8 +723,8 @@ class PivotTableView(QTableView):
 
 
 class OWPivot(OWWidget):
-    name = "Pivot Table"
-    description = "Reshape data table based on column values."
+    name = _("Pivot Table")
+    description = _("Reshape data table based on column values.")
     icon = "icons/Pivot.svg"
     priority = 1000
     keywords = ["pivot", "group", "aggregate"]
@@ -739,11 +739,11 @@ class OWPivot(OWWidget):
 
     class Warning(OWWidget.Warning):
         # TODO - inconsistent for different variable types
-        no_col_feature = Msg("Column feature should be selected.")
-        cannot_aggregate = Msg("Some aggregations ({}) cannot be computed.")
-        renamed_vars = Msg("Some variables have been renamed in some tables"
-                           "to avoid duplicates.\n{}")
-        too_many_values = Msg("Selected variable has too many values.")
+        no_col_feature = Msg(_("Column feature should be selected."))
+        cannot_aggregate = Msg(_("Some aggregations ({}) cannot be computed."))
+        renamed_vars = Msg(_("Some variables have been renamed in some tables"
+                           "to avoid duplicates.\n{}"))
+        too_many_values = Msg(_("Selected variable has too many values."))
 
     settingsHandler = DomainContextHandler()
     row_feature = ContextSetting(None)
@@ -768,6 +768,7 @@ class OWPivot(OWWidget):
                     Pivot.Majority)
 
     MAX_VALUES = 100
+    (_("Var"), _("Mode"), _("Majority"), _("Count defined"))
 
     def __init__(self):
         super().__init__()
@@ -778,26 +779,26 @@ class OWPivot(OWWidget):
         self._add_main_area_controls()
 
     def _add_control_area_controls(self):
-        gui.comboBox(gui.vBox(self.controlArea, box="Rows"),
+        gui.comboBox(gui.vBox(self.controlArea, box=_("Rows")),
                      self, "row_feature",
                      contentsLength=14,
                      searchable=True,
                      model=DomainModel(valid_types=DomainModel.PRIMITIVE),
                      callback=self.__feature_changed,
                      orientation=Qt.Horizontal)
-        gui.comboBox(gui.vBox(self.controlArea, box="Columns"),
+        gui.comboBox(gui.vBox(self.controlArea, box=_("Columns")),
                      self, "col_feature",
                      contentsLength=14,
                      searchable=True,
-                     model=DomainModel(placeholder="(Same as rows)",
+                     model=DomainModel(placeholder=_("(Same as rows)"),
                                        valid_types=DiscreteVariable),
                      callback=self.__feature_changed,
                      orientation=Qt.Horizontal)
-        gui.comboBox(gui.vBox(self.controlArea, box="Values"),
+        gui.comboBox(gui.vBox(self.controlArea, box=_("Values")),
                      self, "val_feature",
                      contentsLength=14,
                      searchable=True,
-                     model=DomainModel(placeholder="(None)"),
+                     model=DomainModel(placeholder=_("(None)")),
                      callback=self.__val_feature_changed,
                      orientation=Qt.Horizontal)
         self.__add_aggregation_controls()
@@ -814,7 +815,7 @@ class OWPivot(OWWidget):
             box.layout().addWidget(inbox)
             row = col = 0
 
-        box = gui.vBox(self.controlArea, "Aggregations")
+        box = gui.vBox(self.controlArea, _("Aggregations"))
         row = col = 0
         inbox = None
         new_inbox()
@@ -832,7 +833,7 @@ class OWPivot(OWWidget):
                 col += 1
                 row = 0
                 continue
-            check_box = QCheckBox(str(agg), inbox)
+            check_box = QCheckBox(_(str(agg)), inbox)
             check_box.setChecked(agg in self.sel_agg_functions)
             check_box.clicked.connect(lambda *args, a=agg:
                                       self.__aggregation_cb_clicked(a, args[0]))

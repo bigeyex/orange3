@@ -53,25 +53,25 @@ ScoreMeta = namedtuple("score_meta", ["name", "shortname", "scorer", 'problem_ty
 
 # Default scores.
 CLS_SCORES = [
-    ScoreMeta("Information Gain", "Info. gain",
+    ScoreMeta(_("Information Gain"), "Info. gain",
               score.InfoGain, ProblemType.CLASSIFICATION, False),
-    ScoreMeta("Information Gain Ratio", "Gain ratio",
+    ScoreMeta(_("Information Gain Ratio"), "Gain ratio",
               score.GainRatio, ProblemType.CLASSIFICATION, True),
-    ScoreMeta("Gini Decrease", "Gini",
+    ScoreMeta(_("Gini Decrease"), "Gini",
               score.Gini, ProblemType.CLASSIFICATION, True),
-    ScoreMeta("ANOVA", "ANOVA",
+    ScoreMeta(_("ANOVA"), "ANOVA",
               score.ANOVA, ProblemType.CLASSIFICATION, False),
-    ScoreMeta("χ²", "χ²",
+    ScoreMeta(_("χ²"), "χ²",
               score.Chi2, ProblemType.CLASSIFICATION, False),
-    ScoreMeta("ReliefF", "ReliefF",
+    ScoreMeta(_("ReliefF"), "ReliefF",
               score.ReliefF, ProblemType.CLASSIFICATION, False),
-    ScoreMeta("FCBF", "FCBF",
+    ScoreMeta(_("FCBF"), "FCBF",
               score.FCBF, ProblemType.CLASSIFICATION, False)
 ]
 REG_SCORES = [
-    ScoreMeta("Univariate Regression", "Univar. reg.",
+    ScoreMeta(_("Univariate Regression"), "Univar. reg.",
               score.UnivariateLinearRegression, ProblemType.REGRESSION, True),
-    ScoreMeta("RReliefF", "RReliefF",
+    ScoreMeta(_("RReliefF"), "RReliefF",
               score.RReliefF, ProblemType.REGRESSION, True)
 ]
 SCORES = CLS_SCORES + REG_SCORES
@@ -248,8 +248,8 @@ def run(
 
 
 class OWRank(OWWidget, ConcurrentWidgetMixin):
-    name = "Rank"
-    description = "Rank and filter data features by their relevance."
+    name = _("Rank")
+    description = _("Rank and filter data features by their relevance.")
     icon = "icons/Rank.svg"
     priority = 1102
     keywords = []
@@ -279,17 +279,17 @@ class OWRank(OWWidget, ConcurrentWidgetMixin):
     selectionMethod = ContextSetting(SelectNBest)
 
     class Information(OWWidget.Information):
-        no_target_var = Msg("Data does not have a (single) target variable.")
-        missings_imputed = Msg('Missing values will be imputed as needed.')
+        no_target_var = Msg(_("Data does not have a (single) target variable."))
+        missings_imputed = Msg(_('Missing values will be imputed as needed.'))
 
     class Error(OWWidget.Error):
-        invalid_type = Msg("Cannot handle target variable type {}")
-        inadequate_learner = Msg("Scorer {} inadequate: {}")
-        no_attributes = Msg("Data does not have a single attribute.")
+        invalid_type = Msg(_("Cannot handle target variable type {}"))
+        inadequate_learner = Msg(_("Scorer {} inadequate: {}"))
+        no_attributes = Msg(_("Data does not have a single attribute."))
 
     class Warning(OWWidget.Warning):
         renamed_variables = Msg(
-            "Variables with duplicated names have been renamed.")
+            _("Variables with duplicated names have been renamed."))
 
     def __init__(self):
         OWWidget.__init__(self)
@@ -328,7 +328,7 @@ class OWRank(OWWidget, ConcurrentWidgetMixin):
         for scoring_methods in (CLS_SCORES,
                                 REG_SCORES,
                                 []):
-            box = gui.vBox(None, "Scoring Methods" if scoring_methods else None)
+            box = gui.vBox(None, _("Scoring Methods") if scoring_methods else None)
             stacked.addWidget(box)
             for method in scoring_methods:
                 box.layout().addWidget(QCheckBox(
@@ -342,7 +342,7 @@ class OWRank(OWWidget, ConcurrentWidgetMixin):
 
         self.switchProblemType(ProblemType.CLASSIFICATION)
 
-        selMethBox = gui.vBox(self.buttonsArea, "Select Attributes")
+        selMethBox = gui.vBox(self.buttonsArea, _("Select Attributes"))
 
         grid = QGridLayout()
         grid.setContentsMargins(0, 0, 0, 0)

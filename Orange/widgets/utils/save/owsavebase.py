@@ -39,10 +39,10 @@ class OWSaveBase(widget.OWWidget, openclass=True):
     """
 
     class Information(widget.OWWidget.Information):
-        empty_input = widget.Msg("Empty input; nothing was saved.")
+        empty_input = widget.Msg(_("Empty input; nothing was saved."))
 
     class Error(widget.OWWidget.Error):
-        no_file_name = widget.Msg("File name is not set.")
+        no_file_name = widget.Msg(_("File name is not set."))
         general_error = widget.Msg("{}")
 
     want_main_area = False
@@ -86,14 +86,14 @@ class OWSaveBase(widget.OWWidget, openclass=True):
         gui.widgetBox(self.controlArea, orientation=grid, box=True)
         grid.addWidget(
             gui.checkBox(
-                None, self, "auto_save", "Autosave when receiving new data",
+                None, self, "auto_save", _("Autosave when receiving new data"),
                 callback=self.update_messages),
             start_row, 0, 1, 2)
         self.bt_save = gui.button(
             self.buttonsArea, self,
-            label=f"Save as {self.stored_name}" if self.stored_name else "Save",
+            label=_(f"Save as {self.stored_name}") if self.stored_name else _("Save"),
             callback=self.save_file)
-        gui.button(self.buttonsArea, self, "Save as ...", callback=self.save_file_as)
+        gui.button(self.buttonsArea, self, _("Save as ..."), callback=self.save_file_as)
 
         self.adjustSize()
         self.update_messages()

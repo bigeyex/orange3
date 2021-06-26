@@ -728,17 +728,17 @@ def _icon(name, icon_path="icons/paintdata",
 
 class OWPaintData(OWWidget):
     TOOLS = [
-        ("Brush", "Create multiple instances", AirBrushTool, _icon("brush.svg")),
-        ("Put", "Put individual instances", PutInstanceTool, _icon("put.svg")),
-        ("Select", "Select and move instances", SelectTool,
+        (_("Brush"), "Create multiple instances", AirBrushTool, _icon("brush.svg")),
+        (_("Put"), "Put individual instances", PutInstanceTool, _icon("put.svg")),
+        (_("Select"), "Select and move instances", SelectTool,
          _icon("select-transparent_42px.png")),
-        ("Jitter", "Jitter instances", JitterTool, _icon("jitter.svg")),
-        ("Magnet", "Attract multiple instances", MagnetTool, _icon("magnet.svg")),
-        ("Clear", "Clear the plot", ClearTool, _icon("../../../icons/Dlg_clear.png"))
+        (_("Jitter"), "Jitter instances", JitterTool, _icon("jitter.svg")),
+        (_("Magnet"), "Attract multiple instances", MagnetTool, _icon("magnet.svg")),
+        (_("Clear"), "Clear the plot", ClearTool, _icon("../../../icons/Dlg_clear.png"))
     ]
 
-    name = "Paint Data"
-    description = "Create data by painting data points on a plane."
+    name = _("Paint Data")
+    description = _("Create data by painting data points on a plane.")
     icon = "icons/PaintData.svg"
     priority = 60
     keywords = ["create", "draw"]
@@ -767,15 +767,15 @@ class OWPaintData(OWWidget):
     graph_name = "plot"
 
     class Warning(OWWidget.Warning):
-        no_input_variables = Msg("Input data has no variables")
-        continuous_target = Msg("Numeric target value can not be used.")
-        sparse_not_supported = Msg("Sparse data is ignored.")
-        renamed_vars = Msg("Some variables have been renamed "
-                           "to avoid duplicates.\n{}")
+        no_input_variables = Msg(_("Input data has no variables"))
+        continuous_target = Msg(_("Numeric target value can not be used."))
+        sparse_not_supported = Msg(_("Sparse data is ignored."))
+        renamed_vars = Msg(_("Some variables have been renamed "
+                           "to avoid duplicates.\n{}"))
 
     class Information(OWWidget.Information):
         use_first_two = \
-            Msg("Paint Data uses data from the first two attributes.")
+            Msg(_("Paint Data uses data from the first two attributes."))
 
     def __init__(self):
         super().__init__()
@@ -821,15 +821,15 @@ class OWPaintData(OWWidget):
         self.commit()
 
     def _init_ui(self):
-        namesBox = gui.vBox(self.controlArea, "Names")
+        namesBox = gui.vBox(self.controlArea, _("Names"))
 
         hbox = gui.hBox(namesBox, margin=0, spacing=0)
-        gui.lineEdit(hbox, self, "attr1", "Variable X: ",
+        gui.lineEdit(hbox, self, "attr1", _("Variable X: "),
                      controlWidth=80, orientation=Qt.Horizontal,
                      callback=self._attr_name_changed)
         gui.separator(hbox, 21)
         hbox = gui.hBox(namesBox, margin=0, spacing=0)
-        attr2 = gui.lineEdit(hbox, self, "attr2", "Variable Y: ",
+        attr2 = gui.lineEdit(hbox, self, "attr2", _("Variable Y: "),
                              controlWidth=80, orientation=Qt.Horizontal,
                              callback=self._attr_name_changed)
         gui.separator(hbox)
@@ -837,7 +837,7 @@ class OWPaintData(OWWidget):
                      labelWidth=0,
                      callback=self.set_dimensions)
 
-        gui.widgetLabel(namesBox, "Labels")
+        gui.widgetLabel(namesBox, _("Labels"))
         self.classValuesView = listView = gui.ListViewWithSizeHint(
             preferred_size=(-1, 30))
         listView.setModel(self.class_model)
@@ -846,13 +846,13 @@ class OWPaintData(OWWidget):
 
         self.addClassLabel = QAction(
             "+", self,
-            toolTip="Add new class label",
+            toolTip=_("Add new class label"),
             triggered=self.add_new_class_label
         )
 
         self.removeClassLabel = QAction(
             unicodedata.lookup("MINUS SIGN"), self,
-            toolTip="Remove selected class label",
+            toolTip=_("Remove selected class label"),
             triggered=self.remove_selected_class_label
         )
 
@@ -863,7 +863,7 @@ class OWPaintData(OWWidget):
         actionsWidget.layout().setSpacing(1)
         namesBox.layout().addWidget(actionsWidget)
 
-        tBox = gui.vBox(self.buttonsArea, "Tools")
+        tBox = gui.vBox(self.buttonsArea, _("Tools"))
         toolsBox = gui.widgetBox(tBox, orientation=QGridLayout())
 
         self.toolActions = QActionGroup(self)
@@ -915,24 +915,24 @@ class OWPaintData(OWWidget):
             indBox, self, "brushRadius", minValue=1, maxValue=100,
             createLabel=False, addToLayout=False
         )
-        form.addRow("Radius:", slider)
+        form.addRow(_("Radius:"), slider)
 
         slider = gui.hSlider(
             indBox, self, "density", None, minValue=1, maxValue=100,
             createLabel=False, addToLayout=False
         )
 
-        form.addRow("Intensity:", slider)
+        form.addRow(_("Intensity:"), slider)
 
         slider = gui.hSlider(
             indBox, self, "symbol_size", None, minValue=1, maxValue=100,
             createLabel=False, callback=self.set_symbol_size, addToLayout=False
         )
 
-        form.addRow("Symbol:", slider)
+        form.addRow(_("Symbol:"), slider)
 
         self.btResetToInput = gui.button(
-            tBox, self, "Reset to Input Data", self.reset_to_input)
+            tBox, self, _("Reset to Input Data"), self.reset_to_input)
         self.btResetToInput.setDisabled(True)
 
         gui.auto_send(self.buttonsArea, self, "autocommit")
