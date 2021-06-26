@@ -69,6 +69,15 @@ class TestPandasCompat(unittest.TestCase):
         self.assertEqual(names, ['index', '1', '2'])
         self.assertEqual(types, [DiscreteVariable, ContinuousVariable, TimeVariable])
 
+    def test_table_from_frame_keep_ids(self):
+        """ Test if indices are correctly transferred to Table"""
+        from Orange.data.pandas_compat import table_from_frame
+        df = OrangeDataFrame(Table('iris')[:6])
+        df.index = [1, "_oa", "_o", "1", "_o20", "_o30"]
+        table = table_from_frame(df)
+        self.assertEqual(table.ids[-2:].tolist(), [20, 30])
+        self.assertTrue(np.issubdtype(table.ids.dtype, np.number))
+
     def test_table_to_frame(self):
         from Orange.data.pandas_compat import table_to_frame
         table = Table("iris")
@@ -80,6 +89,18 @@ class TestPandasCompat(unittest.TestCase):
         self.assertEqual(type(df['iris'].dtype), pd.api.types.CategoricalDtype)
         self.assertEqual(list(df['sepal length'])[0:4], [5.1, 4.9, 4.7, 4.6])
         self.assertEqual(list(df['iris'])[0:2], ['Iris-setosa', 'Iris-setosa'])
+
+    def test_table_to_frame_object_dtype(self):
+        from Orange.data.pandas_compat import table_to_frame
+
+        domain = Domain([], metas=[ContinuousVariable("a", number_of_decimals=0)])
+        table = Table.from_numpy(
+            domain, np.empty((10, 0)), metas=np.ones((10, 1), dtype=object)
+        )
+
+        df = table_to_frame(table, include_metas=True)
+        self.assertEqual(["a"], df.columns)
+        np.testing.assert_array_equal(df["a"].values, np.ones((10,)))
 
     def test_table_to_frame_nans(self):
         from Orange.data.pandas_compat import table_to_frame
