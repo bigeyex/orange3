@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-26 16:36+0800\n"
+"POT-Creation-Date: 2021-06-26 16:54+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2168,6 +2168,7 @@ msgstr ""
 
 #: Orange/widgets/data/owselectbydataindex.py:49
 #: Orange/widgets/data/owtransform.py:100
+#: ../orange-canvas-core/orangecanvas/gui/toolbox.py:513
 msgid "Data"
 msgstr ""
 
@@ -3256,6 +3257,10 @@ msgstr ""
 
 #: ../orange-canvas-core/orangecanvas/canvas/view.py:50
 msgid "Reset Zoom"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/gui/toolbox.py:513
+msgid "Visualize"
 msgstr ""
 
 #: ../orange-canvas-core/orangecanvas/canvas/items/annotationitem.py:131
