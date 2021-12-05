@@ -90,17 +90,17 @@ ClusteringRole = Qt.UserRole + 13
 #: Item data for clustering method selection models
 ClusteringModelData = [
     {
-        Qt.DisplayRole: "None",
-        Qt.ToolTipRole: "No clustering",
+        Qt.DisplayRole: _("None"),
+        Qt.ToolTipRole: _("No clustering"),
         ClusteringRole: Clustering.None_,
     }, {
-        Qt.DisplayRole: "Clustering",
-        Qt.ToolTipRole: "Apply hierarchical clustering",
+        Qt.DisplayRole: _("Clustering"),
+        Qt.ToolTipRole: _("Apply hierarchical clustering"),
         ClusteringRole: Clustering.Clustering,
     }, {
-        Qt.DisplayRole: "Clustering (opt. ordering)",
-        Qt.ToolTipRole: "Apply hierarchical clustering with optimal leaf "
-                        "ordering.",
+        Qt.DisplayRole: _("Clustering (opt. ordering)"),
+        Qt.ToolTipRole: _("Apply hierarchical clustering with optimal leaf "
+                        "ordering."),
         ClusteringRole: Clustering.OrderedClustering,
     }
 ]
@@ -108,10 +108,10 @@ ClusteringModelData = [
 ColumnLabelsPosData = [
     {Qt.DisplayRole: name, Qt.UserRole: value}
     for name, value in [
-        ("None", HeatmapGridWidget.NoPosition),
-        ("Top", HeatmapGridWidget.PositionTop),
-        ("Bottom", HeatmapGridWidget.PositionBottom),
-        ("Top and Bottom", (HeatmapGridWidget.PositionTop |
+        (_("None"), HeatmapGridWidget.NoPosition),
+        (_("Top"), HeatmapGridWidget.PositionTop),
+        (_("Bottom"), HeatmapGridWidget.PositionBottom),
+        (_("Top and Bottom"), (HeatmapGridWidget.PositionTop |
                             HeatmapGridWidget.PositionBottom)),
     ]
 ]
@@ -132,8 +132,8 @@ def create_list_model(
 
 
 class OWHeatMap(widget.OWWidget):
-    name = "Heat Map"
-    description = "Plot a data matrix heatmap."
+    name = _("Heat Map")
+    description = _("Plot a data matrix heatmap.")
     icon = "icons/Heatmap.svg"
     priority = 260
     keywords = []
@@ -189,28 +189,28 @@ class OWHeatMap(widget.OWWidget):
     graph_name = "scene"
 
     class Information(widget.OWWidget.Information):
-        sampled = Msg("Data has been sampled")
-        discrete_ignored = Msg("{} categorical feature{} ignored")
-        row_clust = Msg("{}")
-        col_clust = Msg("{}")
-        sparse_densified = Msg("Showing this data may require a lot of memory")
+        sampled = Msg(_("Data has been sampled"))
+        discrete_ignored = Msg(_("{} categorical feature{} ignored"))
+        row_clust = Msg(_("{}"))
+        col_clust = Msg(_("{}"))
+        sparse_densified = Msg(_("Showing this data may require a lot of memory"))
 
     class Error(widget.OWWidget.Error):
-        no_continuous = Msg("No numeric features")
-        not_enough_features = Msg("Not enough features for column clustering")
-        not_enough_instances = Msg("Not enough instances for clustering")
+        no_continuous = Msg(_("No numeric features"))
+        not_enough_features = Msg(_("Not enough features for column clustering"))
+        not_enough_instances = Msg(_("Not enough instances for clustering"))
         not_enough_instances_k_means = Msg(
-            "Not enough instances for k-means merging")
-        not_enough_memory = Msg("Not enough memory to show this data")
+            _("Not enough instances for k-means merging"))
+        not_enough_memory = Msg(_("Not enough memory to show this data"))
 
     class Warning(widget.OWWidget.Warning):
-        empty_clusters = Msg("Empty clusters were removed")
+        empty_clusters = Msg(_("Empty clusters were removed"))
 
     UserAdviceMessages = [
         widget.Message(
-            "For data with a meaningful mid-point, "
+            _("For data with a meaningful mid-point, "
             "choose one of diverging palettes.",
-            "diverging_palette")]
+            "diverging_palette"))]
 
     def __init__(self):
         super().__init__()
@@ -271,15 +271,15 @@ class OWHeatMap(widget.OWWidget):
 
         colorbox.layout().addWidget(self.color_map_widget)
 
-        mergebox = gui.vBox(self.controlArea, "Merge",)
-        gui.checkBox(mergebox, self, "merge_kmeans", "Merge by k-means",
+        mergebox = gui.vBox(self.controlArea, _("Merge"),)
+        gui.checkBox(mergebox, self, "merge_kmeans", _("Merge by k-means"),
                      callback=self.__update_row_clustering)
         ibox = gui.indentedBox(mergebox)
         gui.spin(ibox, self, "merge_kmeans_k", minv=5, maxv=500,
-                 label="Clusters:", keyboardTracking=False,
+                 label=_("Clusters:"), keyboardTracking=False,
                  callbackOnReturn=True, callback=self.update_merge)
 
-        cluster_box = gui.vBox(self.controlArea, "Clustering")
+        cluster_box = gui.vBox(self.controlArea, _("Clustering"))
         # Row clustering
         self.row_cluster_cb = cb = ComboBox()
         cb.setModel(create_list_model(ClusteringModelData, self))
@@ -308,10 +308,10 @@ class OWHeatMap(widget.OWWidget):
             labelAlignment=Qt.AlignLeft, formAlignment=Qt.AlignLeft,
             fieldGrowthPolicy=QFormLayout.AllNonFixedFieldsGrow,
         )
-        form.addRow("Rows:", self.row_cluster_cb)
-        form.addRow("Columns:", self.col_cluster_cb)
+        form.addRow(_("Rows:"), self.row_cluster_cb)
+        form.addRow(_("Columns:"), self.col_cluster_cb)
         cluster_box.layout().addLayout(form)
-        box = gui.vBox(self.controlArea, "Split By")
+        box = gui.vBox(self.controlArea, _("Split By"))
         form = QFormLayout(
             formAlignment=Qt.AlignLeft, labelAlignment=Qt.AlignLeft,
             fieldGrowthPolicy=QFormLayout.AllNonFixedFieldsGrow,
@@ -319,7 +319,7 @@ class OWHeatMap(widget.OWWidget):
         box.layout().addLayout(form)
 
         self.row_split_model = DomainModel(
-            placeholder="(None)",
+            placeholder=_("(None)"),
             valid_types=(Orange.data.DiscreteVariable,),
             parent=self,
         )
@@ -327,7 +327,7 @@ class OWHeatMap(widget.OWWidget):
             enabled=not self.merge_kmeans,
             sizeAdjustPolicy=ComboBox.AdjustToMinimumContentsLengthWithIcon,
             minimumContentsLength=14,
-            toolTip="Split the heatmap vertically by a categorical column"
+            toolTip=_("Split the heatmap vertically by a categorical column")
         )
         self.row_split_cb.setModel(self.row_split_model)
         self.connect_control(
@@ -350,7 +350,7 @@ class OWHeatMap(widget.OWWidget):
         self.col_split_cb = cb = ComboBoxSearch(
             sizeAdjustPolicy=ComboBox.AdjustToMinimumContentsLengthWithIcon,
             minimumContentsLength=14,
-            toolTip="Split the heatmap horizontally by column annotation"
+            toolTip=_("Split the heatmap horizontally by column annotation")
         )
         self.col_split_cb.setModel(self.col_split_model)
         self.connect_control(
@@ -361,12 +361,12 @@ class OWHeatMap(widget.OWWidget):
         form.addRow("Rows:", self.row_split_cb)
         form.addRow("Columns:", self.col_split_cb)
 
-        box = gui.vBox(self.controlArea, 'Annotation && Legends')
+        box = gui.vBox(self.controlArea, _('Annotation && Legends'))
 
-        gui.checkBox(box, self, 'legend', 'Show legend',
+        gui.checkBox(box, self, 'legend', _('Show legend'),
                      callback=self.update_legend)
 
-        gui.checkBox(box, self, 'averages', 'Stripes with averages',
+        gui.checkBox(box, self, 'averages', _('Stripes with averages'),
                      callback=self.update_averages_stripe)
         gui.separator(box)
         annotbox = QGroupBox("Row Annotations")
@@ -376,7 +376,7 @@ class OWHeatMap(widget.OWWidget):
             labelAlignment=Qt.AlignLeft,
             fieldGrowthPolicy=QFormLayout.AllNonFixedFieldsGrow
         )
-        self.annotation_model = DomainModel(placeholder="(None)")
+        self.annotation_model = DomainModel(placeholder=_("(None)"))
         self.annotation_text_cb = ComboBoxSearch(
             minimumContentsLength=12,
             sizeAdjustPolicy=QComboBox.AdjustToMinimumContentsLengthWithIcon
@@ -399,10 +399,10 @@ class OWHeatMap(widget.OWWidget):
         self.row_side_color_cb.setModel(self.row_side_color_model)
         self.row_side_color_cb.activated.connect(self.set_annotation_color_var)
         self.connect_control("annotation_color_var", self.annotation_color_var_changed)
-        form.addRow("Text", self.annotation_text_cb)
-        form.addRow("Color", self.row_side_color_cb)
+        form.addRow(_("Text"), self.annotation_text_cb)
+        form.addRow(_("Color"), self.row_side_color_cb)
         box.layout().addWidget(annotbox)
-        annotbox = QGroupBox("Column annotations")
+        annotbox = QGroupBox(_("Column annotations"))
         form = QFormLayout(
             annotbox,
             formAlignment=Qt.AlignLeft,
@@ -410,7 +410,7 @@ class OWHeatMap(widget.OWWidget):
             fieldGrowthPolicy=QFormLayout.AllNonFixedFieldsGrow
         )
         self.col_side_color_model = DomainModel(
-            placeholder="(None)",
+            placeholder=_("(None)"),
             valid_types=(DiscreteVariable, ContinuousVariable),
             parent=self
         )
@@ -431,12 +431,12 @@ class OWHeatMap(widget.OWWidget):
             callback=self.update_column_annotations)
         cb.setModel(create_list_model(ColumnLabelsPosData, parent=self))
         cb.setCurrentIndex(self.column_label_pos)
-        form.addRow("Position", cb)
-        form.addRow("Color", self.col_side_color_cb)
+        form.addRow(_("Position"), cb)
+        form.addRow(_("Color"), self.col_side_color_cb)
         box.layout().addWidget(annotbox)
 
         gui.checkBox(self.controlArea, self, "keep_aspect",
-                     "Keep aspect ratio", box="Resize",
+                     _("Keep aspect ratio"), box=_("Resize"),
                      callback=self.__aspect_mode_changed)
 
         gui.rubber(self.controlArea)
@@ -462,9 +462,9 @@ class OWHeatMap(widget.OWWidget):
         self.mainArea.layout().addWidget(self.view)
         self.selected_rows = []
         self.__font_inc = QAction(
-            "Increase Font", self, shortcut=QKeySequence("ctrl+>"))
+            _("Increase Font"), self, shortcut=QKeySequence("ctrl+>"))
         self.__font_dec = QAction(
-            "Decrease Font", self, shortcut=QKeySequence("ctrl+<"))
+            _("Decrease Font"), self, shortcut=QKeySequence("ctrl+<"))
         self.__font_inc.triggered.connect(lambda: self.__adjust_font_size(1))
         self.__font_dec.triggered.connect(lambda: self.__adjust_font_size(-1))
         if hasattr(QAction, "setShortcutVisibleInContextMenu"):

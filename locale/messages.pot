@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-26 16:54+0800\n"
+"POT-Creation-Date: 2021-12-05 23:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,7 +80,8 @@ msgstr ""
 msgid "Variable name: "
 msgstr ""
 
-#: Orange/widgets/data/owcolor.py:537
+#: Orange/widgets/data/owcolor.py:537 Orange/widgets/visualize/owheatmap.py:403
+#: Orange/widgets/visualize/owheatmap.py:435
 msgid "Color"
 msgstr ""
 
@@ -307,66 +308,66 @@ msgstr ""
 msgid "(All combinations)"
 msgstr ""
 
-#: Orange/widgets/data/owcreateclass.py:163
+#: Orange/widgets/data/owcreateclass.py:168
 msgid "Create Class"
 msgstr ""
 
-#: Orange/widgets/data/owcreateclass.py:164
+#: Orange/widgets/data/owcreateclass.py:169
 msgid "Create class attribute from a string attribute"
 msgstr ""
 
-#: Orange/widgets/data/owcreateclass.py:194
+#: Orange/widgets/data/owcreateclass.py:199
 msgid "Data contains only numeric variables."
 msgstr ""
 
-#: Orange/widgets/data/owcreateclass.py:197
+#: Orange/widgets/data/owcreateclass.py:202
 msgid "Class name duplicated."
 msgstr ""
 
-#: Orange/widgets/data/owcreateclass.py:198
+#: Orange/widgets/data/owcreateclass.py:203
 msgid "Class name should not be empty."
 msgstr ""
 
-#: Orange/widgets/data/owcreateclass.py:220
+#: Orange/widgets/data/owcreateclass.py:225
 msgid "New Class Name"
 msgstr ""
 
-#: Orange/widgets/data/owcreateclass.py:222
+#: Orange/widgets/data/owcreateclass.py:227
 msgid "Match by Substring"
 msgstr ""
 
-#: Orange/widgets/data/owcreateclass.py:225
+#: Orange/widgets/data/owcreateclass.py:230
 msgid "From column:"
 msgstr ""
 
-#: Orange/widgets/data/owcreateclass.py:244
+#: Orange/widgets/data/owcreateclass.py:249
 #: Orange/widgets/data/owfeaturestatistics.py:121
 #: ../orange-canvas-core/orangecanvas/application/addons.py:333
 msgid "Name"
 msgstr ""
 
-#: Orange/widgets/data/owcreateclass.py:245
+#: Orange/widgets/data/owcreateclass.py:250
 msgid "Substring"
 msgstr ""
 
-#: Orange/widgets/data/owcreateclass.py:246
+#: Orange/widgets/data/owcreateclass.py:251
 msgid "Count"
 msgstr ""
 
-#: Orange/widgets/data/owcreateclass.py:260
+#: Orange/widgets/data/owcreateclass.py:265
 #: Orange/widgets/data/owdatasampler.py:151
 msgid "Options"
 msgstr ""
 
-#: Orange/widgets/data/owcreateclass.py:262
+#: Orange/widgets/data/owcreateclass.py:267
 msgid "Match only at the beginning"
 msgstr ""
 
-#: Orange/widgets/data/owcreateclass.py:265
+#: Orange/widgets/data/owcreateclass.py:270
 msgid "Case sensitive"
 msgstr ""
 
-#: Orange/widgets/data/owcreateclass.py:270
+#: Orange/widgets/data/owcreateclass.py:275
 #: Orange/widgets/data/oweditdomain.py:1871 Orange/widgets/data/owfile.py:244
 #: ../orange-widget-base/orangewidget/gui.py:1830
 msgid "Apply"
@@ -413,6 +414,8 @@ msgid "input"
 msgstr ""
 
 #: Orange/widgets/data/owcreateinstance.py:472
+#: Orange/widgets/visualize/owboxplot.py:206
+#: Orange/widgets/visualize/owdistributions.py:320
 msgid "Variable"
 msgstr ""
 
@@ -551,6 +554,7 @@ msgstr ""
 #: Orange/widgets/data/owdatainfo.py:98
 #: Orange/widgets/data/oweditdomain.py:1645
 #: Orange/widgets/data/owfeatureconstructor.py:449
+#: Orange/widgets/visualize/owheatmap.py:402
 #: ../orange-canvas-core/orangecanvas/document/schemeedit.py:256
 msgid "Text"
 msgstr ""
@@ -566,6 +570,7 @@ msgstr ""
 
 #: Orange/widgets/data/owdatainfo.py:114 Orange/widgets/data/owdatainfo.py:119
 #: Orange/widgets/data/owpivot.py:789
+#: Orange/widgets/visualize/owdistributions.py:353
 msgid "Columns"
 msgstr ""
 
@@ -907,6 +912,7 @@ msgid "Group all except"
 msgstr ""
 
 #: Orange/widgets/data/oweditdomain.py:1249
+#: Orange/widgets/visualize/owbarplot.py:442
 msgid "Values:"
 msgstr ""
 
@@ -1033,6 +1039,7 @@ msgid "Send"
 msgstr ""
 
 #: Orange/widgets/data/owfeaturestatistics.py:122
+#: Orange/widgets/visualize/owdistributions.py:330
 msgid "Distribution"
 msgstr ""
 
@@ -1063,10 +1070,14 @@ msgstr ""
 #: Orange/widgets/data/owfeaturestatistics.py:774
 #: Orange/widgets/data/owpreprocess.py:68 Orange/widgets/data/owrandomize.py:56
 #: Orange/widgets/data/owrank.py:360
+#: Orange/widgets/visualize/owdistributions.py:292
+#: Orange/widgets/visualize/owheatmap.py:93
+#: Orange/widgets/visualize/owheatmap.py:111
 msgid "None"
 msgstr ""
 
 #: Orange/widgets/data/owfeaturestatistics.py:778
+#: Orange/widgets/visualize/owbarplot.py:473
 msgid "Color:"
 msgstr ""
 
@@ -1093,10 +1104,6 @@ msgstr ""
 
 #: Orange/widgets/data/owfile.py:253
 msgid "Browse documentation datasets"
-msgstr ""
-
-#: Orange/widgets/data/owfile.py:441
-msgid "<p>{len(table)} instance(s)"
 msgstr ""
 
 #: Orange/widgets/data/owimpute.py:136 Orange/widgets/data/owpreprocess.py:997
@@ -1554,7 +1561,9 @@ msgstr ""
 msgid "Values"
 msgstr ""
 
-#: Orange/widgets/data/owpivot.py:801
+#: Orange/widgets/data/owpivot.py:801 Orange/widgets/visualize/owheatmap.py:322
+#: Orange/widgets/visualize/owheatmap.py:379
+#: Orange/widgets/visualize/owheatmap.py:413
 msgid "(None)"
 msgstr ""
 
@@ -2533,6 +2542,393 @@ msgstr ""
 msgid "Instance to select in each group:"
 msgstr ""
 
+#: Orange/widgets/visualize/owbarplot.py:369
+msgid "Bar Plot"
+msgstr ""
+
+#: Orange/widgets/visualize/owbarplot.py:370
+msgid "Visualizes comparisons among categorical variables."
+msgstr ""
+
+#: Orange/widgets/visualize/owbarplot.py:397
+msgid "Plotting requires a numeric feature."
+msgstr ""
+
+#: Orange/widgets/visualize/owbarplot.py:400
+msgid "Data has too many instances. Only first {} are shown."
+msgstr ""
+
+#: Orange/widgets/visualize/owbarplot.py:451
+msgid "Group by:"
+msgstr ""
+
+#: Orange/widgets/visualize/owbarplot.py:464
+msgid "Annotations:"
+msgstr ""
+
+#: Orange/widgets/visualize/owboxplot.py:121
+msgid "Box Plot"
+msgstr ""
+
+#: Orange/widgets/visualize/owboxplot.py:122
+msgid "Visualize the distribution of feature values in a box plot."
+msgstr ""
+
+#: Orange/widgets/visualize/owboxplot.py:136
+msgid "Data contains no categorical or numeric variables"
+msgstr ""
+
+#: Orange/widgets/visualize/owboxplot.py:219
+msgid "Order by relevance to subgroups"
+msgstr ""
+
+#: Orange/widgets/visualize/owboxplot.py:220
+msgid "Order by 𝜒² or ANOVA over the subgroups"
+msgstr ""
+
+#: Orange/widgets/visualize/owboxplot.py:228
+msgid "Subgroups"
+msgstr ""
+
+#: Orange/widgets/visualize/owboxplot.py:238
+msgid "Order by relevance to variable"
+msgstr ""
+
+#: Orange/widgets/visualize/owboxplot.py:239
+msgid "Order by 𝜒² or ANOVA over the variable values"
+msgstr ""
+
+#: Orange/widgets/visualize/owboxplot.py:257
+msgid "Display"
+msgstr ""
+
+#: Orange/widgets/visualize/owboxplot.py:261
+msgid "Stretch bars"
+msgstr ""
+
+#: Orange/widgets/visualize/owboxplot.py:265
+msgid "Show box labels"
+msgstr ""
+
+#: Orange/widgets/visualize/owboxplot.py:268
+msgid "Sort by subgroup frequencies"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:249
+msgid "Distributions"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:250
+msgid "Display value distributions of a data feature in a graph."
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:265
+msgid "Variable '{}' does not have any defined values"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:267
+msgid "No data instances with '{}' and '{}' defined"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:270
+msgid "Data instances with missing values are ignored"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:293
+msgid "Normal"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:294
+msgid "Beta"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:296
+msgid "Gamma"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:297
+msgid "Rayleigh"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:298
+msgid "Pareto"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:299
+msgid "Exponential"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:300
+msgid "Kernel density"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:327
+msgid "Sort categories by frequency"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:332
+#: Orange/widgets/visualize/owdistributions.py:517
+msgid "Fitted distribution"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:337
+msgid "Bin width"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:346
+msgid "Smoothing"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:349
+msgid "Hide bars"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:355
+msgid "Split by"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:361
+msgid "Stack columns"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:364
+msgid "Show probabilities"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:367
+msgid "Show cumulative distribution"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:513
+msgid "Fitted probability"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:515
+msgid "Chosen distribution is used to compute Bayesian probabilities"
+msgstr ""
+
+#: Orange/widgets/visualize/owdistributions.py:584
+msgid "Frequency"
+msgstr ""
+
+#: Orange/widgets/visualize/owfreeviz.py:131
+msgid "Displays FreeViz projection"
+msgstr ""
+
+#: Orange/widgets/visualize/owfreeviz.py:142
+msgid "Data must have a target variable."
+msgstr ""
+
+#: Orange/widgets/visualize/owfreeviz.py:144
+msgid "Data must have a single target variable."
+msgstr ""
+
+#: Orange/widgets/visualize/owfreeviz.py:146
+msgid "Target variable must have at least two unique values."
+msgstr ""
+
+#: Orange/widgets/visualize/owfreeviz.py:148
+msgid "Number of features exceeds the number of instances."
+msgstr ""
+
+#: Orange/widgets/visualize/owfreeviz.py:149
+msgid "Data is too large."
+msgstr ""
+
+#: Orange/widgets/visualize/owfreeviz.py:150
+msgid "All data columns are constant."
+msgstr ""
+
+#: Orange/widgets/visualize/owfreeviz.py:151
+msgid "At least two features are required."
+msgstr ""
+
+#: Orange/widgets/visualize/owfreeviz.py:154
+msgid "Categorical features with more than two values are not shown."
+msgstr ""
+
+#: Orange/widgets/visualize/owfreeviz.py:165
+msgid "Hide radius:"
+msgstr ""
+
+#: Orange/widgets/visualize/owfreeviz.py:171
+msgid "Optimize"
+msgstr ""
+
+#: Orange/widgets/visualize/owfreeviz.py:173
+msgid "Initialization:"
+msgstr ""
+
+#: Orange/widgets/visualize/owfreeviz.py:176
+#: Orange/widgets/visualize/owfreeviz.py:225
+#: Orange/widgets/visualize/owfreeviz.py:231
+#: Orange/widgets/visualize/owfreeviz.py:284
+msgid "Start"
+msgstr ""
+
+#: Orange/widgets/visualize/owfreeviz.py:198
+msgid "Resume"
+msgstr ""
+
+#: Orange/widgets/visualize/owfreeviz.py:207
+msgid "Stop"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:94
+msgid "No clustering"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:97
+#: Orange/widgets/visualize/owheatmap.py:282
+msgid "Clustering"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:98
+msgid "Apply hierarchical clustering"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:101
+msgid "Clustering (opt. ordering)"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:102
+msgid "Apply hierarchical clustering with optimal leaf ordering."
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:112
+msgid "Top"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:113
+msgid "Bottom"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:114
+msgid "Top and Bottom"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:135
+msgid "Heat Map"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:136
+msgid "Plot a data matrix heatmap."
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:192
+msgid "Data has been sampled"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:193
+msgid "{} categorical feature{} ignored"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:194
+#: Orange/widgets/visualize/owheatmap.py:195
+msgid "{}"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:196
+msgid "Showing this data may require a lot of memory"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:199
+msgid "No numeric features"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:200
+msgid "Not enough features for column clustering"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:201
+msgid "Not enough instances for clustering"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:203
+msgid "Not enough instances for k-means merging"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:204
+msgid "Not enough memory to show this data"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:207
+msgid "Empty clusters were removed"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:211
+msgid "For data with a meaningful mid-point, choose one of diverging palettes."
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:274
+msgid "Merge"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:275
+msgid "Merge by k-means"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:279
+msgid "Clusters:"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:311
+msgid "Rows:"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:312
+msgid "Columns:"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:314
+msgid "Split By"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:330
+msgid "Split the heatmap vertically by a categorical column"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:353
+msgid "Split the heatmap horizontally by column annotation"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:364
+msgid "Annotation && Legends"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:366
+msgid "Show legend"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:369
+msgid "Stripes with averages"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:405
+msgid "Column annotations"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:434
+msgid "Position"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:439
+msgid "Keep aspect ratio"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:439
+#: ../orange-canvas-core/orangecanvas/document/commands.py:222
+msgid "Resize"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:465
+msgid "Increase Font"
+msgstr ""
+
+#: Orange/widgets/visualize/owheatmap.py:467
+msgid "Decrease Font"
+msgstr ""
+
 #: Orange/preprocess/impute.py:77
 msgid "Don't impute"
 msgstr ""
@@ -2588,6 +2984,10 @@ msgstr ""
 
 #: Orange/widgets/utils/save/owsavebase.py:96
 msgid "Save as ..."
+msgstr ""
+
+#: Orange/widgets/utils/plot/owplotgui.py:918
+msgid "Zoom/Select"
 msgstr ""
 
 #: ../orange-widget-base/orangewidget/gui.py:1814
@@ -3263,6 +3663,18 @@ msgstr ""
 msgid "Visualize"
 msgstr ""
 
+#: ../orange-canvas-core/orangecanvas/gui/toolbox.py:513
+msgid "Model"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/gui/toolbox.py:513
+msgid "Evaluate"
+msgstr ""
+
+#: ../orange-canvas-core/orangecanvas/gui/toolbox.py:513
+msgid "Unsupervised"
+msgstr ""
+
 #: ../orange-canvas-core/orangecanvas/canvas/items/annotationitem.py:131
 msgid "Enter text here"
 msgstr ""
@@ -3349,10 +3761,6 @@ msgstr ""
 #: ../orange-canvas-core/orangecanvas/document/commands.py:206
 #: ../orange-canvas-core/orangecanvas/document/schemeedit.py:1500
 msgid "Move"
-msgstr ""
-
-#: ../orange-canvas-core/orangecanvas/document/commands.py:222
-msgid "Resize"
 msgstr ""
 
 #: ../orange-canvas-core/orangecanvas/document/commands.py:238

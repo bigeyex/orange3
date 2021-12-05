@@ -1,3 +1,4 @@
+# This Python file uses the following encoding: utf-8
 """Widget for visualization of tree models"""
 import numpy as np
 

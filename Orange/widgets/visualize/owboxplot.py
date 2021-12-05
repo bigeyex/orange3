@@ -1,3 +1,4 @@
+# This Python file uses the following encoding: utf-8
 import math
 from collections import namedtuple
 from itertools import chain, count
@@ -117,8 +118,8 @@ class SortProxyModel(QSortFilterProxyModel):
         return r_score is not None and (l_score is None or l_score < r_score)
 
 class OWBoxPlot(widget.OWWidget):
-    name = "Box Plot"
-    description = "Visualize the distribution of feature values in a box plot."
+    name = _("Box Plot")
+    description = _("Visualize the distribution of feature values in a box plot.")
     icon = "icons/BoxPlot.svg"
     priority = 100
     keywords = ["whisker"]
@@ -132,7 +133,7 @@ class OWBoxPlot(widget.OWWidget):
 
     class Warning(widget.OWWidget.Warning):
         no_vars = widget.Msg(
-            "Data contains no categorical or numeric variables")
+            _("Data contains no categorical or numeric variables"))
 
     buttons_area_orientation = None
 
@@ -202,7 +203,7 @@ class OWBoxPlot(widget.OWWidget):
         sorted_model = SortProxyModel(sortRole=Qt.UserRole)
         sorted_model.setSourceModel(self.attrs)
         sorted_model.sort(0)
-        box = gui.vBox(self.controlArea, "Variable")
+        box = gui.vBox(self.controlArea, _("Variable"))
         view = self.attr_list = ListViewSearch()
         view.setModel(sorted_model)
         view.setSelectionMode(view.SingleSelection)
@@ -215,8 +216,8 @@ class OWBoxPlot(widget.OWWidget):
         box.layout().addWidget(view)
         gui.checkBox(
             box, self, "order_by_importance",
-            "Order by relevance to subgroups",
-            tooltip="Order by 𝜒² or ANOVA over the subgroups",
+            _("Order by relevance to subgroups"),
+            tooltip=_("Order by 𝜒² or ANOVA over the subgroups"),
             callback=self.apply_attr_sorting)
 
         self.group_vars = VariableListModel(placeholder="None")
@@ -224,7 +225,7 @@ class OWBoxPlot(widget.OWWidget):
         sorted_model.setSourceModel(self.group_vars)
         sorted_model.sort(0)
 
-        box = gui.vBox(self.controlArea, "Subgroups")
+        box = gui.vBox(self.controlArea, _("Subgroups"))
         view = self.group_list = ListViewSearch()
         view.setModel(sorted_model)
         view.selectionModel().selectionChanged.connect(self.grouping_changed)
@@ -234,8 +235,8 @@ class OWBoxPlot(widget.OWWidget):
         box.layout().addWidget(view)
         gui.checkBox(
             box, self, "order_grouping_by_importance",
-            "Order by relevance to variable",
-            tooltip="Order by 𝜒² or ANOVA over the variable values",
+            _("Order by relevance to variable"),
+            tooltip=_("Order by 𝜒² or ANOVA over the variable values"),
             callback=self.apply_group_sorting)
 
         # TODO: move Compare median/mean to grouping box
@@ -253,18 +254,18 @@ class OWBoxPlot(widget.OWWidget):
 
         # The vertical size policy is needed to let only the list views expand
         self.stretching_box = box = gui.vBox(
-            self.controlArea, box="Display",
+            self.controlArea, box=_("Display"),
             sizePolicy=(QSizePolicy.Minimum, QSizePolicy.Fixed))
         self.stretching_box.sizeHint = self.display_box.sizeHint
         gui.checkBox(
-            box, self, 'stretched', "Stretch bars",
+            box, self, 'stretched', _("Stretch bars"),
             callback=self.update_graph,
             stateWhenDisabled=False)
         gui.checkBox(
-            box, self, 'show_labels', "Show box labels",
+            box, self, 'show_labels', _("Show box labels"),
             callback=self.update_graph)
         self.sort_cb = gui.checkBox(
-            box, self, 'sort_freqs', "Sort by subgroup frequencies",
+            box, self, 'sort_freqs', _("Sort by subgroup frequencies"),
             callback=self.update_graph,
             stateWhenDisabled=False)
 

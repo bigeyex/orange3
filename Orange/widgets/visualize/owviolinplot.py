@@ -1,3 +1,4 @@
+# This Python file uses the following encoding: utf-8
 # pylint: disable=too-many-lines
 from collections import namedtuple
 from itertools import chain, count

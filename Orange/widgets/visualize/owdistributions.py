@@ -1,3 +1,4 @@
+# This Python file uses the following encoding: utf-8
 from functools import partial, reduce
 from itertools import count, groupby, repeat
 from xml.sax.saxutils import escape
@@ -245,8 +246,8 @@ class ElidedAxisNoUnits(ElidedLabelsAxis):
 
 
 class OWDistributions(OWWidget):
-    name = "Distributions"
-    description = "Display value distributions of a data feature in a graph."
+    name = _("Distributions")
+    description = _("Display value distributions of a data feature in a graph.")
     icon = "icons/Distribution.svg"
     priority = 120
     keywords = ["histogram"]
@@ -261,12 +262,12 @@ class OWDistributions(OWWidget):
 
     class Error(OWWidget.Error):
         no_defined_values_var = \
-            Msg("Variable '{}' does not have any defined values")
+            Msg(_("Variable '{}' does not have any defined values"))
         no_defined_values_pair = \
-            Msg("No data instances with '{}' and '{}' defined")
+            Msg(_("No data instances with '{}' and '{}' defined"))
 
     class Warning(OWWidget.Warning):
-        ignored_nans = Msg("Data instances with missing values are ignored")
+        ignored_nans = Msg(_("Data instances with missing values are ignored"))
 
     settingsHandler = settings.DomainContextHandler()
     var = settings.ContextSetting(None)
@@ -288,15 +289,15 @@ class OWDistributions(OWWidget):
     graph_name = "plot"
 
     Fitters = (
-        ("None", None, (), ()),
-        ("Normal", norm, ("loc", "scale"), ("μ", "σ")),
-        ("Beta", beta, ("a", "b", "loc", "scale"),
+        (_("None"), None, (), ()),
+        (_("Normal"), norm, ("loc", "scale"), ("μ", "σ")),
+        (_("Beta"), beta, ("a", "b", "loc", "scale"),
          ("α", "β", "-loc", "-scale")),
-        ("Gamma", gamma, ("a", "loc", "scale"), ("α", "β", "-loc", "-scale")),
-        ("Rayleigh", rayleigh, ("loc", "scale"), ("-loc", "σ")),
-        ("Pareto", pareto, ("b", "loc", "scale"), ("α", "-loc", "-scale")),
-        ("Exponential", expon, ("loc", "scale"), ("-loc", "λ")),
-        ("Kernel density", AshCurve, ("a",), ("",))
+        (_("Gamma"), gamma, ("a", "loc", "scale"), ("α", "β", "-loc", "-scale")),
+        (_("Rayleigh"), rayleigh, ("loc", "scale"), ("-loc", "σ")),
+        (_("Pareto"), pareto, ("b", "loc", "scale"), ("α", "-loc", "-scale")),
+        (_("Exponential"), expon, ("loc", "scale"), ("-loc", "λ")),
+        (_("Kernel density"), AshCurve, ("a",), ("",))
     )
 
     DragNone, DragAdd, DragRemove = range(3)
@@ -316,24 +317,24 @@ class OWDistributions(OWWidget):
         self._user_var_bins = {}
 
         varview = gui.listView(
-            self.controlArea, self, "var", box="Variable",
+            self.controlArea, self, "var", box=_("Variable"),
             model=DomainModel(valid_types=DomainModel.PRIMITIVE,
                               separators=False),
             callback=self._on_var_changed,
             viewType=ListViewSearch
         )
         gui.checkBox(
-            varview.box, self, "sort_by_freq", "Sort categories by frequency",
+            varview.box, self, "sort_by_freq", _("Sort categories by frequency"),
             callback=self._on_sort_by_freq, stateWhenDisabled=False)
 
-        box = self.continuous_box = gui.vBox(self.controlArea, "Distribution")
+        box = self.continuous_box = gui.vBox(self.controlArea, _("Distribution"))
         gui.comboBox(
-            box, self, "fitted_distribution", label="Fitted distribution",
+            box, self, "fitted_distribution", label=_("Fitted distribution"),
             orientation=Qt.Horizontal, items=(name[0] for name in self.Fitters),
             callback=self._on_fitted_dist_changed)
         slider = gui.hSlider(
             box, self, "number_of_bins",
-            label="Bin width", orientation=Qt.Horizontal,
+            label=_("Bin width"), orientation=Qt.Horizontal,
             minValue=0, maxValue=max(1, len(self.binnings) - 1),
             createLabel=False, callback=self._on_bins_changed)
         self.bin_width_label = gui.widgetLabel(slider.box)
@@ -342,28 +343,28 @@ class OWDistributions(OWWidget):
         slider.sliderReleased.connect(self._on_bin_slider_released)
         self.smoothing_box = gui.hSlider(
             box, self, "kde_smoothing",
-            label="Smoothing", orientation=Qt.Horizontal,
+            label=_("Smoothing"), orientation=Qt.Horizontal,
             minValue=2, maxValue=20, callback=self.replot, disabled=True)
         gui.checkBox(
-            box, self, "hide_bars", "Hide bars", stateWhenDisabled=False,
+            box, self, "hide_bars", _("Hide bars"), stateWhenDisabled=False,
             callback=self._on_hide_bars_changed,
             disabled=not self.fitted_distribution)
 
-        box = gui.vBox(self.controlArea, "Columns")
+        box = gui.vBox(self.controlArea, _("Columns"))
         gui.comboBox(
-            box, self, "cvar", label="Split by", orientation=Qt.Horizontal,
+            box, self, "cvar", label=_("Split by"), orientation=Qt.Horizontal,
             searchable=True,
             model=DomainModel(placeholder="(None)",
                               valid_types=(DiscreteVariable), ),
             callback=self._on_cvar_changed, contentsLength=18)
         gui.checkBox(
-            box, self, "stacked_columns", "Stack columns",
+            box, self, "stacked_columns", _("Stack columns"),
             callback=self.replot)
         gui.checkBox(
-            box, self, "show_probs", "Show probabilities",
+            box, self, "show_probs", _("Show probabilities"),
             callback=self._on_show_probabilities_changed)
         gui.checkBox(
-            box, self, "cumulative_distr", "Show cumulative distribution",
+            box, self, "cumulative_distr", _("Show cumulative distribution"),
             callback=self._on_show_cumulative)
 
         gui.auto_apply(self.buttonsArea, self, commit=self.apply)
@@ -509,11 +510,11 @@ class OWDistributions(OWWidget):
     def _on_show_probabilities_changed(self):
         label = self.controls.fitted_distribution.label
         if self.show_probs:
-            label.setText("Fitted probability")
+            label.setText(_("Fitted probability"))
             label.setToolTip(
-                "Chosen distribution is used to compute Bayesian probabilities")
+                _("Chosen distribution is used to compute Bayesian probabilities"))
         else:
-            label.setText("Fitted distribution")
+            label.setText(_("Fitted distribution"))
             label.setToolTip("")
         self.replot()
 
@@ -580,7 +581,7 @@ class OWDistributions(OWWidget):
             leftaxis.setLabel(
                 f"Probability of '{self.cvar.name}' at given '{self.var.name}'")
         else:
-            leftaxis.setLabel("Frequency")
+            leftaxis.setLabel(_("Frequency"))
         leftaxis.resizeEvent()
 
     def _update_controls_state(self):

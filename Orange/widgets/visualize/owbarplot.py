@@ -366,8 +366,8 @@ class BarPlotGraph(pg.PlotWidget):
 
 
 class OWBarPlot(OWWidget):
-    name = "Bar Plot"
-    description = "Visualizes comparisons among categorical variables."
+    name = _("Bar Plot")
+    description = _("Visualizes comparisons among categorical variables.")
     icon = "icons/BarPlot.svg"
     priority = 190
     keywords = ["chart"]
@@ -394,11 +394,11 @@ class OWBarPlot(OWWidget):
     graph_name = "graph.plotItem"
 
     class Error(OWWidget.Error):
-        no_cont_features = Msg("Plotting requires a numeric feature.")
+        no_cont_features = Msg(_("Plotting requires a numeric feature."))
 
     class Information(OWWidget.Information):
-        too_many_instances = Msg("Data has too many instances. Only first {}"
-                                 " are shown.".format(MAX_INSTANCES))
+        too_many_instances = Msg(_("Data has too many instances. Only first {}"
+                                 " are shown.").format(MAX_INSTANCES))
 
     enumeration = "Enumeration"
 
@@ -439,7 +439,7 @@ class OWBarPlot(OWWidget):
         gui.rubber(self.controlArea)
         self._selected_var_model = DomainModel(valid_types=ContinuousVariable)
         gui.comboBox(
-            box, self, "selected_var", label="Values:",
+            box, self, "selected_var", label=_("Values:"),
             model=self._selected_var_model, contentsLength=12, searchable=True,
             orientation=Qt.Horizontal, callback=self.__parameter_changed,
         )
@@ -448,7 +448,7 @@ class OWBarPlot(OWWidget):
             placeholder="None", valid_types=DiscreteVariable
         )
         gui.comboBox(
-            box, self, "group_var", label="Group by:",
+            box, self, "group_var", label=_("Group by:"),
             model=self._group_var_model, contentsLength=12, searchable=True,
             orientation=Qt.Horizontal, callback=self.__group_var_changed,
         )
@@ -461,7 +461,7 @@ class OWBarPlot(OWWidget):
                                       (self.enumeration,) + \
                                       self._annot_var_model.order[1:]
         gui.comboBox(
-            box, self, "annot_var", label="Annotations:",
+            box, self, "annot_var", label=_("Annotations:"),
             model=self._annot_var_model, contentsLength=12, searchable=True,
             orientation=Qt.Horizontal, callback=self.__parameter_changed,
         )
@@ -470,7 +470,7 @@ class OWBarPlot(OWWidget):
             placeholder="(Same color)", valid_types=DiscreteVariable
         )
         gui.comboBox(
-            box, self, "color_var", label="Color:",
+            box, self, "color_var", label=_("Color:"),
             model=self._color_var_model,
             contentsLength=12, searchable=True, orientation=Qt.Horizontal,
             callback=self.__parameter_changed,

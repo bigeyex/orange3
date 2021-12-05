@@ -1,3 +1,4 @@
+# This Python file uses the following encoding: utf-8
 from itertools import chain
 from xml.sax.saxutils import escape
 
